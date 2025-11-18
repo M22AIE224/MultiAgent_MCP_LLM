@@ -1,0 +1,210 @@
+body {
+    -webkit-animation: bugfix infinite 1s;
+}
+
+@-webkit-keyframes bugfix {
+    from {
+        padding:0;
+    }
+    to {
+        padding:0;
+    }
+}
+
+
+div#navtoggler{  /* Sample burger icon to toggle menu state */
+    z-index: 9;
+    display: block;
+    position: relative;
+    font-size: 8px;
+    width: 28px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    text-indent: -1000px;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 3px 0;
+    cursor: pointer;
+}
+
+
+div#navtoggler::before{ /* Sample burger icon */
+    /* inner strip inside label */
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 50%;
+    margin-top: -2px;
+    left: 0;
+    background: #fff; /* stripes background color. Change to match border color of parent label above */
+}
+
+nav#ddfullscreenmenu{ /* Full screen nav menu */
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform: scale(0.9);  /* initially scale down nav size */
+    transform: scale(0.9);
+    background: #1a2e3f; /* menu background color */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    z-index: 100000;
+    opacity: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    text-align: center;
+    -webkit-transition: visibility 0s 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+    transition: visibility 0s 0.5s, opacity 0.5s, transform 0.5s;
+}
+
+nav#ddfullscreenmenu.openmenu{ /* open menu class */
+    visibility: visible;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    -webkit-transition-delay: 0s;
+    -transition-delay: 0s;
+}
+
+nav#ddfullscreenmenu div#closex{ /* Large x close button inside nav */
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    text-indent: -1000px;
+    z-index: 10;
+    top: 15px;
+    right: 15px;
+}
+
+nav#ddfullscreenmenu div#closex::before, nav div#closex::after{ /* render large cross inside close button */
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    top: 50%;
+    margin-top: -3px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+nav#ddfullscreenmenu div#closex::after{ /* render large cross inside close button */
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+
+div#ulwrapper{
+    position: relative;
+    width: 500px; /* menu UL width */
+    max-width: 92%;
+    margin: 50px auto auto auto;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+    -webkit-perspective-origin: 50%;
+    perspective-origin: 50%;
+}
+
+nav#ddfullscreenmenu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    max-height: 100%;
+    -webkit-transition: all 0.5s .1s;
+    transition: all 0.5s .1s;
+}
+
+nav#ddfullscreenmenu ul li{
+    position: relative;
+    display: block;
+}
+
+nav#ddfullscreenmenu ul li.header > a:after{ /* right arrow inside header LIs */
+    content: "\f105";
+    font-family: FontAwesome;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+nav#ddfullscreenmenu ul li.header > a:hover::after{
+    color: #ff8623;
+}
+
+nav#ddfullscreenmenu ul.submenu{ /* style for non "first page" ULs */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(100%, 0, 0);
+}
+
+nav#ddfullscreenmenu ul li a,
+nav#ddfullscreenmenu ul li.breadcrumb{
+    text-decoration: none;
+    color: #fff; /* link color */
+/*    text-transform: uppercase;*/
+    padding: 16px 10px;
+    display: block;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.7);
+}
+
+nav#ddfullscreenmenu ul li.breadcrumb{
+    background: #ff8623;
+    position: relative;
+}
+
+nav#ddfullscreenmenu ul li.breadcrumb:after{ /* back arrow inside breadcrumb LI */
+    content: "\f104";
+    font-family: FontAwesome;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    line-height: 25px;
+    color: #fff;
+}
+
+nav#ddfullscreenmenu ul li a:hover{
+    color: #ff8623;
+}
+
+
+nav#ddfullscreenmenu ul.hidemenu{
+    transform: rotateY(30deg) translateZ(-5px) !important;
+    opacity: 0;
+    pointer-events: none;
+}
+
+nav#ddfullscreenmenu ul.showmenu{
+    transform: translate3d(0,0,0) !important;
+    opacity: 1 !important;
+    pointer-events: auto;
+}

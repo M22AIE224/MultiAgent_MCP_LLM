@@ -1,0 +1,121 @@
+2025-11-18 15:36:19,699 [INFO] Starting ML MCP Agent at http://localhost:10200
+2025-11-18 15:36:19,702 [INFO] Using MCP ML Trainer at http://localhost:11000/ml
+INFO:     Started server process [33520]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10200 (Press CTRL+C to quit)
+Client ID 1234
+Client Sercret abcd
+USE_SSO true
+Using Single Sign-On (SSO)
+Downloading Dell certificates zip from: https://pki.dell.com//Dell%20Technologies%20PKI%202018%20B64_PEM.zip
+Downloaded certificate zip, size: 19445 bytes
+Certifi bundle path: C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\certifi\cacert.pem
+Appending Dell certificates to certifi bundle...
+Dell certificates successfully added to certifi bundle.
+INFO:     127.0.0.1:52570 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
+2025-11-18 15:46:20,274 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-18 15:46:20,275 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='46e78506-c23a-4489-a1dc-ab0057062f42', extensions=None, kind='message', message_id='bea6363b15ce4be688c7ed789793e7ec', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='Getting planner from LLM with USer query calandar'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='bf4e3e46-3ec9-4b71-bfbc-855775678676'), metadata=None), '_task_id': 'bf4e3e46-3ec9-4b71-bfbc-855775678676', '_context_id': '46e78506-c23a-4489-a1dc-ab0057062f42', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '271', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000001CDA11F8440>, requested_extensions=set(), activated_extensions=set())}
+2025-11-18 15:46:20,276 [INFO] User Query in ML Agent Execute Start: Getting planner from LLM with USer query calandar
+C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\agent_executor.py:65: RuntimeWarning: coroutine 'EventQueue.enqueue_event' was never awaited
+  event_queue.enqueue_event(task)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+2025-11-18 15:46:20,324 [INFO] MLAgent invoked with query='Getting planner from LLM with USer query calandar' | context_id=46e78506-c23a-4489-a1dc-ab0057062f42
+2025-11-18 15:46:25,177 [ERROR] MLAgent failed: Object of type coroutine is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\ml_agent.py", line 33, in invoke
+    result = await self.call_llm(query,context_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\ml_agent.py", line 57, in call_llm
+    resp = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 968, in request
+    request = self._build_request(options, retries_taken=retries_taken)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 547, in _build_request
+    return self._client.build_request(  # pyright: ignore[reportUnknownMemberType]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 378, in build_request
+    return Request(
+           ^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_models.py", line 408, in __init__
+    headers, stream = encode_request(
+                      ^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_content.py", line 216, in encode_request
+    return encode_json(json)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_content.py", line 177, in encode_json
+    body = json_dumps(
+           ^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type coroutine is not JSON serializable
+2025-11-18 15:46:25,671 [ERROR] Error executing MLAgent task: Object of type coroutine is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\agent_executor.py", line 72, in execute
+    result = await self.agent.invoke(query, task.context_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\ml_agent.py", line 33, in invoke
+    result = await self.call_llm(query,context_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\ml_agent.py", line 57, in call_llm
+    resp = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 968, in request
+    request = self._build_request(options, retries_taken=retries_taken)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 547, in _build_request
+    return self._client.build_request(  # pyright: ignore[reportUnknownMemberType]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 378, in build_request
+    return Request(
+           ^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_models.py", line 408, in __init__
+    headers, stream = encode_request(
+                      ^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_content.py", line 216, in encode_request
+    return encode_json(json)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_content.py", line 177, in encode_json
+    body = json_dumps(
+           ^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type coroutine is not JSON serializable
+INFO:     127.0.0.1:58528 - "POST / HTTP/1.1" 200 OK

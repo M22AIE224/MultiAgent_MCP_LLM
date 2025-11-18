@@ -1,0 +1,68 @@
+2025-11-18 15:36:07,692 [INFO] Starting DV Agent at http://0.0.0.0:10300
+INFO:     Started server process [47640]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10300 (Press CTRL+C to quit)
+Client ID 1234
+Client Sercret abcd
+USE_SSO true
+Using Single Sign-On (SSO)
+Downloading Dell certificates zip from: https://pki.dell.com//Dell%20Technologies%20PKI%202018%20B64_PEM.zip
+Downloaded certificate zip, size: 19445 bytes
+Certifi bundle path: C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\certifi\cacert.pem
+Appending Dell certificates to certifi bundle...
+Dell certificates successfully added to certifi bundle.
+INFO:     127.0.0.1:52572 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
+2025-11-18 15:46:26,268 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-18 15:46:26,268 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-18 15:46:26,268 [INFO] ['academic_calendar.pdf', 'academic_programs.html', 'academic_programs_css', 'all_curriculum.html', 'all_curriculum_css', 'ug_curriculum.html', 'ug_curriculum_css']
+2025-11-18 15:46:26,269 [INFO] Combined files : 
+            <html>
+            <head>
+                <title>Combined Resource Visualization</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        background: #f7f7f7;
+                    }
+                    h1 {
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Visualization Results</h1>
+                
+                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">
+                        <h2>PDF Resource: academic_calendar.pdf</h2>
+                        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" width="100%" height="800px" />
+                    </section>
+                    
+                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">
+                        <h2>HTML Resource: academic_programs.html</h2>
+                        <iframe src="/static/resource/academic_programs.html" 
+                                style="width:100%; height:600px; border:none;">
+                        </iframe>
+                    </section>
+                    <p style='color:orange'>Unsupported file type: academic_programs_css</p>
+                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">
+                        <h2>HTML Resource: all_curriculum.html</h2>
+                        <iframe src="/static/resource/all_curriculum.html" 
+                                style="width:100%; height:600px; border:none;">
+                        </iframe>
+                    </section>
+                    <p style='color:orange'>Unsupported file type: all_curriculum_css</p>
+                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">
+                        <h2>HTML Resource: ug_curriculum.html</h2>
+                        <iframe src="/static/resource/ug_curriculum.html" 
+                                style="width:100%; height:600px; border:none;">
+                        </iframe>
+                    </section>
+                    <p style='color:orange'>Unsupported file type: ug_curriculum_css</p>
+            </body>
+            </html>
+            
+2025-11-18 15:46:26,269 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:58533 - "POST / HTTP/1.1" 200 OK

@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "plots": {
+    "pred_vs_actual": "./artifacts/dv_results\\pred_vs_actual_pred_vs_actual.png",
+    "residuals": "./artifacts/dv_results\\pred_vs_actual_residuals.png",
+    "feature_importances": null
+  },
+  "data_points": 78,
+  "predictions_path": "./artifacts/ml_results/predictions.csv"
+}

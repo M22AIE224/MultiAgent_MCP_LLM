@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Academic Copilot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 Student Academic Copilot</h1>
+    <form method="POST">
+      <label for="question">Ask your academic question:</label>
+      <textarea id="question" name="question" rows="3" placeholder="e.g., What are the electives for 3rd semester CSE?" required>{{ request.form.get('question', '') }}</textarea>
+      <button type="submit">Ask</button>
+    </form>
+
+    {% if error %}
+      <div class="error">❌ {{ error }}</div>
+    {% endif %}
+
+    <!-- {% if response %}
+      <div class="response">
+        <h2>🧭 Copilot Response:</h2>
+        <pre>{{ response | tojson(indent=2) }}</pre>
+      </div>
+    {% endif %} -->
+    {% if dv_html %}
+      <div class="response">
+        <h2>Copilot Response:</h2>
+        <div class="dv-output">
+          {{ dv_html | safe }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
