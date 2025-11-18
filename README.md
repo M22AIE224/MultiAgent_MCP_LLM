@@ -1,10 +1,8 @@
 # Multi-Agent Orchestration Platform  
-**Supervisor → A2A → Agents → MCP Architecture**
-
-
+**Student UI → Supervisor → A2A → Agents → MCP Architecture**
 ---
 
-# =============================== Overview  ==================================
+# ====================== Overview  =========================
 
 This project implements a **multi-agent orchestration system** where a central **Supervisor Agent** manages specialized downstream **Agents** (Data, ML, Visualization, etc.) through **A2A (Agent-to-Agent)** messaging.  
 Each agent exposes its capabilities through a dedicated **MCP (Model Control Plane)** service.  
@@ -13,7 +11,7 @@ The design supports **distributed execution**, **clean separation of concerns**,
 
 ---
 
-# =============================== Architecture  ===============================
+# ==================== Architecture  =======================
 
 flowchart 
     S -->[Supervisor Agent] -->|A2A Messaging| A1[Data Agent]
@@ -24,17 +22,15 @@ flowchart
     A2 -->|MCP API| M2[MCP_ML]
     A3 -->|MCP API| M3[MCP_DV]
 
-#  ================================== Flow Summary  ===================================
+#  ================== Flow Summary  =========================
 
+Student UI interface as for Query from Student
 Supervisor Agent receives a task or pipeline command.
-
 It sends A2A JSON-RPC messages to the relevant Agents.
-
 Each Agent performs its function and interacts with its respective MCP backend.
-
 Results are returned up the chain → aggregated by the Supervisor → logged and saved.
 
-#  ================================= Components  ======================================
+#  ================== Components  ============================
 Component	Role
 Supervisor Agent	Central controller that orchestrates all agent workflows via A2A.
 Data Agent	Handles data ingestion, cleaning, feature engineering.
@@ -44,7 +40,7 @@ MCP Servers	REST interfaces used by each Agent to perform data/model/visualizati
 start_all.bat / stop_all.bat	One-click startup and shutdown for all MCPs and agents.
 
 
-#  ================================== Directory Layout  ===============================
+#  ================ Directory Layout  =========================
 
 code/
 ├── agents/
@@ -77,21 +73,21 @@ code/
     ├── ml_results/
     └── dv_results/
 
-# =============================== How to Run ====================================
+# ==================== How to Run =======================
 
 
 ## Step 1: Environment Setup
-# --------------------------------------------------------------------------------
+# --------------------------------------------------------
 pip install -r requirements.txt
-# --------------------------------------------------------------------------------
+# --------------------------------------------------------
 
 
 ## Step 2. Start All MCPs and Agents
 
 From the project root:
-# --------------------------------------------------------------------------------
+# ---------------------------------------------------------
 .\scripts\start_all.bat
-# --------------------------------------------------------------------------------
+# ---------------------------------------------------------
 
 This will launch:
 
@@ -105,9 +101,9 @@ Logs are streamed to scripts/logs/.
 
 Run the Supervisor separately:
 
-# --------------------------------------------------------------------------------
+# -------------------------------------------------------
 python -m supervisor_agent.agent_main
-# --------------------------------------------------------------------------------
+# -------------------------------------------------------
 
 
 Once running, the Supervisor will:
@@ -129,7 +125,7 @@ To gracefully stop all background services:
 
 This will terminate all python processes spawned by the startup script.
 
-## ================================= Example Workflow =============================
+## ================== Example Workflow =====================
 
 Supervisor input:
 
@@ -143,7 +139,7 @@ Supervisor → (A2A) → Data Agent → (MCP_DATA)
             → (A2A) → DV Agent   → (MCP_DV)
 
 
-## ==================================== Outputs ====================================
+## ================ Outputs ===============================
 
 Cleaned Data → ./artifacts/data_results
 
@@ -151,7 +147,7 @@ Trained Model → ./artifacts/ml_results/
 
 Visualizations → ./artifacts/dv_results/
 
-## =================================== Logging and Artifacts ========================
+## ================= Logging and Artifacts =================
 
 # Folder	
 
@@ -174,13 +170,13 @@ Async IO + HTTPX
 
 Logging + Environment Orchestration via Batch scripts
 
-# ===================================  Quick Reference =================================== 
+# ====================  Quick Reference ================== 
 Command	Purpose
 .\scripts\start_all.bat	Starts all agents + MCPs
 python -m supervisor_agent.agent_main	Launches Supervisor
 .\scripts\stop_all.bat	Stops all services
 
-# =================================== Extending the Platform ==============================
+# ================== Extending the Platform ===============
 
 You can easily add new specialized agents and MCPs:
 
@@ -195,3 +191,4 @@ Add it to start_all.bat and stop_all.bat
 ## Author
 
 Prabha Sharma
+
