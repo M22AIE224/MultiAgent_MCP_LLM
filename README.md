@@ -2,7 +2,7 @@
 **Student UI → Supervisor → A2A → Agents → MCP Architecture**
 ---
 
-# ====================== Overview  =========================
+# ============ Overview  =========================
 
 This project implements a **multi-agent orchestration system** where a central **Supervisor Agent** manages specialized downstream **Agents** (Data, ML, Visualization, etc.) through **A2A (Agent-to-Agent)** messaging.  
 Each agent exposes its capabilities through a dedicated **MCP (Model Control Plane)** service.  
@@ -11,7 +11,7 @@ The design supports **distributed execution**, **clean separation of concerns**,
 
 ---
 
-# ==================== Architecture  =======================
+# ========== Architecture  =======================
 
 flowchart 
     S -->[Supervisor Agent] -->|A2A Messaging| A1[Data Agent]
@@ -191,4 +191,5 @@ Add it to start_all.bat and stop_all.bat
 ## Author
 
 Prabha Sharma
+
 
