@@ -106,8 +106,8 @@ class DataAgent:
             local_path = os.getenv("DATA_LOCAL_PATH", "./data/source_data.csv")
             remote_port = os.getenv("DATA_MCP_PORT", "10010")
             mcp_url = f"http://localhost:{remote_port}/load_data"
-            out_dir = os.getenv("DATA_OUTPUT_DIR", "./artifacts/data_results")
-            data_processed_path = os.getenv("DATA_PROCESSED_PATH", "./artifacts/data_results/processed_data.csv")
+            out_dir = os.getenv("DATA_OUTPUT_DIR", "./student_ui/static/resource")
+            data_processed_path = os.getenv("DATA_PROCESSED_PATH", "./student_ui/static/resource/processed_data.csv")
             #os.makedirs(out_dir, exist_ok=True)
             os.makedirs(os.path.dirname(out_dir), exist_ok=True)
 
@@ -155,24 +155,29 @@ class DataAgent:
             logger.info("--------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------")
             #logger.info(f"REQUEST : \n {path} ")
 
-            refresh_folder = False
+            # refresh_folder = False
 
-            # ============ Load Data ============ #
-            if os.path.exists(out_dir) and os.path.isdir(out_dir):
-                files = [f for f in os.listdir(out_dir) if os.path.isfile(os.path.join(out_dir, f))]
-                if files:
-                    refresh_folder= False
-                else:
-                    refresh_folder = True
-            else:
-                refresh_folder = True
+            # # ============ Load Data ============ #
+            # if os.path.exists(out_dir) and os.path.isdir(out_dir):
+            #     files = [f for f in os.listdir(out_dir) if os.path.isfile(os.path.join(out_dir, f))]
+            #     if files:
+            #         refresh_folder= False
+            #     else:
+            #         refresh_folder = True
+            # else:
+            #     refresh_folder = True
 
-            if refresh_folder:
-                logger.warning(f"Local file not found at {out_dir}. Fetching from MCP: {mcp_url}")
-                async with httpx.AsyncClient(verify=False, timeout=120) as client:
-                    # ✅ Use GET instead of POST
-                    response = await client.get(mcp_url)
-                    response.raise_for_status()
+            #refresh_folder = True
+
+           # if refresh_folder:
+            logger.warning(f"Fetching from MCP: {mcp_url}")
+            async with httpx.AsyncClient(verify=False, timeout=300) as client:
+                response = await client.get(
+                        mcp_url,
+                        params={"st_message": st_message}
+                    )
+                
+                response.raise_for_status()
                     
 
             #logger.info(f"Processed data saved at {save_path}")
@@ -182,10 +187,10 @@ class DataAgent:
 
 
             summary = {
-                "rows": "",
-                "columns":"",
-                "target": "",
-                "source": "local" if not refresh_folder else  "remote_mcp",
+                #"rows": "",
+                #"columns":"",
+                #"target": "",
+                "source": "MCP",
                 "processed_path": os.path.abspath(out_dir),
             }
 

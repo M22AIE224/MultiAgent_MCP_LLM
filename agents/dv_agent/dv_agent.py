@@ -24,8 +24,9 @@ class DVAgent:
     """
 
     def __init__(self):
-        self.mcp_port = os.getenv("DV_MCP_PORT", "10030")
-        self.mcp_url = f"http://localhost:{self.mcp_port}"
+        #self.mcp_port = os.getenv("DV_MCP_PORT", "10030")
+        # self.mcp_url = f"http://localhost:{self.mcp_port}"
+        logger.info("-------------Initilizing Critic-------------")
 
     async def invoke_bkp(self, query: str, context_id: str, params: dict = None):
         """
@@ -58,6 +59,26 @@ class DVAgent:
             logger.exception("DVAgent failed")
             raise
 
+    def render_html_card(self,title, content):
+        return f"""
+        <section class="dv-card">
+            <h2>{title}</h2>
+            {content}
+        </section>
+        """
+
+
+    def render_iframe(self, resource_url):
+        return f"""
+        <iframe src="{resource_url}" class="dv-iframe"></iframe>
+        """
+
+
+    def render_pdf(self,resource_url):
+        return f"""
+        <embed src="{resource_url}" type="application/pdf" class="dv-pdf" />
+        """
+    
     async def combine_results(self, payload: dict = None):
        
         if payload is None:
@@ -86,66 +107,49 @@ class DVAgent:
 
                 ext = os.path.splitext(name)[1].lower()
 
+                resource_url = f"/static/resource/{name}"
                 # ---------------------------
                 # HTML FILE
                 # ---------------------------
-                # if ext in [".html", ".htm"]:
-                #     with open(file_path, "r", encoding="utf-8") as f:
-                #         content = f.read()
 
-                #     wrapped = f"""
-                #     <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">
-                #         <h2>HTML Resource: {name}</h2>
-                #         <div>{content}</div>
-                #     </section>
-                #     """
-                #     combined_html_parts.append(wrapped)
                 if ext in [".html", ".htm"]:
+                    content = self.render_iframe(resource_url)
+                    combined_html_parts.append( self.render_html_card(f"HTML Resource: {name}", content))
                     # Instead of reading file content, serve as iframe
-                    resource_url = f"/static/resource/{name}"  # Flask route you will create
+                    # resource_url = f"/static/resource/{name}"  # Flask route you will create
 
-                    wrapped = f"""
-                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">
-                        <h2>HTML Resource: {name}</h2>
-                        <iframe src="{resource_url}" 
-                                style="width:100%; height:600px; border:none;">
-                        </iframe>
-                    </section>
-                    """
-                    combined_html_parts.append(wrapped)
+
+                    # wrapped = f"""
+                    # <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">
+                    #     <h2>HTML Resource: {name}</h2>
+                    #     <iframe src="{resource_url}" 
+                    #             style="width:100%; height:600px; border:none;">
+                    #     </iframe>
+                    # </section>
+                    # """
+                    # combined_html_parts.append(wrapped)
                 # ---------------------------
                 # PDF FILE
                 # ---------------------------
                 elif ext == ".pdf":
-                    wrapped = f"""
-                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">
-                        <h2>PDF Resource: {name}</h2>
-                        <embed src="/static/resource/{name}" type="application/pdf" width="100%" height="800px" />
-                    </section>
-                    """
-                    combined_html_parts.append(wrapped)
+                    content = self.render_pdf(resource_url)
+                    combined_html_parts.append(self.render_html_card(f"PDF Resource: {name}", content))
+                    # wrapped = f"""
+                    # <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">
+                    #     <h2>PDF Resource: {name}</h2>
+                    #     <embed src="/static/resource/{name}" type="application/pdf" width="100%" height="800px" />
+                    # </section>
+                    # """
+                    # combined_html_parts.append(wrapped)
 
-                else:
-                    combined_html_parts.append(
-                        f"<p style='color:orange'>Unsupported file type: {name}</p>"
-                    )
+                # else:
+                #     combined_html_parts.append(
+                #         f"<p style='color:orange'>Unsupported file type: {name}</p>"
+                #     )
 
             final_page = f"""
             <html>
-            <head>
-                <title>Combined Resource Visualization</title>
-                <style>
-                    body {{
-                        font-family: Arial, sans-serif;
-                        margin: 20px;
-                        background: #f7f7f7;
-                    }}
-                    h1 {{
-                        text-align: center;
-                        margin-bottom: 40px;
-                    }}
-                </style>
-            </head>
+
             <body>
                 <h1>Visualization Results</h1>
                 {''.join(combined_html_parts)}

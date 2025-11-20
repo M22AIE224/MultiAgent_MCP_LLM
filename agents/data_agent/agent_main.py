@@ -41,8 +41,8 @@ def main(host, port):
         port = port or int(os.getenv("DATA_AGENT_PORT", 10100))
         mcp_url = os.getenv("DATA_MCP_URL", f"http://localhost:{os.getenv('DATA_MCP_PORT', 10010)}")
 
-        logger.info(f"🚀 Starting Data MCP Agent at http://{host}:{port}")
-        logger.info(f"📡 Using MCP Data Downloader at {mcp_url}")
+        logger.info(f"Starting Data MCP Agent at http://{host}:{port}")
+        logger.info(f"Using MCP Data Downloader at {mcp_url}")
 
         # --- Capabilities and skills ---
         capabilities = AgentCapabilities(streaming=False, pushNotifications=False)

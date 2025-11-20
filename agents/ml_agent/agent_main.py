@@ -66,6 +66,7 @@ def main(host, port):
 
         # --- HTTP client + push config ---
         http_client = get_http_client_based_on_authentication(httpx.AsyncClient)
+        #httpx_client = httpx.AsyncClient
         push_config = InMemoryPushNotificationConfigStore()
         push_sender = BasePushNotificationSender(http_client, config_store=push_config)
 

@@ -32,7 +32,7 @@ class MLAgentExecutor(AgentExecutor):
 
            
             # Optionally notify client that training has started
-            await event_queue.enqueue_event(new_agent_text_message("Starting ML training..."))
+            #await event_queue.enqueue_event(new_agent_text_message("Starting ML training..."))
 
             # Invoke your data agent
             result = await self.agent.invoke(query, task.context_id)
@@ -66,7 +66,7 @@ class MLAgentExecutor(AgentExecutor):
 
            
             # Optionally notify client that training has started
-            await event_queue.enqueue_event(new_agent_text_message("Starting ML training..."))
+            #await event_queue.enqueue_event(new_agent_text_message("Starting ML training..."))
 
             # Invoke your data agent
             result = await self.agent.invoke(query, task.context_id)
