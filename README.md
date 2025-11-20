@@ -41,6 +41,33 @@ ML Agent	Trains ML models, evaluates results, and exports metrics.
 DV Agent	Generates visualizations and analytics reports.
 MCP Servers	REST interfaces used by each Agent to perform data/model/visualization tasks.
 start_all.bat / stop_all.bat	One-click startup and shutdown for all MCPs and agents.
+#
+code/
+├── agents/
+│   ├── data_agent/              ← Implements Data Agent
+│   ├── ml_agent/                ← Implements ML Agent
+│   ├── dv_agent/                ← Implements DV Agent
+│   ├── supervisor_agent/        ← Implements Supervisor
+│   ├── agent_main.py
+│   └── supervisor_agent.py
+├── mcp_servers/                 ← Implements MCP
+│   ├── mcp_data.py
+│   ├── mcp_ml.py
+│   ├── mcp_dv.py
+├── scripts/
+│   ├── start_all.bat            ← Starts all agents + MCPs
+│   └── stop_all.bat             ← Gracefully stops all
+├── logs/                        ← Execution logs
+│   ├── data_agent.log
+│   ├── ml_agent.log
+│   ├── dv_agent.log
+│   └── mcp_*.log
+├── data/                        ← Source data
+│   └── source_data.csv
+└── artifacts/                   ← Processed results
+    ├── data_results/
+    ├── ml_results/
+    └── dv_results/
 
 
 #  ========== Directory Layout  ===========
@@ -218,3 +245,4 @@ Prabha Sharma
 M22AIE224
 
 Executive Mtech
+
