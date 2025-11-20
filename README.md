@@ -4,7 +4,7 @@
 
 ---
 
-# =============== Overview  ================
+# ============ Overview  ==============
 
 This project implements a **multi-agent orchestration system** where a central **Supervisor Agent** manages specialized downstream **Agents** (Planning, Data Extract, Visualization, etc.) through **A2A (Agent-to-Agent)** messaging.  
 Each agent exposes its capabilities through a dedicated **MCP (Model Control Plane)** service.  
@@ -13,7 +13,7 @@ The design supports **distributed execution**, **clean separation of concerns**,
 
 ---
 
-# ============= Architecture  ================
+# =========== Architecture  ============
 
 flowchart 
     S -->[Supervisor Agent] -->|A2A Messaging| A1[Data Agent]
@@ -24,7 +24,7 @@ flowchart
     A2 -->|MCP API| M2[MCP_ML]
     A3 -->|MCP API| M3[MCP_DV]
 
-#  ============ Flow Summary  ======================
+#  ============ Flow Summary  ===========
 
 Supervisor Agent receives a task or pipeline command.
 
@@ -43,7 +43,7 @@ MCP Servers	REST interfaces used by each Agent to perform data/model/visualizati
 start_all.bat / stop_all.bat	One-click startup and shutdown for all MCPs and agents.
 
 
-#  ============= Directory Layout  =============
+#  ========== Directory Layout  ===========
 
 code/
 ├── agents/
@@ -135,7 +135,7 @@ python .\student_ui\app.py
 ## Step 6. Open the browser for Student UI 
 
 Open the browser with URL  http://127.0.0.1:5000
-# a Wnter the User Query:
+# a Enter the User Query:
 Eg - What is the Acedemic Calander
    - Show me the UG Programs and Curriculam
    - Can I see the latest All Curriculam
@@ -216,4 +216,5 @@ Add it to start_all.bat and stop_all.bat
 
 Prabha Sharma
 M22AIE224
+
 Executive Mtech
