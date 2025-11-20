@@ -1,5 +1,6 @@
-2025-11-18 15:36:07,692 [INFO] Starting DV Agent at http://0.0.0.0:10300
-INFO:     Started server process [47640]
+2025-11-20 13:23:21,435 [INFO] Starting DV Agent at http://0.0.0.0:10300
+2025-11-20 13:23:26,914 [INFO] -------------Initilizing Critic-------------
+INFO:     Started server process [52172]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:10300 (Press CTRL+C to quit)
@@ -12,11 +13,27 @@ Downloaded certificate zip, size: 19445 bytes
 Certifi bundle path: C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\certifi\cacert.pem
 Appending Dell certificates to certifi bundle...
 Dell certificates successfully added to certifi bundle.
-INFO:     127.0.0.1:52572 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
-2025-11-18 15:46:26,268 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
-2025-11-18 15:46:26,268 [INFO] File Names in the folder ./student_ui/static/resource
-2025-11-18 15:46:26,268 [INFO] ['academic_calendar.pdf', 'academic_programs.html', 'academic_programs_css', 'all_curriculum.html', 'all_curriculum_css', 'ug_curriculum.html', 'ug_curriculum_css']
-2025-11-18 15:46:26,269 [INFO] Combined files : 
+INFO:     127.0.0.1:55227 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
+2025-11-20 13:33:13,290 [INFO] Starting DV Agent at http://0.0.0.0:10300
+2025-11-20 13:33:16,389 [INFO] -------------Initilizing Critic-------------
+INFO:     Started server process [29532]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10300 (Press CTRL+C to quit)
+Client ID 1234
+Client Sercret abcd
+USE_SSO true
+Using Single Sign-On (SSO)
+Downloading Dell certificates zip from: https://pki.dell.com//Dell%20Technologies%20PKI%202018%20B64_PEM.zip
+Downloaded certificate zip, size: 19445 bytes
+Certifi bundle path: C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\certifi\cacert.pem
+Appending Dell certificates to certifi bundle...
+Dell certificates successfully added to certifi bundle.
+INFO:     127.0.0.1:65010 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
+2025-11-20 13:36:49,682 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 13:36:49,682 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 13:36:49,682 [INFO] ['academic_programs.html', 'academic_programs_css', 'academic_programs_images', 'all_curriculum.html', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum_css']
+2025-11-20 13:36:49,682 [INFO] Combined files : 
             <html>
             <head>
                 <title>Combined Resource Visualization</title>
@@ -35,34 +52,432 @@ INFO:     127.0.0.1:52572 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
             <body>
                 <h1>Visualization Results</h1>
                 
-                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">
-                        <h2>PDF Resource: academic_calendar.pdf</h2>
-                        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" width="100%" height="800px" />
-                    </section>
-                    
-                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">
-                        <h2>HTML Resource: academic_programs.html</h2>
-                        <iframe src="/static/resource/academic_programs.html" 
-                                style="width:100%; height:600px; border:none;">
-                        </iframe>
-                    </section>
-                    <p style='color:orange'>Unsupported file type: academic_programs_css</p>
-                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">
-                        <h2>HTML Resource: all_curriculum.html</h2>
-                        <iframe src="/static/resource/all_curriculum.html" 
-                                style="width:100%; height:600px; border:none;">
-                        </iframe>
-                    </section>
-                    <p style='color:orange'>Unsupported file type: all_curriculum_css</p>
-                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">
-                        <h2>HTML Resource: ug_curriculum.html</h2>
-                        <iframe src="/static/resource/ug_curriculum.html" 
-                                style="width:100%; height:600px; border:none;">
-                        </iframe>
-                    </section>
-                    <p style='color:orange'>Unsupported file type: ug_curriculum_css</p>
+        <section class="dv-card">
+            <h2>HTML Resource: academic_programs.html</h2>
+            
+        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+        <section class="dv-card">
+            <h2>HTML Resource: all_curriculum.html</h2>
+            
+        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
             </body>
             </html>
             
-2025-11-18 15:46:26,269 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
-INFO:     127.0.0.1:58533 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:36:49,682 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:53239 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:39:58,369 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 13:39:58,369 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 13:39:58,369 [INFO] ['academic_calendar.pdf', 'academic_programs_css', 'academic_programs_images', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum_css']
+2025-11-20 13:39:58,369 [INFO] Combined files : 
+            <html>
+            <head>
+                <title>Combined Resource Visualization</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        background: #f7f7f7;
+                    }
+                    h1 {
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 13:39:58,369 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:49892 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:43:02,392 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 13:43:02,394 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 13:43:02,394 [INFO] ['academic_calendar.pdf', 'academic_programs_css', 'academic_programs_images', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum_css']
+2025-11-20 13:43:02,396 [INFO] Combined files : 
+            <html>
+            <head>
+                <title>Combined Resource Visualization</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        background: #f7f7f7;
+                    }
+                    h1 {
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 13:43:02,396 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:59518 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:46:13,441 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 13:46:13,442 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 13:46:13,442 [INFO] ['academic_calendar.pdf', 'academic_programs_css', 'academic_programs_images', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum_css']
+2025-11-20 13:46:13,443 [INFO] Combined files : 
+            <html>
+            <head>
+                <title>Combined Resource Visualization</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        background: #f7f7f7;
+                    }
+                    h1 {
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 13:46:13,443 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:49701 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:48:11,129 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 13:48:11,129 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 13:48:11,129 [INFO] ['academic_calendar.pdf', 'academic_programs.html', 'academic_programs_css', 'academic_programs_images', 'all_curriculum.html', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum_css']
+2025-11-20 13:48:11,129 [INFO] Combined files : 
+            <html>
+            <head>
+                <title>Combined Resource Visualization</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        background: #f7f7f7;
+                    }
+                    h1 {
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+        <section class="dv-card">
+            <h2>HTML Resource: academic_programs.html</h2>
+            
+        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+        <section class="dv-card">
+            <h2>HTML Resource: all_curriculum.html</h2>
+            
+        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 13:48:11,129 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:58029 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:52:47,051 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 13:52:47,052 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 13:52:47,053 [INFO] ['academic_calendar.pdf', 'academic_programs_css', 'academic_programs_images', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum_css']
+2025-11-20 13:52:47,054 [INFO] Combined files : 
+            <html>
+            <head>
+                <title>Combined Resource Visualization</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        background: #f7f7f7;
+                    }
+                    h1 {
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 13:52:47,054 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:65288 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:41:06,518 [INFO] Starting DV Agent at http://0.0.0.0:10300
+2025-11-20 14:41:10,566 [INFO] -------------Initilizing Critic-------------
+INFO:     Started server process [39772]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10300 (Press CTRL+C to quit)
+Client ID 1234
+Client Sercret abcd
+USE_SSO true
+Using Single Sign-On (SSO)
+Downloading Dell certificates zip from: https://pki.dell.com//Dell%20Technologies%20PKI%202018%20B64_PEM.zip
+Downloaded certificate zip, size: 19445 bytes
+Certifi bundle path: C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\certifi\cacert.pem
+Appending Dell certificates to certifi bundle...
+Dell certificates successfully added to certifi bundle.
+INFO:     127.0.0.1:61066 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
+2025-11-20 14:44:09,829 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 14:44:09,829 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 14:44:09,829 [INFO] ['academic_programs_css', 'academic_programs_images', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum.html', 'ug_curriculum_css', 'ug_curriculum_images']
+2025-11-20 14:44:09,829 [INFO] Combined files : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>HTML Resource: ug_curriculum.html</h2>
+            
+        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 14:44:09,829 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:49909 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:49:00,192 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 14:49:00,192 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 14:49:00,192 [INFO] ['academic_programs_css', 'academic_programs_images', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum.html', 'ug_curriculum_css', 'ug_curriculum_images']
+2025-11-20 14:49:00,194 [INFO] Combined files : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>HTML Resource: ug_curriculum.html</h2>
+            
+        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 14:49:00,194 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:53839 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:51:42,012 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 14:51:42,015 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 14:51:42,015 [INFO] ['academic_programs_css', 'academic_programs_images', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum.html', 'ug_curriculum_css', 'ug_curriculum_images']
+2025-11-20 14:51:42,015 [INFO] Combined files : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>HTML Resource: ug_curriculum.html</h2>
+            
+        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 14:51:42,015 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:57135 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:51:55,525 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 14:51:55,526 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 14:51:55,526 [INFO] ['academic_calendar.pdf', 'academic_programs_css', 'academic_programs_images', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum_css', 'ug_curriculum_images']
+2025-11-20 14:51:55,527 [INFO] Combined files : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 14:51:55,528 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:61441 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:52:26,316 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 14:52:26,316 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 14:52:26,317 [INFO] ['academic_calendar.pdf', 'academic_programs_css', 'academic_programs_images', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum_css', 'ug_curriculum_images']
+2025-11-20 14:52:26,318 [INFO] Combined files : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 14:52:26,318 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:58293 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:52:55,339 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 14:52:55,340 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 14:52:55,340 [INFO] ['academic_programs_css', 'academic_programs_images', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum.html', 'ug_curriculum_css', 'ug_curriculum_images']
+2025-11-20 14:52:55,340 [INFO] Combined files : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>HTML Resource: ug_curriculum.html</h2>
+            
+        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 14:52:55,340 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:55933 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:57:32,799 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 14:57:32,799 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 14:57:32,799 [INFO] ['academic_calendar.pdf', 'academic_programs_css', 'academic_programs_images', 'all_curriculum.html', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum_css', 'ug_curriculum_images']
+2025-11-20 14:57:32,799 [INFO] Combined files : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+        <section class="dv-card">
+            <h2>HTML Resource: all_curriculum.html</h2>
+            
+        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 14:57:32,799 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:64527 - "POST / HTTP/1.1" 200 OK
+2025-11-20 15:02:39,907 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 15:02:39,907 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 15:02:39,907 [INFO] ['academic_calendar.pdf', 'academic_programs.html', 'academic_programs_css', 'academic_programs_images', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum_css', 'ug_curriculum_images']
+2025-11-20 15:02:39,912 [INFO] Combined files : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+        <section class="dv-card">
+            <h2>HTML Resource: academic_programs.html</h2>
+            
+        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 15:02:39,913 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:53625 - "POST / HTTP/1.1" 200 OK
+2025-11-20 15:07:53,249 [INFO] ----- DVAgentExecutor: forward A2A request to MCP_DV -----
+2025-11-20 15:07:53,250 [INFO] File Names in the folder ./student_ui/static/resource
+2025-11-20 15:07:53,251 [INFO] ['academic_calendar.pdf', 'academic_programs_css', 'academic_programs_images', 'all_curriculum.html', 'all_curriculum_css', 'all_curriculum_images', 'ug_curriculum_css', 'ug_curriculum_images']
+2025-11-20 15:07:53,252 [INFO] Combined files : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+        <section class="dv-card">
+            <h2>HTML Resource: all_curriculum.html</h2>
+            
+        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+2025-11-20 15:07:53,253 [INFO] ----- DVAgentExecutor: visualization response streamed back -----
+INFO:     127.0.0.1:62044 - "POST / HTTP/1.1" 200 OK

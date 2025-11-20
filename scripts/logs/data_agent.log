@@ -1,6 +1,6 @@
-2025-11-18 15:36:15,441 [INFO] \U0001f680 Starting Data MCP Agent at http://0.0.0.0:10100
-2025-11-18 15:36:15,444 [INFO] \U0001f4e1 Using MCP Data Downloader at http://localhost:10010
-INFO:     Started server process [8388]
+2025-11-20 13:23:23,084 [INFO] Starting Data MCP Agent at http://0.0.0.0:10100
+2025-11-20 13:23:23,086 [INFO] Using MCP Data Downloader at http://localhost:10010
+INFO:     Started server process [35268]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:10100 (Press CTRL+C to quit)
@@ -13,86 +13,1504 @@ Downloaded certificate zip, size: 19445 bytes
 Certifi bundle path: C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\certifi\cacert.pem
 Appending Dell certificates to certifi bundle...
 Dell certificates successfully added to certifi bundle.
-INFO:     127.0.0.1:52568 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
-2025-11-18 15:46:25,944 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
-2025-11-18 15:46:25,945 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='185844dc-1be4-47a6-a6f3-e6258fcb4b61', extensions=None, kind='message', message_id='ee930dc1d9c640abb726fdea6380fa53', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE={};'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='d5e4fa82-9de9-4f68-a2a6-99c688a68494'), metadata=None), '_task_id': 'd5e4fa82-9de9-4f68-a2a6-99c688a68494', '_context_id': '185844dc-1be4-47a6-a6f3-e6258fcb4b61', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '235', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000014D3461F1A0>, requested_extensions=set(), activated_extensions=set())}
+INFO:     127.0.0.1:55223 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
+2025-11-20 13:25:32,260 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 13:25:32,260 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='038c7f79-4d3b-4cd5-90a0-c9df45024bfa', extensions=None, kind='message', message_id='6899a77987f64824bdf0886b71cbe4d4', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=all_curriculum,academic_programs;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='a0515a97-4889-4eb8-9382-1bdfea9da497'), metadata=None), '_task_id': 'a0515a97-4889-4eb8-9382-1bdfea9da497', '_context_id': '038c7f79-4d3b-4cd5-90a0-c9df45024bfa', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '265', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000002A4298D7230>, requested_extensions=set(), activated_extensions=set())}
 C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\data_agent\agent_executor.py:35: RuntimeWarning: coroutine 'EventQueue.enqueue_event' was never awaited
   event_queue.enqueue_event(task)
 RuntimeWarning: Enable tracemalloc to get the object allocation traceback
-2025-11-18 15:46:25,998 [INFO] Invoked DataAgent with query: 'STMESSAGE={};' and context_id=185844dc-1be4-47a6-a6f3-e6258fcb4b61
-2025-11-18 15:46:25,998 [INFO] ==== DEEP TASK INSPECTION ====
-2025-11-18 15:46:25,998 [INFO] Type: <class 'str'>
-2025-11-18 15:46:25,998 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,998 [INFO]   • query.casefold = <built-in method casefold of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,998 [INFO]   • query.center = <built-in method center of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.count = <built-in method count of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.encode = <built-in method encode of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.endswith = <built-in method endswith of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.find = <built-in method find of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.format = <built-in method format of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.format_map = <built-in method format_map of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.index = <built-in method index of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.isascii = <built-in method isascii of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.islower = <built-in method islower of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.isspace = <built-in method isspace of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.istitle = <built-in method istitle of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:25,999 [INFO]   • query.isupper = <built-in method isupper of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.join = <built-in method join of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.ljust = <built-in method ljust of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.lower = <built-in method lower of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
-2025-11-18 15:46:26,000 [INFO]   • query.partition = <built-in method partition of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.replace = <built-in method replace of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.rfind = <built-in method rfind of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.rindex = <built-in method rindex of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.rjust = <built-in method rjust of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.split = <built-in method split of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.startswith = <built-in method startswith of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.strip = <built-in method strip of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.title = <built-in method title of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.translate = <built-in method translate of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.upper = <built-in method upper of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO]   • query.zfill = <built-in method zfill of str object at 0x0000014D35B6F0F0>
-2025-11-18 15:46:26,000 [INFO] ===================================
-2025-11-18 15:46:26,000 [INFO] DataAgent invoked with query: 'STMESSAGE={};'
-2025-11-18 15:46:26,001 [INFO] Using MCP URL: http://localhost:10010/load_data
-2025-11-18 15:46:26,001 [INFO] Using output directory: ./student_ui/static/resource
-2025-11-18 15:46:26,002 [INFO] Parsed query parameters: {'STMESSAGE': '{}'}
-2025-11-18 15:46:26,002 [INFO] SAVE PATH in Query - None
-2025-11-18 15:46:26,002 [INFO] Parsed query params: {
-  "STMESSAGE": "{}"
+2025-11-20 13:25:32,304 [INFO] Invoked DataAgent with query: 'STMESSAGE=all_curriculum,academic_programs;' and context_id=038c7f79-4d3b-4cd5-90a0-c9df45024bfa
+2025-11-20 13:25:32,304 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 13:25:32,304 [INFO] Type: <class 'str'>
+2025-11-20 13:25:32,304 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.casefold = <built-in method casefold of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.center = <built-in method center of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.count = <built-in method count of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.encode = <built-in method encode of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.endswith = <built-in method endswith of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.find = <built-in method find of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.format = <built-in method format of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.format_map = <built-in method format_map of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.index = <built-in method index of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.isascii = <built-in method isascii of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.islower = <built-in method islower of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.isspace = <built-in method isspace of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.istitle = <built-in method istitle of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,304 [INFO]   • query.isupper = <built-in method isupper of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.join = <built-in method join of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.ljust = <built-in method ljust of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.lower = <built-in method lower of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 13:25:32,315 [INFO]   • query.partition = <built-in method partition of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.replace = <built-in method replace of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.rfind = <built-in method rfind of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.rindex = <built-in method rindex of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.rjust = <built-in method rjust of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.split = <built-in method split of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.startswith = <built-in method startswith of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.strip = <built-in method strip of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.title = <built-in method title of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.translate = <built-in method translate of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.upper = <built-in method upper of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO]   • query.zfill = <built-in method zfill of str object at 0x000002A4288F9E30>
+2025-11-20 13:25:32,315 [INFO] ===================================
+2025-11-20 13:25:32,315 [INFO] DataAgent invoked with query: 'STMESSAGE=all_curriculum,academic_programs;'
+2025-11-20 13:25:32,315 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 13:25:32,315 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 13:25:32,315 [INFO] Parsed query parameters: {'STMESSAGE': 'all_curriculum,academic_programs'}
+2025-11-20 13:25:32,319 [INFO] SAVE PATH in Query - None
+2025-11-20 13:25:32,319 [INFO] Parsed query params: {
+  "STMESSAGE": "all_curriculum,academic_programs"
 }
-2025-11-18 15:46:26,002 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
-2025-11-18 15:46:26,003 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
-2025-11-18 15:46:26,003 [INFO] Data Agent execution completed successfully with result:
-2025-11-18 15:46:26,003 [INFO] {'rows': '', 'columns': '', 'target': '', 'source': 'local', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
-2025-11-18 15:46:26,003 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
-2025-11-18 15:46:26,003 [INFO] RESPONSE : 
+2025-11-20 13:25:32,319 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 13:25:32,319 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 13:30:32,595 [ERROR] DataAgent invoke failed: 
+Traceback (most recent call last):
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\data_agent\data_agent.py", line 175, in invoke
+    response = await client.get(
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+2025-11-20 13:30:32,859 [ERROR] Error executing DataAgent task: 
+Traceback (most recent call last):
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\data_agent\agent_executor.py", line 38, in execute
+    result = await self.agent.invoke(query, task.context_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\data_agent\data_agent.py", line 175, in invoke
+    response = await client.get(
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+2025-11-20 13:30:33,033 [ERROR] Agent execution failed
+Traceback (most recent call last):
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\data_agent\agent_executor.py", line 38, in execute
+    result = await self.agent.invoke(query, task.context_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\data_agent\data_agent.py", line 175, in invoke
+    response = await client.get(
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\a2a\server\request_handlers\default_request_handler.py", line 338, in on_message_send
+    ) = await result_aggregator.consume_and_break_on_interrupt(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\a2a\server\tasks\result_aggregator.py", line 128, in consume_and_break_on_interrupt
+    async for event in event_stream:
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\a2a\server\events\event_consumer.py", line 87, in consume_all
+    raise self._exception
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\a2a\utils\telemetry.py", line 196, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\a2a\server\request_handlers\default_request_handler.py", line 209, in _run_event_stream
+    await self.agent_executor.execute(request, queue)
+  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\data_agent\agent_executor.py", line 53, in execute
+    raise ServerError(error=InternalError())
+a2a.utils.errors.ServerError
+2025-11-20 13:33:14,648 [INFO] Starting Data MCP Agent at http://0.0.0.0:10100
+2025-11-20 13:33:14,648 [INFO] Using MCP Data Downloader at http://localhost:10010
+INFO:     Started server process [50352]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10100 (Press CTRL+C to quit)
+Client ID 1234
+Client Sercret abcd
+USE_SSO true
+Using Single Sign-On (SSO)
+Downloading Dell certificates zip from: https://pki.dell.com//Dell%20Technologies%20PKI%202018%20B64_PEM.zip
+Downloaded certificate zip, size: 19445 bytes
+Certifi bundle path: C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\certifi\cacert.pem
+Appending Dell certificates to certifi bundle...
+Dell certificates successfully added to certifi bundle.
+INFO:     127.0.0.1:65006 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
+2025-11-20 13:34:29,159 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 13:34:29,160 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='e98f6e25-6c4d-40e7-8589-9972c60bc471', extensions=None, kind='message', message_id='807d4bf83fe84448a18adb1d9ad9bfb2', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=all_curriculum,academic_programs;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='121feee9-817d-4ca7-880c-d6d8c3caf3b7'), metadata=None), '_task_id': '121feee9-817d-4ca7-880c-d6d8c3caf3b7', '_context_id': 'e98f6e25-6c4d-40e7-8589-9972c60bc471', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '265', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000017DA30A71A0>, requested_extensions=set(), activated_extensions=set())}
+C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\data_agent\agent_executor.py:35: RuntimeWarning: coroutine 'EventQueue.enqueue_event' was never awaited
+  event_queue.enqueue_event(task)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+2025-11-20 13:34:29,180 [INFO] Invoked DataAgent with query: 'STMESSAGE=all_curriculum,academic_programs;' and context_id=e98f6e25-6c4d-40e7-8589-9972c60bc471
+2025-11-20 13:34:29,180 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 13:34:29,180 [INFO] Type: <class 'str'>
+2025-11-20 13:34:29,181 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.casefold = <built-in method casefold of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.center = <built-in method center of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.count = <built-in method count of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.encode = <built-in method encode of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.endswith = <built-in method endswith of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.find = <built-in method find of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.format = <built-in method format of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.format_map = <built-in method format_map of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.index = <built-in method index of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.isascii = <built-in method isascii of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.islower = <built-in method islower of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.isspace = <built-in method isspace of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.istitle = <built-in method istitle of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.isupper = <built-in method isupper of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.join = <built-in method join of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.ljust = <built-in method ljust of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.lower = <built-in method lower of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 13:34:29,181 [INFO]   • query.partition = <built-in method partition of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.replace = <built-in method replace of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.rfind = <built-in method rfind of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,181 [INFO]   • query.rindex = <built-in method rindex of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO]   • query.rjust = <built-in method rjust of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO]   • query.split = <built-in method split of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO]   • query.startswith = <built-in method startswith of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO]   • query.strip = <built-in method strip of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO]   • query.title = <built-in method title of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO]   • query.translate = <built-in method translate of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO]   • query.upper = <built-in method upper of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO]   • query.zfill = <built-in method zfill of str object at 0x0000017DA3439D70>
+2025-11-20 13:34:29,182 [INFO] ===================================
+2025-11-20 13:34:29,182 [INFO] DataAgent invoked with query: 'STMESSAGE=all_curriculum,academic_programs;'
+2025-11-20 13:34:29,183 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 13:34:29,183 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 13:34:29,183 [INFO] Parsed query parameters: {'STMESSAGE': 'all_curriculum,academic_programs'}
+2025-11-20 13:34:29,183 [INFO] SAVE PATH in Query - None
+2025-11-20 13:34:29,183 [INFO] Parsed query params: {
+  "STMESSAGE": "all_curriculum,academic_programs"
+}
+2025-11-20 13:34:29,183 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 13:34:29,183 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 13:36:49,412 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=all_curriculum%2Cacademic_programs "HTTP/1.1 200 OK"
+2025-11-20 13:36:49,414 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 13:36:49,414 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 13:36:49,414 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 13:36:49,414 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 13:36:49,415 [INFO] RESPONSE : 
  {
-  "rows": "",
-  "columns": "",
-  "target": "",
-  "source": "local",
+  "source": "MCP",
   "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
 } 
-2025-11-18 15:46:26,003 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
-2025-11-18 15:46:26,003 [INFO] RESPONSE: {'rows': '', 'columns': '', 'target': '', 'source': 'local', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
-2025-11-18 15:46:26,003 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
-2025-11-18 15:46:26,003 [INFO] Response streamed successfully to client
-INFO:     127.0.0.1:58531 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:36:49,415 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 13:36:49,415 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 13:36:49,415 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 13:36:49,415 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:59205 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:39:54,507 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 13:39:54,508 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='77dcecef-2194-4bd7-945c-95f1892f8494', extensions=None, kind='message', message_id='4cb5714a2f094fc9a95989a08f649517', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=academic_calendar;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='23304d3b-d9db-4246-966d-59c63f05c3df'), metadata=None), '_task_id': '23304d3b-d9db-4246-966d-59c63f05c3df', '_context_id': '77dcecef-2194-4bd7-945c-95f1892f8494', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '250', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000017DA446E540>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 13:39:54,508 [INFO] Invoked DataAgent with query: 'STMESSAGE=academic_calendar;' and context_id=77dcecef-2194-4bd7-945c-95f1892f8494
+2025-11-20 13:39:54,508 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 13:39:54,508 [INFO] Type: <class 'str'>
+2025-11-20 13:39:54,508 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.casefold = <built-in method casefold of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.center = <built-in method center of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.count = <built-in method count of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.encode = <built-in method encode of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.endswith = <built-in method endswith of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.find = <built-in method find of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.format = <built-in method format of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.format_map = <built-in method format_map of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.index = <built-in method index of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.isascii = <built-in method isascii of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,508 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.islower = <built-in method islower of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.isspace = <built-in method isspace of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.istitle = <built-in method istitle of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.isupper = <built-in method isupper of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.join = <built-in method join of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.ljust = <built-in method ljust of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.lower = <built-in method lower of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 13:39:54,509 [INFO]   • query.partition = <built-in method partition of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.replace = <built-in method replace of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.rfind = <built-in method rfind of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.rindex = <built-in method rindex of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.rjust = <built-in method rjust of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.split = <built-in method split of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.startswith = <built-in method startswith of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.strip = <built-in method strip of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.title = <built-in method title of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.translate = <built-in method translate of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.upper = <built-in method upper of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO]   • query.zfill = <built-in method zfill of str object at 0x0000017DA442B4B0>
+2025-11-20 13:39:54,509 [INFO] ===================================
+2025-11-20 13:39:54,509 [INFO] DataAgent invoked with query: 'STMESSAGE=academic_calendar;'
+2025-11-20 13:39:54,510 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 13:39:54,510 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 13:39:54,510 [INFO] Parsed query parameters: {'STMESSAGE': 'academic_calendar'}
+2025-11-20 13:39:54,510 [INFO] SAVE PATH in Query - None
+2025-11-20 13:39:54,510 [INFO] Parsed query params: {
+  "STMESSAGE": "academic_calendar"
+}
+2025-11-20 13:39:54,510 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 13:39:54,510 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 13:39:58,099 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=academic_calendar "HTTP/1.1 200 OK"
+2025-11-20 13:39:58,101 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 13:39:58,101 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 13:39:58,101 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 13:39:58,101 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 13:39:58,101 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 13:39:58,101 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 13:39:58,101 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 13:39:58,101 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 13:39:58,101 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:49887 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:42:59,224 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 13:42:59,224 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='39be38de-75b3-4508-ab1e-33830716027d', extensions=None, kind='message', message_id='f7d3df888ac64016acff86284120855e', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=academic_calendar;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='af3aaded-5ff3-4697-9222-7903307d3dd4'), metadata=None), '_task_id': 'af3aaded-5ff3-4697-9222-7903307d3dd4', '_context_id': '39be38de-75b3-4508-ab1e-33830716027d', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '250', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000017DF6D7AF60>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 13:42:59,224 [INFO] Invoked DataAgent with query: 'STMESSAGE=academic_calendar;' and context_id=39be38de-75b3-4508-ab1e-33830716027d
+2025-11-20 13:42:59,224 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 13:42:59,224 [INFO] Type: <class 'str'>
+2025-11-20 13:42:59,224 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.casefold = <built-in method casefold of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.center = <built-in method center of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.count = <built-in method count of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.encode = <built-in method encode of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.endswith = <built-in method endswith of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.find = <built-in method find of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.format = <built-in method format of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.format_map = <built-in method format_map of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.index = <built-in method index of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.isascii = <built-in method isascii of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.islower = <built-in method islower of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.isspace = <built-in method isspace of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.istitle = <built-in method istitle of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.isupper = <built-in method isupper of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.join = <built-in method join of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.ljust = <built-in method ljust of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.lower = <built-in method lower of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 13:42:59,224 [INFO]   • query.partition = <built-in method partition of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.replace = <built-in method replace of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.rfind = <built-in method rfind of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.rindex = <built-in method rindex of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.rjust = <built-in method rjust of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.split = <built-in method split of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.startswith = <built-in method startswith of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.strip = <built-in method strip of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.title = <built-in method title of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.translate = <built-in method translate of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.upper = <built-in method upper of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO]   • query.zfill = <built-in method zfill of str object at 0x0000017DA442B4B0>
+2025-11-20 13:42:59,224 [INFO] ===================================
+2025-11-20 13:42:59,224 [INFO] DataAgent invoked with query: 'STMESSAGE=academic_calendar;'
+2025-11-20 13:42:59,224 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 13:42:59,224 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 13:42:59,224 [INFO] Parsed query parameters: {'STMESSAGE': 'academic_calendar'}
+2025-11-20 13:42:59,224 [INFO] SAVE PATH in Query - None
+2025-11-20 13:42:59,224 [INFO] Parsed query params: {
+  "STMESSAGE": "academic_calendar"
+}
+2025-11-20 13:42:59,224 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 13:42:59,224 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 13:43:02,121 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=academic_calendar "HTTP/1.1 200 OK"
+2025-11-20 13:43:02,122 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 13:43:02,122 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 13:43:02,122 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 13:43:02,122 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 13:43:02,122 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 13:43:02,122 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 13:43:02,122 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 13:43:02,122 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 13:43:02,122 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:59502 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:45:46,981 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 13:45:46,982 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='d0034d9b-2c09-40da-95f5-ebb25ac00a86', extensions=None, kind='message', message_id='27d776d6fb9149e7b29a0b0993ff042a', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=all_curriculum,academic_programs;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='7f2139a6-2fc2-4592-8875-b92c7a842af6'), metadata=None), '_task_id': '7f2139a6-2fc2-4592-8875-b92c7a842af6', '_context_id': 'd0034d9b-2c09-40da-95f5-ebb25ac00a86', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '265', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000017DA446F080>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 13:45:46,982 [INFO] Invoked DataAgent with query: 'STMESSAGE=all_curriculum,academic_programs;' and context_id=d0034d9b-2c09-40da-95f5-ebb25ac00a86
+2025-11-20 13:45:46,982 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 13:45:46,982 [INFO] Type: <class 'str'>
+2025-11-20 13:45:46,982 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.casefold = <built-in method casefold of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.center = <built-in method center of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.count = <built-in method count of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.encode = <built-in method encode of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.endswith = <built-in method endswith of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.find = <built-in method find of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.format = <built-in method format of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.format_map = <built-in method format_map of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.index = <built-in method index of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.isascii = <built-in method isascii of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.islower = <built-in method islower of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.isspace = <built-in method isspace of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.istitle = <built-in method istitle of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.isupper = <built-in method isupper of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.join = <built-in method join of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.ljust = <built-in method ljust of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.lower = <built-in method lower of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 13:45:46,982 [INFO]   • query.partition = <built-in method partition of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.replace = <built-in method replace of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.rfind = <built-in method rfind of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.rindex = <built-in method rindex of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.rjust = <built-in method rjust of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.split = <built-in method split of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.startswith = <built-in method startswith of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.strip = <built-in method strip of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.title = <built-in method title of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.translate = <built-in method translate of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.upper = <built-in method upper of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO]   • query.zfill = <built-in method zfill of str object at 0x0000017DA343A670>
+2025-11-20 13:45:46,982 [INFO] ===================================
+2025-11-20 13:45:46,982 [INFO] DataAgent invoked with query: 'STMESSAGE=all_curriculum,academic_programs;'
+2025-11-20 13:45:46,982 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 13:45:46,982 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 13:45:46,982 [INFO] Parsed query parameters: {'STMESSAGE': 'all_curriculum,academic_programs'}
+2025-11-20 13:45:46,982 [INFO] SAVE PATH in Query - None
+2025-11-20 13:45:46,982 [INFO] Parsed query params: {
+  "STMESSAGE": "all_curriculum,academic_programs"
+}
+2025-11-20 13:45:46,982 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 13:45:46,982 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 13:46:08,729 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 13:46:08,729 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='34c66237-a351-47a8-a23c-39b6b73eb81a', extensions=None, kind='message', message_id='da5f3bcd78a249329c83184f24b1caef', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=academic_calendar;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='1f4b4893-a6ec-4ee3-9880-69c62b1a258c'), metadata=None), '_task_id': '1f4b4893-a6ec-4ee3-9880-69c62b1a258c', '_context_id': '34c66237-a351-47a8-a23c-39b6b73eb81a', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '250', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000017DA448EDE0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 13:46:08,729 [INFO] Invoked DataAgent with query: 'STMESSAGE=academic_calendar;' and context_id=34c66237-a351-47a8-a23c-39b6b73eb81a
+2025-11-20 13:46:08,729 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 13:46:08,729 [INFO] Type: <class 'str'>
+2025-11-20 13:46:08,729 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,729 [INFO]   • query.casefold = <built-in method casefold of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,729 [INFO]   • query.center = <built-in method center of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.count = <built-in method count of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.encode = <built-in method encode of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.endswith = <built-in method endswith of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.find = <built-in method find of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.format = <built-in method format of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.format_map = <built-in method format_map of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.index = <built-in method index of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.isascii = <built-in method isascii of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.islower = <built-in method islower of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.isspace = <built-in method isspace of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.istitle = <built-in method istitle of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.isupper = <built-in method isupper of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.join = <built-in method join of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.ljust = <built-in method ljust of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.lower = <built-in method lower of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 13:46:08,730 [INFO]   • query.partition = <built-in method partition of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.replace = <built-in method replace of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.rfind = <built-in method rfind of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.rindex = <built-in method rindex of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.rjust = <built-in method rjust of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.split = <built-in method split of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.startswith = <built-in method startswith of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.strip = <built-in method strip of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.title = <built-in method title of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.translate = <built-in method translate of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.upper = <built-in method upper of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,730 [INFO]   • query.zfill = <built-in method zfill of str object at 0x0000017DA44D2D80>
+2025-11-20 13:46:08,731 [INFO] ===================================
+2025-11-20 13:46:08,731 [INFO] DataAgent invoked with query: 'STMESSAGE=academic_calendar;'
+2025-11-20 13:46:08,731 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 13:46:08,731 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 13:46:08,731 [INFO] Parsed query parameters: {'STMESSAGE': 'academic_calendar'}
+2025-11-20 13:46:08,731 [INFO] SAVE PATH in Query - None
+2025-11-20 13:46:08,731 [INFO] Parsed query params: {
+  "STMESSAGE": "academic_calendar"
+}
+2025-11-20 13:46:08,731 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 13:46:08,731 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 13:46:13,182 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=academic_calendar "HTTP/1.1 200 OK"
+2025-11-20 13:46:13,184 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 13:46:13,184 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 13:46:13,184 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 13:46:13,184 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 13:46:13,184 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 13:46:13,184 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 13:46:13,184 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 13:46:13,184 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 13:46:13,184 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:49686 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:48:10,868 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=all_curriculum%2Cacademic_programs "HTTP/1.1 200 OK"
+2025-11-20 13:48:10,868 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 13:48:10,868 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 13:48:10,868 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 13:48:10,868 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 13:48:10,868 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 13:48:10,868 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 13:48:10,868 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 13:48:10,868 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 13:48:10,868 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:62968 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:52:43,886 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 13:52:43,886 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='8a9a01a6-4a47-42b4-8359-f3d8b05fdf7f', extensions=None, kind='message', message_id='3a240fce324b49bab78010ad40ec1599', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=academic_calendar;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='43d64f60-6772-471e-a501-dc2bb30b192e'), metadata=None), '_task_id': '43d64f60-6772-471e-a501-dc2bb30b192e', '_context_id': '8a9a01a6-4a47-42b4-8359-f3d8b05fdf7f', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '250', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000017DA446E7E0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 13:52:43,886 [INFO] Invoked DataAgent with query: 'STMESSAGE=academic_calendar;' and context_id=8a9a01a6-4a47-42b4-8359-f3d8b05fdf7f
+2025-11-20 13:52:43,886 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 13:52:43,886 [INFO] Type: <class 'str'>
+2025-11-20 13:52:43,886 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,886 [INFO]   • query.casefold = <built-in method casefold of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.center = <built-in method center of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.count = <built-in method count of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.encode = <built-in method encode of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.endswith = <built-in method endswith of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.find = <built-in method find of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.format = <built-in method format of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.format_map = <built-in method format_map of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.index = <built-in method index of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.isascii = <built-in method isascii of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,888 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.islower = <built-in method islower of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.isspace = <built-in method isspace of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.istitle = <built-in method istitle of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.isupper = <built-in method isupper of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.join = <built-in method join of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.ljust = <built-in method ljust of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.lower = <built-in method lower of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 13:52:43,890 [INFO]   • query.partition = <built-in method partition of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.replace = <built-in method replace of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.rfind = <built-in method rfind of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.rindex = <built-in method rindex of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.rjust = <built-in method rjust of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.split = <built-in method split of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.startswith = <built-in method startswith of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.strip = <built-in method strip of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.title = <built-in method title of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.translate = <built-in method translate of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.upper = <built-in method upper of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO]   • query.zfill = <built-in method zfill of str object at 0x0000017DA442B730>
+2025-11-20 13:52:43,890 [INFO] ===================================
+2025-11-20 13:52:43,890 [INFO] DataAgent invoked with query: 'STMESSAGE=academic_calendar;'
+2025-11-20 13:52:43,890 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 13:52:43,890 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 13:52:43,892 [INFO] Parsed query parameters: {'STMESSAGE': 'academic_calendar'}
+2025-11-20 13:52:43,892 [INFO] SAVE PATH in Query - None
+2025-11-20 13:52:43,892 [INFO] Parsed query params: {
+  "STMESSAGE": "academic_calendar"
+}
+2025-11-20 13:52:43,892 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 13:52:43,892 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 13:52:46,784 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=academic_calendar "HTTP/1.1 200 OK"
+2025-11-20 13:52:46,786 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 13:52:46,786 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 13:52:46,786 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 13:52:46,786 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 13:52:46,786 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 13:52:46,786 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 13:52:46,786 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 13:52:46,786 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 13:52:46,786 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:65283 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:41:03,853 [INFO] Starting Data MCP Agent at http://0.0.0.0:10100
+2025-11-20 14:41:03,855 [INFO] Using MCP Data Downloader at http://localhost:10010
+INFO:     Started server process [27320]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10100 (Press CTRL+C to quit)
+Client ID 1234
+Client Sercret abcd
+USE_SSO true
+Using Single Sign-On (SSO)
+Downloading Dell certificates zip from: https://pki.dell.com//Dell%20Technologies%20PKI%202018%20B64_PEM.zip
+Downloaded certificate zip, size: 19445 bytes
+Certifi bundle path: C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\certifi\cacert.pem
+Appending Dell certificates to certifi bundle...
+Dell certificates successfully added to certifi bundle.
+INFO:     127.0.0.1:61062 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
+2025-11-20 14:43:58,789 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 14:43:58,789 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='bc348a1b-b692-4f63-a017-313db17e089d', extensions=None, kind='message', message_id='0e68cfd5e9224952b83ee2c07e4772ec', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=ug_curriculum;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='8a36ec8d-7e6b-451d-bcc9-5f122c4ee3a1'), metadata=None), '_task_id': '8a36ec8d-7e6b-451d-bcc9-5f122c4ee3a1', '_context_id': 'bc348a1b-b692-4f63-a017-313db17e089d', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '246', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000001BC7F42CEC0>, requested_extensions=set(), activated_extensions=set())}
+C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\data_agent\agent_executor.py:35: RuntimeWarning: coroutine 'EventQueue.enqueue_event' was never awaited
+  event_queue.enqueue_event(task)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+2025-11-20 14:43:58,833 [INFO] Invoked DataAgent with query: 'STMESSAGE=ug_curriculum;' and context_id=bc348a1b-b692-4f63-a017-313db17e089d
+2025-11-20 14:43:58,834 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 14:43:58,834 [INFO] Type: <class 'str'>
+2025-11-20 14:43:58,835 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,836 [INFO]   • query.casefold = <built-in method casefold of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,836 [INFO]   • query.center = <built-in method center of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,836 [INFO]   • query.count = <built-in method count of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,836 [INFO]   • query.encode = <built-in method encode of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,836 [INFO]   • query.endswith = <built-in method endswith of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,836 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,836 [INFO]   • query.find = <built-in method find of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,837 [INFO]   • query.format = <built-in method format of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,837 [INFO]   • query.format_map = <built-in method format_map of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,837 [INFO]   • query.index = <built-in method index of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,837 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.isascii = <built-in method isascii of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.islower = <built-in method islower of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.isspace = <built-in method isspace of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.istitle = <built-in method istitle of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.isupper = <built-in method isupper of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.join = <built-in method join of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.ljust = <built-in method ljust of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.lower = <built-in method lower of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,838 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 14:43:58,838 [INFO]   • query.partition = <built-in method partition of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.replace = <built-in method replace of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.rfind = <built-in method rfind of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.rindex = <built-in method rindex of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.rjust = <built-in method rjust of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.split = <built-in method split of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.startswith = <built-in method startswith of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.strip = <built-in method strip of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.title = <built-in method title of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.translate = <built-in method translate of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.upper = <built-in method upper of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO]   • query.zfill = <built-in method zfill of str object at 0x000001BC7F96B4B0>
+2025-11-20 14:43:58,839 [INFO] ===================================
+2025-11-20 14:43:58,839 [INFO] DataAgent invoked with query: 'STMESSAGE=ug_curriculum;'
+2025-11-20 14:43:58,840 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 14:43:58,840 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 14:43:58,840 [INFO] Parsed query parameters: {'STMESSAGE': 'ug_curriculum'}
+2025-11-20 14:43:58,841 [INFO] SAVE PATH in Query - None
+2025-11-20 14:43:58,841 [INFO] Parsed query params: {
+  "STMESSAGE": "ug_curriculum"
+}
+2025-11-20 14:43:58,841 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 14:43:58,841 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 14:44:09,555 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=ug_curriculum "HTTP/1.1 200 OK"
+2025-11-20 14:44:09,562 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 14:44:09,562 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 14:44:09,562 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:44:09,562 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 14:44:09,562 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 14:44:09,562 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 14:44:09,562 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:44:09,563 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 14:44:09,563 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:49882 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:48:53,198 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 14:48:53,198 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='e0638f5b-10ae-42c4-a411-a9ece0cbe538', extensions=None, kind='message', message_id='448f13d3d6fa4b87979ca5f11eb4ab96', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=ug_curriculum;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='8dac8164-fa12-4c64-a52b-b11cdd282dd6'), metadata=None), '_task_id': '8dac8164-fa12-4c64-a52b-b11cdd282dd6', '_context_id': 'e0638f5b-10ae-42c4-a411-a9ece0cbe538', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '246', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000001BC7F995D30>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:48:53,198 [INFO] Invoked DataAgent with query: 'STMESSAGE=ug_curriculum;' and context_id=e0638f5b-10ae-42c4-a411-a9ece0cbe538
+2025-11-20 14:48:53,198 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 14:48:53,198 [INFO] Type: <class 'str'>
+2025-11-20 14:48:53,198 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.casefold = <built-in method casefold of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.center = <built-in method center of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.count = <built-in method count of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.encode = <built-in method encode of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.endswith = <built-in method endswith of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.find = <built-in method find of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.format = <built-in method format of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.format_map = <built-in method format_map of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.index = <built-in method index of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.isascii = <built-in method isascii of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.islower = <built-in method islower of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.isspace = <built-in method isspace of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.istitle = <built-in method istitle of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.isupper = <built-in method isupper of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.join = <built-in method join of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.ljust = <built-in method ljust of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.lower = <built-in method lower of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 14:48:53,198 [INFO]   • query.partition = <built-in method partition of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.replace = <built-in method replace of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.rfind = <built-in method rfind of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.rindex = <built-in method rindex of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.rjust = <built-in method rjust of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.split = <built-in method split of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.startswith = <built-in method startswith of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.strip = <built-in method strip of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.title = <built-in method title of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.translate = <built-in method translate of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.upper = <built-in method upper of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO]   • query.zfill = <built-in method zfill of str object at 0x000001BC7F96B410>
+2025-11-20 14:48:53,198 [INFO] ===================================
+2025-11-20 14:48:53,198 [INFO] DataAgent invoked with query: 'STMESSAGE=ug_curriculum;'
+2025-11-20 14:48:53,198 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 14:48:53,198 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 14:48:53,198 [INFO] Parsed query parameters: {'STMESSAGE': 'ug_curriculum'}
+2025-11-20 14:48:53,198 [INFO] SAVE PATH in Query - None
+2025-11-20 14:48:53,198 [INFO] Parsed query params: {
+  "STMESSAGE": "ug_curriculum"
+}
+2025-11-20 14:48:53,198 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 14:48:53,198 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 14:48:59,932 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=ug_curriculum "HTTP/1.1 200 OK"
+2025-11-20 14:48:59,933 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 14:48:59,933 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 14:48:59,933 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:48:59,933 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 14:48:59,933 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 14:48:59,933 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 14:48:59,933 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:48:59,933 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 14:48:59,933 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:53822 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:51:31,180 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 14:51:31,180 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='19cb49d5-fb90-466f-a611-c12e7b19464b', extensions=None, kind='message', message_id='d3a04228931a479480e08f7afa05d213', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=ug_curriculum;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='35ff77f8-99e7-4441-a756-f62a9ac81b73'), metadata=None), '_task_id': '35ff77f8-99e7-4441-a756-f62a9ac81b73', '_context_id': '19cb49d5-fb90-466f-a611-c12e7b19464b', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '246', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000001BC7F9966C0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:51:31,180 [INFO] Invoked DataAgent with query: 'STMESSAGE=ug_curriculum;' and context_id=19cb49d5-fb90-466f-a611-c12e7b19464b
+2025-11-20 14:51:31,180 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 14:51:31,180 [INFO] Type: <class 'str'>
+2025-11-20 14:51:31,180 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.casefold = <built-in method casefold of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.center = <built-in method center of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.count = <built-in method count of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.encode = <built-in method encode of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.endswith = <built-in method endswith of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.find = <built-in method find of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.format = <built-in method format of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.format_map = <built-in method format_map of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.index = <built-in method index of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.isascii = <built-in method isascii of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.islower = <built-in method islower of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.isspace = <built-in method isspace of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.istitle = <built-in method istitle of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.isupper = <built-in method isupper of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.join = <built-in method join of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.ljust = <built-in method ljust of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.lower = <built-in method lower of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 14:51:31,180 [INFO]   • query.partition = <built-in method partition of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.replace = <built-in method replace of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.rfind = <built-in method rfind of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.rindex = <built-in method rindex of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.rjust = <built-in method rjust of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.split = <built-in method split of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.startswith = <built-in method startswith of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.strip = <built-in method strip of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.title = <built-in method title of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.translate = <built-in method translate of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.upper = <built-in method upper of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO]   • query.zfill = <built-in method zfill of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:31,180 [INFO] ===================================
+2025-11-20 14:51:31,180 [INFO] DataAgent invoked with query: 'STMESSAGE=ug_curriculum;'
+2025-11-20 14:51:31,180 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 14:51:31,180 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 14:51:31,180 [INFO] Parsed query parameters: {'STMESSAGE': 'ug_curriculum'}
+2025-11-20 14:51:31,180 [INFO] SAVE PATH in Query - None
+2025-11-20 14:51:31,180 [INFO] Parsed query params: {
+  "STMESSAGE": "ug_curriculum"
+}
+2025-11-20 14:51:31,180 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 14:51:31,180 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 14:51:41,765 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=ug_curriculum "HTTP/1.1 200 OK"
+2025-11-20 14:51:41,767 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 14:51:41,767 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 14:51:41,767 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:51:41,767 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 14:51:41,767 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 14:51:41,767 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 14:51:41,767 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:51:41,767 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 14:51:41,767 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:56999 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:51:49,778 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 14:51:49,778 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='17468a68-a8ea-4253-ac83-1e373d916e34', extensions=None, kind='message', message_id='3ea355a00c4f46c5906004e95b52e83d', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=academic_calendar;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='54b30295-6a1d-4580-bd10-a903db9b9b9b'), metadata=None), '_task_id': '54b30295-6a1d-4580-bd10-a903db9b9b9b', '_context_id': '17468a68-a8ea-4253-ac83-1e373d916e34', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '250', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000001BC7F9972F0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:51:49,778 [INFO] Invoked DataAgent with query: 'STMESSAGE=academic_calendar;' and context_id=17468a68-a8ea-4253-ac83-1e373d916e34
+2025-11-20 14:51:49,778 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 14:51:49,778 [INFO] Type: <class 'str'>
+2025-11-20 14:51:49,778 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.casefold = <built-in method casefold of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.center = <built-in method center of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.count = <built-in method count of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.encode = <built-in method encode of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.endswith = <built-in method endswith of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.find = <built-in method find of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.format = <built-in method format of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.format_map = <built-in method format_map of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.index = <built-in method index of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.isascii = <built-in method isascii of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.islower = <built-in method islower of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.isspace = <built-in method isspace of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.istitle = <built-in method istitle of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.isupper = <built-in method isupper of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.join = <built-in method join of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.ljust = <built-in method ljust of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.lower = <built-in method lower of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 14:51:49,778 [INFO]   • query.partition = <built-in method partition of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.replace = <built-in method replace of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.rfind = <built-in method rfind of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.rindex = <built-in method rindex of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.rjust = <built-in method rjust of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.split = <built-in method split of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.startswith = <built-in method startswith of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.strip = <built-in method strip of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.title = <built-in method title of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.translate = <built-in method translate of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.upper = <built-in method upper of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO]   • query.zfill = <built-in method zfill of str object at 0x000001BC7F96B320>
+2025-11-20 14:51:49,778 [INFO] ===================================
+2025-11-20 14:51:49,778 [INFO] DataAgent invoked with query: 'STMESSAGE=academic_calendar;'
+2025-11-20 14:51:49,778 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 14:51:49,778 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 14:51:49,778 [INFO] Parsed query parameters: {'STMESSAGE': 'academic_calendar'}
+2025-11-20 14:51:49,778 [INFO] SAVE PATH in Query - None
+2025-11-20 14:51:49,778 [INFO] Parsed query params: {
+  "STMESSAGE": "academic_calendar"
+}
+2025-11-20 14:51:49,778 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 14:51:49,778 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 14:51:55,250 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=academic_calendar "HTTP/1.1 200 OK"
+2025-11-20 14:51:55,256 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 14:51:55,256 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 14:51:55,256 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:51:55,256 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 14:51:55,256 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 14:51:55,257 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 14:51:55,257 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:51:55,257 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 14:51:55,257 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:61436 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:52:19,735 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 14:52:19,735 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='ac425553-7588-4d85-a0c7-b33e46dda15a', extensions=None, kind='message', message_id='15932ba72a4e4084871ad0f5f6bea767', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=academic_calendar;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='34a88a86-8c29-40d4-a993-307fa8960cfe'), metadata=None), '_task_id': '34a88a86-8c29-40d4-a993-307fa8960cfe', '_context_id': 'ac425553-7588-4d85-a0c7-b33e46dda15a', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '250', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000001BC7F996510>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:52:19,735 [INFO] Invoked DataAgent with query: 'STMESSAGE=academic_calendar;' and context_id=ac425553-7588-4d85-a0c7-b33e46dda15a
+2025-11-20 14:52:19,735 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 14:52:19,735 [INFO] Type: <class 'str'>
+2025-11-20 14:52:19,735 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.casefold = <built-in method casefold of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.center = <built-in method center of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.count = <built-in method count of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.encode = <built-in method encode of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.endswith = <built-in method endswith of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.find = <built-in method find of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.format = <built-in method format of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.format_map = <built-in method format_map of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.index = <built-in method index of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.isascii = <built-in method isascii of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.islower = <built-in method islower of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.isspace = <built-in method isspace of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.istitle = <built-in method istitle of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.isupper = <built-in method isupper of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.join = <built-in method join of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.ljust = <built-in method ljust of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.lower = <built-in method lower of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 14:52:19,735 [INFO]   • query.partition = <built-in method partition of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.replace = <built-in method replace of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.rfind = <built-in method rfind of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.rindex = <built-in method rindex of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.rjust = <built-in method rjust of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.split = <built-in method split of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.startswith = <built-in method startswith of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.strip = <built-in method strip of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.title = <built-in method title of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.translate = <built-in method translate of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.upper = <built-in method upper of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO]   • query.zfill = <built-in method zfill of str object at 0x000001BC7F96B320>
+2025-11-20 14:52:19,735 [INFO] ===================================
+2025-11-20 14:52:19,735 [INFO] DataAgent invoked with query: 'STMESSAGE=academic_calendar;'
+2025-11-20 14:52:19,735 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 14:52:19,735 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 14:52:19,735 [INFO] Parsed query parameters: {'STMESSAGE': 'academic_calendar'}
+2025-11-20 14:52:19,735 [INFO] SAVE PATH in Query - None
+2025-11-20 14:52:19,735 [INFO] Parsed query params: {
+  "STMESSAGE": "academic_calendar"
+}
+2025-11-20 14:52:19,735 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 14:52:19,735 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 14:52:26,055 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=academic_calendar "HTTP/1.1 200 OK"
+2025-11-20 14:52:26,061 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 14:52:26,061 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 14:52:26,061 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:52:26,061 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 14:52:26,061 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 14:52:26,061 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 14:52:26,061 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:52:26,062 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 14:52:26,062 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:58285 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:52:47,378 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 14:52:47,378 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='55249951-d48f-477b-b486-4d55a4944825', extensions=None, kind='message', message_id='bef58c27a40445c7a2a82124433bd04a', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=ug_curriculum;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='1be453d2-d348-43b8-b30d-b8c47ca28c52'), metadata=None), '_task_id': '1be453d2-d348-43b8-b30d-b8c47ca28c52', '_context_id': '55249951-d48f-477b-b486-4d55a4944825', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '246', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000001BC7F9972F0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:52:47,378 [INFO] Invoked DataAgent with query: 'STMESSAGE=ug_curriculum;' and context_id=55249951-d48f-477b-b486-4d55a4944825
+2025-11-20 14:52:47,378 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 14:52:47,378 [INFO] Type: <class 'str'>
+2025-11-20 14:52:47,378 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.casefold = <built-in method casefold of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.center = <built-in method center of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.count = <built-in method count of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.encode = <built-in method encode of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.endswith = <built-in method endswith of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.find = <built-in method find of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.format = <built-in method format of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.format_map = <built-in method format_map of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.index = <built-in method index of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.isascii = <built-in method isascii of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.islower = <built-in method islower of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.isspace = <built-in method isspace of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.istitle = <built-in method istitle of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.isupper = <built-in method isupper of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.join = <built-in method join of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.ljust = <built-in method ljust of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.lower = <built-in method lower of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 14:52:47,378 [INFO]   • query.partition = <built-in method partition of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.replace = <built-in method replace of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.rfind = <built-in method rfind of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.rindex = <built-in method rindex of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.rjust = <built-in method rjust of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.split = <built-in method split of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.startswith = <built-in method startswith of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.strip = <built-in method strip of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.title = <built-in method title of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.translate = <built-in method translate of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.upper = <built-in method upper of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO]   • query.zfill = <built-in method zfill of str object at 0x000001BC7F96B640>
+2025-11-20 14:52:47,378 [INFO] ===================================
+2025-11-20 14:52:47,378 [INFO] DataAgent invoked with query: 'STMESSAGE=ug_curriculum;'
+2025-11-20 14:52:47,378 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 14:52:47,378 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 14:52:47,378 [INFO] Parsed query parameters: {'STMESSAGE': 'ug_curriculum'}
+2025-11-20 14:52:47,378 [INFO] SAVE PATH in Query - None
+2025-11-20 14:52:47,378 [INFO] Parsed query params: {
+  "STMESSAGE": "ug_curriculum"
+}
+2025-11-20 14:52:47,378 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 14:52:47,378 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 14:52:55,089 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=ug_curriculum "HTTP/1.1 200 OK"
+2025-11-20 14:52:55,089 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 14:52:55,089 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 14:52:55,089 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:52:55,089 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 14:52:55,089 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 14:52:55,089 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 14:52:55,089 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:52:55,089 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 14:52:55,089 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:55922 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:54:49,341 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 14:54:49,341 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='a59f15e1-0d1e-4b6a-9622-1ff11a7c1f45', extensions=None, kind='message', message_id='b962080bd6e74dbfab4920ea084e9696', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=academic_calendar,all_curriculum;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='b90e1c92-e879-4cf1-be97-aeeb2205833d'), metadata=None), '_task_id': 'b90e1c92-e879-4cf1-be97-aeeb2205833d', '_context_id': 'a59f15e1-0d1e-4b6a-9622-1ff11a7c1f45', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '265', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000001BC7F9A9A60>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:54:49,343 [INFO] Invoked DataAgent with query: 'STMESSAGE=academic_calendar,all_curriculum;' and context_id=a59f15e1-0d1e-4b6a-9622-1ff11a7c1f45
+2025-11-20 14:54:49,343 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 14:54:49,343 [INFO] Type: <class 'str'>
+2025-11-20 14:54:49,343 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,343 [INFO]   • query.casefold = <built-in method casefold of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,345 [INFO]   • query.center = <built-in method center of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,345 [INFO]   • query.count = <built-in method count of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,345 [INFO]   • query.encode = <built-in method encode of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,345 [INFO]   • query.endswith = <built-in method endswith of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,345 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,345 [INFO]   • query.find = <built-in method find of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,345 [INFO]   • query.format = <built-in method format of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,345 [INFO]   • query.format_map = <built-in method format_map of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.index = <built-in method index of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.isascii = <built-in method isascii of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.islower = <built-in method islower of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.isspace = <built-in method isspace of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.istitle = <built-in method istitle of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.isupper = <built-in method isupper of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.join = <built-in method join of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.ljust = <built-in method ljust of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.lower = <built-in method lower of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 14:54:49,347 [INFO]   • query.partition = <built-in method partition of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.replace = <built-in method replace of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.rfind = <built-in method rfind of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.rindex = <built-in method rindex of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.rjust = <built-in method rjust of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.split = <built-in method split of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.startswith = <built-in method startswith of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.strip = <built-in method strip of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.title = <built-in method title of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.translate = <built-in method translate of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.upper = <built-in method upper of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO]   • query.zfill = <built-in method zfill of str object at 0x000001BC7F9A2190>
+2025-11-20 14:54:49,347 [INFO] ===================================
+2025-11-20 14:54:49,347 [INFO] DataAgent invoked with query: 'STMESSAGE=academic_calendar,all_curriculum;'
+2025-11-20 14:54:49,347 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 14:54:49,347 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 14:54:49,347 [INFO] Parsed query parameters: {'STMESSAGE': 'academic_calendar,all_curriculum'}
+2025-11-20 14:54:49,347 [INFO] SAVE PATH in Query - None
+2025-11-20 14:54:49,347 [INFO] Parsed query params: {
+  "STMESSAGE": "academic_calendar,all_curriculum"
+}
+2025-11-20 14:54:49,347 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 14:54:49,347 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 14:57:32,515 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=academic_calendar%2Call_curriculum "HTTP/1.1 200 OK"
+2025-11-20 14:57:32,515 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 14:57:32,515 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 14:57:32,515 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:57:32,515 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 14:57:32,528 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 14:57:32,528 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 14:57:32,528 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 14:57:32,528 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 14:57:32,528 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:64771 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:59:57,197 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 14:59:57,198 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='46d35345-567c-4499-864e-e63f7ed88161', extensions=None, kind='message', message_id='23f3f6665ffd41ada01d803be5eac416', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=academic_programs,academic_calendar;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='b9fcc185-82f8-4ad7-8094-4c8bc1fd538e'), metadata=None), '_task_id': 'b9fcc185-82f8-4ad7-8094-4c8bc1fd538e', '_context_id': '46d35345-567c-4499-864e-e63f7ed88161', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '268', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000001BC7F9A8560>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:59:57,199 [INFO] Invoked DataAgent with query: 'STMESSAGE=academic_programs,academic_calendar;' and context_id=46d35345-567c-4499-864e-e63f7ed88161
+2025-11-20 14:59:57,199 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 14:59:57,199 [INFO] Type: <class 'str'>
+2025-11-20 14:59:57,200 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,200 [INFO]   • query.casefold = <built-in method casefold of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,200 [INFO]   • query.center = <built-in method center of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.count = <built-in method count of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.encode = <built-in method encode of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.endswith = <built-in method endswith of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.find = <built-in method find of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.format = <built-in method format of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.format_map = <built-in method format_map of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.index = <built-in method index of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.isascii = <built-in method isascii of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.islower = <built-in method islower of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,201 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,202 [INFO]   • query.isspace = <built-in method isspace of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,202 [INFO]   • query.istitle = <built-in method istitle of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,202 [INFO]   • query.isupper = <built-in method isupper of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,202 [INFO]   • query.join = <built-in method join of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,202 [INFO]   • query.ljust = <built-in method ljust of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.lower = <built-in method lower of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 14:59:57,203 [INFO]   • query.partition = <built-in method partition of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.replace = <built-in method replace of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.rfind = <built-in method rfind of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.rindex = <built-in method rindex of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.rjust = <built-in method rjust of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.split = <built-in method split of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.startswith = <built-in method startswith of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.strip = <built-in method strip of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.title = <built-in method title of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.translate = <built-in method translate of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.upper = <built-in method upper of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO]   • query.zfill = <built-in method zfill of str object at 0x000001BC7F9A0E70>
+2025-11-20 14:59:57,203 [INFO] ===================================
+2025-11-20 14:59:57,204 [INFO] DataAgent invoked with query: 'STMESSAGE=academic_programs,academic_calendar;'
+2025-11-20 14:59:57,205 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 14:59:57,205 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 14:59:57,205 [INFO] Parsed query parameters: {'STMESSAGE': 'academic_programs,academic_calendar'}
+2025-11-20 14:59:57,206 [INFO] SAVE PATH in Query - None
+2025-11-20 14:59:57,206 [INFO] Parsed query params: {
+  "STMESSAGE": "academic_programs,academic_calendar"
+}
+2025-11-20 14:59:57,206 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 14:59:57,206 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 15:02:39,628 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=academic_programs%2Cacademic_calendar "HTTP/1.1 200 OK"
+2025-11-20 15:02:39,644 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 15:02:39,644 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 15:02:39,644 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 15:02:39,644 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 15:02:39,644 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 15:02:39,644 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 15:02:39,644 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 15:02:39,644 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 15:02:39,644 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:63013 - "POST / HTTP/1.1" 200 OK
+2025-11-20 15:04:30,199 [INFO] --------------------------------FORWARD LAYER 2 A2A REQUEST TO MCP ------------------------------
+2025-11-20 15:04:30,201 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='8996dd2b-aa5c-4361-bdab-008dbff61c47', extensions=None, kind='message', message_id='7ba664d960a94e2f8d611be926b31b0a', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='STMESSAGE=academic_calendar,all_curriculum;'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='4efd6f98-c13a-4f89-b5e5-81c8472901bd'), metadata=None), '_task_id': '4efd6f98-c13a-4f89-b5e5-81c8472901bd', '_context_id': '8996dd2b-aa5c-4361-bdab-008dbff61c47', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10100', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '265', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000001BC7F997C50>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 15:04:30,201 [INFO] Invoked DataAgent with query: 'STMESSAGE=academic_calendar,all_curriculum;' and context_id=8996dd2b-aa5c-4361-bdab-008dbff61c47
+2025-11-20 15:04:30,201 [INFO] ==== DEEP TASK INSPECTION ====
+2025-11-20 15:04:30,201 [INFO] Type: <class 'str'>
+2025-11-20 15:04:30,202 [INFO]   • query.capitalize = <built-in method capitalize of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.casefold = <built-in method casefold of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.center = <built-in method center of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.count = <built-in method count of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.encode = <built-in method encode of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.endswith = <built-in method endswith of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.expandtabs = <built-in method expandtabs of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.find = <built-in method find of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.format = <built-in method format of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.format_map = <built-in method format_map of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.index = <built-in method index of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.isalnum = <built-in method isalnum of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.isalpha = <built-in method isalpha of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.isascii = <built-in method isascii of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.isdecimal = <built-in method isdecimal of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.isdigit = <built-in method isdigit of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.isidentifier = <built-in method isidentifier of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,202 [INFO]   • query.islower = <built-in method islower of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.isnumeric = <built-in method isnumeric of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.isprintable = <built-in method isprintable of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.isspace = <built-in method isspace of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.istitle = <built-in method istitle of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.isupper = <built-in method isupper of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.join = <built-in method join of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.ljust = <built-in method ljust of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.lower = <built-in method lower of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.lstrip = <built-in method lstrip of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.maketrans = <built-in method maketrans of type object at 0x00007FF992445F70>
+2025-11-20 15:04:30,203 [INFO]   • query.partition = <built-in method partition of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.removeprefix = <built-in method removeprefix of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.removesuffix = <built-in method removesuffix of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.replace = <built-in method replace of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.rfind = <built-in method rfind of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.rindex = <built-in method rindex of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.rjust = <built-in method rjust of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.rpartition = <built-in method rpartition of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.rsplit = <built-in method rsplit of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,203 [INFO]   • query.rstrip = <built-in method rstrip of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,204 [INFO]   • query.split = <built-in method split of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,204 [INFO]   • query.splitlines = <built-in method splitlines of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,204 [INFO]   • query.startswith = <built-in method startswith of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,204 [INFO]   • query.strip = <built-in method strip of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,204 [INFO]   • query.swapcase = <built-in method swapcase of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,204 [INFO]   • query.title = <built-in method title of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,204 [INFO]   • query.translate = <built-in method translate of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,204 [INFO]   • query.upper = <built-in method upper of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,204 [INFO]   • query.zfill = <built-in method zfill of str object at 0x000001BC7F9A3C90>
+2025-11-20 15:04:30,204 [INFO] ===================================
+2025-11-20 15:04:30,204 [INFO] DataAgent invoked with query: 'STMESSAGE=academic_calendar,all_curriculum;'
+2025-11-20 15:04:30,205 [INFO] Using MCP URL: http://localhost:10010/load_data
+2025-11-20 15:04:30,206 [INFO] Using output directory: ./student_ui/static/resource
+2025-11-20 15:04:30,206 [INFO] Parsed query parameters: {'STMESSAGE': 'academic_calendar,all_curriculum'}
+2025-11-20 15:04:30,206 [INFO] SAVE PATH in Query - None
+2025-11-20 15:04:30,206 [INFO] Parsed query params: {
+  "STMESSAGE": "academic_calendar,all_curriculum"
+}
+2025-11-20 15:04:30,206 [INFO] --------------------------------FORWARD LAYER 3 MCP to Data Access ------------------------------
+2025-11-20 15:04:30,206 [WARNING] Fetching from MCP: http://localhost:10010/load_data
+2025-11-20 15:07:52,978 [INFO] HTTP Request: GET http://localhost:10010/load_data?st_message=academic_calendar%2Call_curriculum "HTTP/1.1 200 OK"
+2025-11-20 15:07:52,982 [INFO] --------------------------------FORWARD LAYER 3 Preprocessing data  ------------------------------
+2025-11-20 15:07:52,982 [INFO] Data Agent execution completed successfully with result:
+2025-11-20 15:07:52,982 [INFO] {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 15:07:52,983 [INFO] --------------------------------BACKWARD LAYER 3 SENDING RESPONSE TO A2A  ------------------------------
+2025-11-20 15:07:52,983 [INFO] RESPONSE : 
+ {
+  "source": "MCP",
+  "processed_path": "C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource"
+} 
+2025-11-20 15:07:52,984 [INFO] --------------------------------BACKWARD LAYER 2 MCP RESPONSE TO A2A -----------------------------
+2025-11-20 15:07:52,984 [INFO] RESPONSE: {'source': 'MCP', 'processed_path': 'C:\\Users\\Prabha_Sharma\\OneDrive - Dell Technologies\\Documents\\Prabha Sharma\\Personal\\IITJ\\Projects\\Assignments\\practice\\FM_Assignment1\\MultiAgent MCP System\\student_ui\\static\\resource'}
+2025-11-20 15:07:52,985 [INFO] --------------------------------BACKWARD LAYER 2 A2A RESPONSE TO CLIENT -----------------------------
+2025-11-20 15:07:52,985 [INFO] Response streamed successfully to client
+INFO:     127.0.0.1:60540 - "POST / HTTP/1.1" 200 OK

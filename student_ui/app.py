@@ -12,7 +12,8 @@ SUPERVISOR_URL = os.getenv("SUPERVISOR_URL", "http://localhost:10500/ask")
 @app.route("/", methods=["GET", "POST"])
 def index():
     response = None
-    error = None
+
+    dv_html = None
 
     if request.method == "POST":
         question = request.form.get("question", "").strip()
@@ -21,53 +22,49 @@ def index():
             error = "Please enter a valid question."
         else:
             try:
-                res = requests.post(SUPERVISOR_URL, json={"question": question}, timeout=30)
+                res = requests.post(SUPERVISOR_URL, json={"question": question}, timeout=300)
+
                 if res.status_code == 200:
                     response = res.json()
                 else:
                     error = f"Supervisor error: {res.text}"
+
             except requests.RequestException as e:
                 error = f"Error connecting to Supervisor: {str(e)}"
+                
 
-    dv_html = None
+    #print("Raw Response :", res)
+    print("UI RECEIVED:", response)
+    print("DV_HTML:", response.get("dv_html") if response else None)
 
-    if response and "dv_result" in response:
-        try:
-            dv_html = response["dv_result"]["result"]["parts"][0]["text"]
-        except Exception as e:
-            dv_html = f"Error extracting DV result: {e}"
+    if isinstance(response, dict) and "dv_html" in response:
+        dv_html = response["dv_html"]
 
-   
-    # Clean for safe rendering
+    # Clean HTML
     dv_html = clean_dv_html(dv_html)
 
     return render_template("index.html", dv_html=dv_html)
-        #return render_template("index.html", response=response, error=error)
-    return render_template("index.html", dv_html=dv_html, error=error)
-
 
 
 def clean_dv_html(raw_html):
     if not raw_html:
         return ""
 
-    # Remove full <html> / <head> / <body> blocks
-    raw_html = re.sub(r"<\/?(html|head|body)[^>]*>", "", raw_html, flags=re.IGNORECASE)
+    # Remove  only script tags
+    raw_html = re.sub(r"<script[^>]*>.*?</script>", "", raw_html,
+                      flags=re.DOTALL | re.IGNORECASE)  
 
-    # Remove all <script> tags
-    raw_html = re.sub(r"<script[^>]*>.*?<\/script>", "", raw_html, flags=re.DOTALL | re.IGNORECASE)
+    # Remove javascript: hrefs
+    raw_html = re.sub(r'href=[\'"]javascript:[^\'"]*[\'"]', "", raw_html,
+                      flags=re.IGNORECASE)
 
-    # Remove all <link> CSS references
-    raw_html = re.sub(r"<link[^>]*>", "", raw_html, flags=re.IGNORECASE)
+    # Remove inline JS events (onclick, onload, etc.)
+    raw_html = re.sub(r'on\w+="[^"]*"', "", raw_html,
+                      flags=re.IGNORECASE)
 
-    # Remove images pointing to external website
-    raw_html = re.sub(r"<img[^>]*>", "", raw_html, flags=re.IGNORECASE)
-
-    # Remove any IITJ site assets
-    raw_html = re.sub(r"\/Website[^\"'> ]*", "", raw_html, flags=re.IGNORECASE)
-
-    # Remove background images in inline styles
-    raw_html = re.sub(r"url\([^)]+\)", "", raw_html, flags=re.IGNORECASE)
+    # Remove external images (but keep local /static/)
+    raw_html = re.sub(r'<img[^>]*(src="http[^"]*")[^>]*>', "", raw_html,
+                      flags=re.IGNORECASE)
 
     return raw_html.strip()
 

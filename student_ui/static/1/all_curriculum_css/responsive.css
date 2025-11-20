@@ -1,0 +1,285 @@
+/* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    .header-bg{
+        height: 510px;
+        margin-bottom: 68px;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .display-1, .iitdisplay-1{
+        font-size: calc(20px + 1.7vw) !important;
+        line-height: calc(27px + 1.7vw) !important;
+    }
+    .display-2, .iitdisplay-2{
+        font-size: calc(15px + 1.7vw) !important;
+        line-height: calc(22px + 1.7vw) !important;
+    }
+    .display-3, .iitdisplay-3{
+        font-size: calc(13px + 1.7vw) !important;
+        line-height: calc(20px + 1.7vw) !important;
+    }
+    .hidelogo{
+        display: none;
+    }
+    .header-position{
+        padding-top: 12px;
+    }
+    .header-bg{
+        height: 370px;
+        margin-bottom: 45px;
+    }
+    .web-slider{
+        top: 190px;
+    }
+    .subpageheader-bg{
+        min-height: 200px;
+    }
+    .header-menu{
+        display: none;
+    }
+    .menu-icon{
+        display: block;
+    }
+    .homenews-info h4{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .menu-icon{
+        left: 12px;
+    }
+    .a-zgrid{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .freezalphabets{
+        top: 0px;
+    }
+    .footer-linksgrid{
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+    .component23 .people-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .people-grid{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    .people-grid, .tender-grid{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .header-bg{
+        height: 300px;
+        margin-bottom: 41px;
+    }
+    .web-slider{
+        top: 170px;
+    }
+    .component23 .people-grid{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .faculty-search{
+        width: 100%;
+    }
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    #highlightslider .btn-close{
+        top: 0;
+        right: 0;
+    }
+    .menu-item-char span{
+        font-size: 80px;
+        line-height: 140px;
+    }
+    .footer-linksgrid{
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .people-image{
+        height: 200px;
+        width: auto;
+        display: inline-block;
+    }
+    .people-image img{
+        max-height: 200px;
+        width: auto;
+    }
+    .header-bg{
+        height: 270px;
+        margin-bottom: 80px;
+    }
+}
+
+
+/* XX-Small devices (portrait phones, less than 476px) */
+@media (max-width: 475.98px) {
+    .homenews-info p{
+        display: none;
+    }
+    .top-bg>.container{
+        padding: 0;
+    }
+    .header-bg{
+        height: 250px;
+        margin-bottom: 56px;
+    }
+}
+
+
+
+
+
+
+
+
+/* Small devices (grater than 576px) */
+@media (min-width: 575.98px) {
+    .home-research-image{
+        height: 173px;
+    }
+    .menu-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .menu-item-image{
+        height: 146px;
+    }
+    .people-image{
+        height: 180px;
+    }
+}
+
+@media (min-width: 699.98px) {
+}
+
+/* Medium devices (grater than 768px) */
+@media (min-width: 767.98px) {
+    .home-research-image{
+        height: 237px;
+    }
+    .menu-item-image{
+        height: 200px;
+    }
+    .people-image{
+        height: auto;
+    }
+}
+
+/* Large devices (grater than 992px) */
+@media (min-width: 991.98px) {
+    .fixedheader{
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        transform: translateX(0);
+        z-index: 9;
+        background-color: #3c3c3c;
+        max-width: 100% !important;
+        transition: background-color 0.2s, box-shadow 0.4s;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+    .smlogo-img{
+        max-width: 60px;
+    }
+    .smlogo-text{
+        font-size: 15px;
+        line-height: 18px;
+        padding-left: 10px;
+    }
+    .home-research-image{
+        height: 209px;
+    }
+    .menu-space{
+        left: 12px;
+    }
+    .menu-item-image{
+        height: 200px;
+    }
+    .people-image{
+        height: 115px;
+    }
+    .rti-date .last-date{
+        position: absolute;
+        right: 0;
+        bottom: -50px;
+    }
+}
+
+/* X-Large devices (grater than 1200px) */
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1160px;
+    }
+    .home-research-image{
+        height: 256px;
+    }
+    .menu-grid{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .menu-item-image{
+        height: 180px;
+    }
+    .people-image{
+        height: 148px;
+    }
+    .header-bg{
+        margin-bottom: 38px;
+    }
+}
+
+/* XX-Large devices (grater than 1300px) */
+@media (min-width: 1300px) {
+    .container{
+        max-width: 1260px;
+    }
+    .home-research-image{
+        height: 280px;
+    }
+    .menu-item-image{
+        height: 200px;
+    }
+    .people-image{
+        height: 162px;
+    }
+    .header-bg{
+        margin-bottom: 68px;
+    }
+}
+
+/* XXX-Large devices (grater than 1400px) */
+@media (min-width: 1400px) {
+    .container{
+        max-width: 1360px;
+    }
+    .home-research-image{
+        height: 303px;
+    }
+    .menu-item-image{
+        height: 200px;
+    }
+    .people-image{
+        height: 172px;
+    }
+    .header-bg{
+        margin-bottom: 98px;
+    }
+}
+
+
+@media (min-width: 991.98px) and (max-width: 1199.98px) {
+    
+}
+
+
+
+@media (min-width: 767.98px) and (max-width: 991.98px) {
+    
+}

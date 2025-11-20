@@ -5,6 +5,7 @@ echo ==========================================
 
 :: List of ports you want to stop (add/remove as needed)
 set PORTS=10010 10020 10030 10100 10200 10300 10400 10500
+::set PORTS=10100 10200 10300 10010 10500
 
 
 
@@ -15,6 +16,7 @@ for %%P in (%PORTS%) do (
         taskkill /PID %%A /F >nul 2>&1
     )
 )
+
 
 echo ------------------------------------------
 echo Done. Checked and stopped all listed ports.

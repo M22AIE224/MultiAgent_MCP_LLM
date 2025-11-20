@@ -1,5 +1,10 @@
-2025-11-18 15:36:04,661 [INFO] \U0001f680 ML MCP Server running on http://0.0.0.0:10020/critic
-INFO:     Started server process [45332]
+2025-11-20 13:33:07,982 [INFO] \U0001f680 ML MCP Server running on http://0.0.0.0:10020/critic
+INFO:     Started server process [4012]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10020 (Press CTRL+C to quit)
+2025-11-20 14:40:58,952 [INFO] \U0001f680 ML MCP Server running on http://0.0.0.0:10020/critic
+INFO:     Started server process [7480]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:10020 (Press CTRL+C to quit)

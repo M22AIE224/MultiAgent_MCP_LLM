@@ -86,8 +86,9 @@ class SupervisorAgent:
 
     async def data_stage(self, state: PipelineState):
 
-        data_local_path = os.getenv("DATA_LOCAL_PATH", "./data/source_data.csv")
-        data_processed_path = os.getenv("DATA_PROCESSED_PATH", "./artifacts/data_results/processed_data.csv")
+        #data_local_path = os.getenv("DATA_LOCAL_PATH", "./data/source_data.csv")
+        #data_processed_path = os.getenv("DATA_PROCESSED_PATH", "./artifacts/data_results/processed_data.csv")
+      
 
         # query = (
         #     f"LOAD path={data_local_path};"
@@ -96,11 +97,48 @@ class SupervisorAgent:
         #     f"SAVE={data_processed_path}"
         # )
         #msg = "What is the calander for 2026?"
-        msg = state.get("ml_results", {})
         
+
+        ml_output = state.get("ml_result") or {}
+
+
+        logger.info(f"ML OUTPUT IN Data STAGE: {ml_output!r}")
+
+        try:
+            raw_text = ml_output["result"]["parts"][0]["text"]
+        except Exception as e:
+            logger.error(f"Could not extract ML text: {e}")
+            raw_text = "{}"
+
+        logger.info(f"RAW ML TEXT: {raw_text}")
+
+
+        # Step 2: First-level JSON parse → returns dict containing "data" (as string)
+        try:
+            level1 = json.loads(raw_text)
+        except Exception as e:
+            logger.error(f"JSON parse error (level 1): {e}")
+            level1 = {}
+
+        # Step 3: Extract "data" (inner JSON string)
+        inner_json_str = level1.get("data", "{}")
+
+        # Step 4: Parse the inner JSON (this contains method)
+        try:
+            parsed = json.loads(inner_json_str)
+        except Exception as e:
+            logger.error(f"JSON parse error (inner level): {e}")
+            parsed = {}
+
+        # Step 5: Extract the method
+        method = parsed.get("method")
+
+
         query = (
-            f"STMESSAGE={msg};"
-        )
+                    f"STMESSAGE={method};"
+                )
+
+        logger.info(f"Extracted method: {method}")
 
 
         logger.info("----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------")
@@ -133,7 +171,7 @@ class SupervisorAgent:
             params=MessageSendParams(
                 message={
                     "role": "user",
-                    "parts": [{"kind": "text", "text": f"Getting planner from LLM with USer query {query}"}],
+                    "parts": [{"kind": "text", "text": f"{query}"}],
                     "messageId": uuid4().hex,
                 }
             ),
@@ -183,10 +221,13 @@ class SupervisorAgent:
             dv_json = response.model_dump(mode="json", exclude_none=True)
 
             # Extract text message (HTML expected)
+            logger.info("DV JSON response:")
             logger.info(dv_json)
             dv_html = ""
             try:
-                dv_html = dv_json["message"]["parts"][0]["text"]
+                #dv_html = dv_json["message"]["parts"][0]["text"]
+                dv_html = dv_json["result"]["parts"][0]["text"]
+                logger.info(f"DV HTML : {dv_html}")
             except:
                 logger.warning("DV Agent did not return expected HTML. Full response returned.")
 
@@ -220,6 +261,7 @@ class SupervisorAgent:
     async def run_pipeline_bkp(self):
         logger.info("Running pipeline via LangGraph...")
         result = await self.graph.ainvoke({"messages": [HumanMessage(content="Start pipeline")]})
+        logger.info(f"Pipeline combined Result : {result}")
         logger.info("Pipeline finished.")
         return result
     

@@ -6,6 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from fastapi import FastAPI, HTTPException, Body
 from dotenv import load_dotenv
+from fastapi.responses import HTMLResponse
 
 load_dotenv()
 logger = logging.getLogger(__name__)
@@ -149,7 +150,7 @@ async def visualize_results(payload: dict = Body(default={})):
         combined_html_parts = []
 
         for name in file_names:
-            file_path = os.path.join(DATA_OUTPUT_DIR, name)
+            file_path = os.path.join(result_dir, name)
 
             if not os.path.exists(file_path):
                 combined_html_parts.append(

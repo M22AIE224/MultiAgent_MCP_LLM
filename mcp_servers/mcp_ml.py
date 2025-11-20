@@ -162,6 +162,6 @@ async def train_model():
 if __name__ == "__main__":
     import uvicorn
 
-    port = int(os.getenv("MCP_ML_PORT", 10020))
+    port = int(os.getenv("ML_MCP_PORT", 10020))
     logger.info(f"🚀 ML MCP Server running on http://0.0.0.0:{port}/critic")
     uvicorn.run(app, host="0.0.0.0", port=port)

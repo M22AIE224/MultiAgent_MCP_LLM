@@ -1,5 +1,409 @@
-INFO:     Started server process [25140]
+INFO:     Started server process [43072]
 INFO:     Waiting for application startup.
 INFO:mcp.server.streamable_http_manager:StreamableHTTP session manager started
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:10010 (Press CTRL+C to quit)
+INFO:__main__:selected Urls : {'all_curriculum': 'https://iitj.ac.in/office-of-academics/en/curriculum', 'academic_programs': 'https://iitj.ac.in/office-of-academics/en/list-of-academic-programs'}
+INFO:__main__:MCP Data extract invoked for URLs: {'all_curriculum': 'https://iitj.ac.in/office-of-academics/en/curriculum', 'academic_programs': 'https://iitj.ac.in/office-of-academics/en/list-of-academic-programs'}
+INFO:__main__:Saved ./student_ui/static/resource\all_curriculum.html
+INFO:__main__:Saved ./student_ui/static/resource\academic_programs.html
+INFO:     Started server process [38560]
+INFO:     Waiting for application startup.
+INFO:mcp.server.streamable_http_manager:StreamableHTTP session manager started
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:10010 (Press CTRL+C to quit)
+INFO:__main__:selected Urls : {'all_curriculum': 'https://iitj.ac.in/office-of-academics/en/curriculum', 'academic_programs': 'https://iitj.ac.in/office-of-academics/en/list-of-academic-programs'}
+INFO:__main__:MCP Data extract invoked for URLs: {'all_curriculum': 'https://iitj.ac.in/office-of-academics/en/curriculum', 'academic_programs': 'https://iitj.ac.in/office-of-academics/en/list-of-academic-programs'}
+INFO:__main__:Saved ./student_ui/static/resource\all_curriculum.html
+INFO:__main__:Saved ./student_ui/static/resource\academic_programs.html
+ML MCP Server running on http://127.0.0.1:10010/data
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Downloading all_curriculum from https://iitj.ac.in/office-of-academics/en/curriculum...
+Downloaded stylesheet: bootstrap.min.css
+Downloaded stylesheet: font-awesome.min.css
+Downloaded stylesheet: material-icon.css
+Downloaded stylesheet: slick.min.css
+Downloaded stylesheet: fullscreenmenu.css
+Downloaded stylesheet: slick.css
+Downloaded stylesheet: menustyles.css
+Downloaded stylesheet: mystyle.css
+Downloaded stylesheet: responsive.css
+Downloaded stylesheet: line-awesome.min.css
+Downloaded stylesheet: dataTables.bootstrap5.min.css
+Downloaded stylesheet: easy-responsive-tabs.css
+Downloaded image: home.png
+Downloaded image: down-arrow.png
+Downloaded image: logo-1.png
+Downloaded image: logo-1.png
+Downloaded image: 9a1e918c-86af-4667-a7ed-0b3c4e388af8.png
+Downloaded image: 557ce2f7-66a1-4e50-91f7-27accb076dac.png
+Downloaded image: 316f8fa0-09ee-4358-8602-ce161edbe82d.png
+Downloaded image: 12f44380-5332-4d35-8fef-f1ad56a7aef1.png
+Downloaded image: 0dcc5dd3-e0d2-48d0-a8ae-94c3f020ae8d.png
+Downloaded image: 8ed02fda-8d75-42a9-890a-71be04908de5.jpg
+Downloaded image: 015e1ed5-3528-40db-bb91-4de20409b667.jpg
+Downloaded image: 7f1a6ad9-676d-41d5-ab04-8d3913de04f9.jpg
+Downloaded image: e46806a7-819a-48ec-8be1-b43ebf1a8f55.png
+Downloaded image: a99ac780-b5fd-4e87-bbbf-dff0ded298ee.png
+Downloaded image: 8c1aae6b-e821-4980-8fd4-bf7eeb10a265.png
+Downloaded image: 9e0768f4-6213-4737-aaec-151ec4f03462.jpg
+Downloading academic_programs from https://iitj.ac.in/office-of-academics/en/list-of-academic-programs...
+Downloaded stylesheet: bootstrap.min.css
+Downloaded stylesheet: font-awesome.min.css
+Downloaded stylesheet: material-icon.css
+Downloaded stylesheet: slick.min.css
+Downloaded stylesheet: fullscreenmenu.css
+Downloaded stylesheet: slick.css
+Downloaded stylesheet: menustyles.css
+Downloaded stylesheet: mystyle.css
+Downloaded stylesheet: responsive.css
+Downloaded stylesheet: line-awesome.min.css
+Downloaded stylesheet: dataTables.bootstrap5.min.css
+Downloaded stylesheet: easy-responsive-tabs.css
+Downloaded image: home.png
+Downloaded image: down-arrow.png
+Downloaded image: logo-1.png
+Downloaded image: logo-1.png
+Downloaded image: 9a1e918c-86af-4667-a7ed-0b3c4e388af8.png
+Downloaded image: 557ce2f7-66a1-4e50-91f7-27accb076dac.png
+Downloaded image: 316f8fa0-09ee-4358-8602-ce161edbe82d.png
+Downloaded image: 12f44380-5332-4d35-8fef-f1ad56a7aef1.png
+Downloaded image: 0dcc5dd3-e0d2-48d0-a8ae-94c3f020ae8d.png
+Downloaded image: 8ed02fda-8d75-42a9-890a-71be04908de5.jpg
+Downloaded image: 015e1ed5-3528-40db-bb91-4de20409b667.jpg
+Downloaded image: 7f1a6ad9-676d-41d5-ab04-8d3913de04f9.jpg
+Downloaded image: e46806a7-819a-48ec-8be1-b43ebf1a8f55.png
+Downloaded image: a99ac780-b5fd-4e87-bbbf-dff0ded298ee.png
+Downloaded image: 8c1aae6b-e821-4980-8fd4-bf7eeb10a265.png
+Downloaded image: 9e0768f4-6213-4737-aaec-151ec4f03462.jpg
+INFO:     127.0.0.1:59207 - "GET /load_data?st_message=all_curriculum%2Cacademic_programs HTTP/1.1" 200 OK
+INFO:__main__:selected Urls : {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:MCP Data extract invoked for URLs: {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:Saved ./student_ui/static/resource\academic_calendar.pdf
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Downloading academic_calendar from https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf...
+INFO:     127.0.0.1:49889 - "GET /load_data?st_message=academic_calendar HTTP/1.1" 200 OK
+INFO:__main__:selected Urls : {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:MCP Data extract invoked for URLs: {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:Saved ./student_ui/static/resource\academic_calendar.pdf
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Downloading academic_calendar from https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf...
+INFO:     127.0.0.1:59505 - "GET /load_data?st_message=academic_calendar HTTP/1.1" 200 OK
+INFO:__main__:selected Urls : {'all_curriculum': 'https://iitj.ac.in/office-of-academics/en/curriculum', 'academic_programs': 'https://iitj.ac.in/office-of-academics/en/list-of-academic-programs'}
+INFO:__main__:MCP Data extract invoked for URLs: {'all_curriculum': 'https://iitj.ac.in/office-of-academics/en/curriculum', 'academic_programs': 'https://iitj.ac.in/office-of-academics/en/list-of-academic-programs'}
+INFO:__main__:selected Urls : {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:MCP Data extract invoked for URLs: {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:Saved ./student_ui/static/resource\academic_calendar.pdf
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Downloading all_curriculum from https://iitj.ac.in/office-of-academics/en/curriculum...
+Downloaded stylesheet: bootstrap.min.css
+Downloaded stylesheet: font-awesome.min.css
+Downloaded stylesheet: material-icon.css
+Downloaded stylesheet: slick.min.css
+Downloaded stylesheet: fullscreenmenu.css
+Downloaded stylesheet: slick.css
+Downloaded stylesheet: menustyles.css
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Downloading academic_calendar from https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf...
+Downloaded stylesheet: mystyle.css
+Downloaded stylesheet: responsive.css
+INFO:     127.0.0.1:49688 - "GET /load_data?st_message=academic_calendar HTTP/1.1" 200 OK
+INFO:__main__:Saved ./student_ui/static/resource\all_curriculum.html
+INFO:__main__:Saved ./student_ui/static/resource\academic_programs.html
+Downloaded stylesheet: line-awesome.min.css
+Downloaded stylesheet: dataTables.bootstrap5.min.css
+Downloaded stylesheet: easy-responsive-tabs.css
+Downloaded image: home.png
+Downloaded image: down-arrow.png
+Downloaded image: logo-1.png
+Downloaded image: logo-1.png
+Downloaded image: 9a1e918c-86af-4667-a7ed-0b3c4e388af8.png
+Downloaded image: 557ce2f7-66a1-4e50-91f7-27accb076dac.png
+Downloaded image: 316f8fa0-09ee-4358-8602-ce161edbe82d.png
+Downloaded image: 12f44380-5332-4d35-8fef-f1ad56a7aef1.png
+Downloaded image: 0dcc5dd3-e0d2-48d0-a8ae-94c3f020ae8d.png
+Downloaded image: 8ed02fda-8d75-42a9-890a-71be04908de5.jpg
+Downloaded image: 015e1ed5-3528-40db-bb91-4de20409b667.jpg
+Downloaded image: 7f1a6ad9-676d-41d5-ab04-8d3913de04f9.jpg
+Downloaded image: e46806a7-819a-48ec-8be1-b43ebf1a8f55.png
+Downloaded image: a99ac780-b5fd-4e87-bbbf-dff0ded298ee.png
+Downloaded image: 8c1aae6b-e821-4980-8fd4-bf7eeb10a265.png
+Downloaded image: 9e0768f4-6213-4737-aaec-151ec4f03462.jpg
+Downloading academic_programs from https://iitj.ac.in/office-of-academics/en/list-of-academic-programs...
+Downloaded stylesheet: bootstrap.min.css
+Downloaded stylesheet: font-awesome.min.css
+Downloaded stylesheet: material-icon.css
+Downloaded stylesheet: slick.min.css
+Downloaded stylesheet: fullscreenmenu.css
+Downloaded stylesheet: slick.css
+Downloaded stylesheet: menustyles.css
+Downloaded stylesheet: mystyle.css
+Downloaded stylesheet: responsive.css
+Downloaded stylesheet: line-awesome.min.css
+Downloaded stylesheet: dataTables.bootstrap5.min.css
+Downloaded stylesheet: easy-responsive-tabs.css
+Downloaded image: home.png
+Downloaded image: down-arrow.png
+Downloaded image: logo-1.png
+Downloaded image: logo-1.png
+Downloaded image: 9a1e918c-86af-4667-a7ed-0b3c4e388af8.png
+Downloaded image: 557ce2f7-66a1-4e50-91f7-27accb076dac.png
+Downloaded image: 316f8fa0-09ee-4358-8602-ce161edbe82d.png
+Downloaded image: 12f44380-5332-4d35-8fef-f1ad56a7aef1.png
+Downloaded image: 0dcc5dd3-e0d2-48d0-a8ae-94c3f020ae8d.png
+Downloaded image: 8ed02fda-8d75-42a9-890a-71be04908de5.jpg
+Downloaded image: 015e1ed5-3528-40db-bb91-4de20409b667.jpg
+Downloaded image: 7f1a6ad9-676d-41d5-ab04-8d3913de04f9.jpg
+Downloaded image: e46806a7-819a-48ec-8be1-b43ebf1a8f55.png
+Downloaded image: a99ac780-b5fd-4e87-bbbf-dff0ded298ee.png
+Downloaded image: 8c1aae6b-e821-4980-8fd4-bf7eeb10a265.png
+Downloaded image: 9e0768f4-6213-4737-aaec-151ec4f03462.jpg
+INFO:     127.0.0.1:62970 - "GET /load_data?st_message=all_curriculum%2Cacademic_programs HTTP/1.1" 200 OK
+INFO:__main__:selected Urls : {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:MCP Data extract invoked for URLs: {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:Saved ./student_ui/static/resource\academic_calendar.pdf
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Downloading academic_calendar from https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf...
+INFO:     127.0.0.1:65285 - "GET /load_data?st_message=academic_calendar HTTP/1.1" 200 OK
+INFO:     Started server process [17920]
+INFO:     Waiting for application startup.
+INFO:mcp.server.streamable_http_manager:StreamableHTTP session manager started
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:10010 (Press CTRL+C to quit)
+INFO:__main__:selected Urls : {'ug_curriculum': 'http://academics.iitj.ac.in/?page_id=377'}
+INFO:__main__:MCP Data extract invoked for URLs: {'ug_curriculum': 'http://academics.iitj.ac.in/?page_id=377'}
+INFO:__main__:Saved ./student_ui/static/resource\ug_curriculum.html
+ML MCP Server running on http://127.0.0.1:10010/data
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Downloading ug_curriculum from http://academics.iitj.ac.in/?page_id=377...
+Downloaded stylesheet: style.min.css
+Downloaded stylesheet: style.css
+Downloaded stylesheet: css2
+Downloaded stylesheet: css
+Downloaded stylesheet: style.css
+Downloaded image: IIT-Logo.png
+INFO:     127.0.0.1:49884 - "GET /load_data?st_message=ug_curriculum HTTP/1.1" 200 OK
+INFO:__main__:selected Urls : {'ug_curriculum': 'http://academics.iitj.ac.in/?page_id=377'}
+INFO:__main__:MCP Data extract invoked for URLs: {'ug_curriculum': 'http://academics.iitj.ac.in/?page_id=377'}
+INFO:__main__:Saved ./student_ui/static/resource\ug_curriculum.html
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_images'
+Downloading ug_curriculum from http://academics.iitj.ac.in/?page_id=377...
+Downloaded stylesheet: style.min.css
+Downloaded stylesheet: style.css
+Downloaded stylesheet: css2
+Downloaded stylesheet: css
+Downloaded stylesheet: style.css
+Downloaded image: IIT-Logo.png
+INFO:     127.0.0.1:53824 - "GET /load_data?st_message=ug_curriculum HTTP/1.1" 200 OK
+INFO:__main__:selected Urls : {'ug_curriculum': 'http://academics.iitj.ac.in/?page_id=377'}
+INFO:__main__:MCP Data extract invoked for URLs: {'ug_curriculum': 'http://academics.iitj.ac.in/?page_id=377'}
+INFO:__main__:Saved ./student_ui/static/resource\ug_curriculum.html
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_images'
+Downloading ug_curriculum from http://academics.iitj.ac.in/?page_id=377...
+Downloaded stylesheet: style.min.css
+Downloaded stylesheet: style.css
+Downloaded stylesheet: css2
+Downloaded stylesheet: css
+Downloaded stylesheet: style.css
+Downloaded image: IIT-Logo.png
+INFO:     127.0.0.1:57001 - "GET /load_data?st_message=ug_curriculum HTTP/1.1" 200 OK
+INFO:__main__:selected Urls : {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:MCP Data extract invoked for URLs: {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:Saved ./student_ui/static/resource\academic_calendar.pdf
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_images'
+Downloading academic_calendar from https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf...
+INFO:     127.0.0.1:61438 - "GET /load_data?st_message=academic_calendar HTTP/1.1" 200 OK
+INFO:__main__:selected Urls : {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:MCP Data extract invoked for URLs: {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:Saved ./student_ui/static/resource\academic_calendar.pdf
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_images'
+Downloading academic_calendar from https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf...
+INFO:     127.0.0.1:58287 - "GET /load_data?st_message=academic_calendar HTTP/1.1" 200 OK
+INFO:__main__:selected Urls : {'ug_curriculum': 'http://academics.iitj.ac.in/?page_id=377'}
+INFO:__main__:MCP Data extract invoked for URLs: {'ug_curriculum': 'http://academics.iitj.ac.in/?page_id=377'}
+INFO:__main__:Saved ./student_ui/static/resource\ug_curriculum.html
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_images'
+Downloading ug_curriculum from http://academics.iitj.ac.in/?page_id=377...
+Downloaded stylesheet: style.min.css
+Downloaded stylesheet: style.css
+Downloaded stylesheet: css2
+Downloaded stylesheet: css
+Downloaded stylesheet: style.css
+Downloaded image: IIT-Logo.png
+INFO:     127.0.0.1:55924 - "GET /load_data?st_message=ug_curriculum HTTP/1.1" 200 OK
+INFO:__main__:selected Urls : {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf', 'all_curriculum': 'https://iitj.ac.in/office-of-academics/en/curriculum'}
+INFO:__main__:MCP Data extract invoked for URLs: {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf', 'all_curriculum': 'https://iitj.ac.in/office-of-academics/en/curriculum'}
+INFO:__main__:Saved ./student_ui/static/resource\academic_calendar.pdf
+INFO:__main__:Saved ./student_ui/static/resource\all_curriculum.html
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_images'
+Downloading academic_calendar from https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf...
+Downloading all_curriculum from https://iitj.ac.in/office-of-academics/en/curriculum...
+Downloaded stylesheet: bootstrap.min.css
+Downloaded stylesheet: font-awesome.min.css
+Downloaded stylesheet: material-icon.css
+Downloaded stylesheet: slick.min.css
+Downloaded stylesheet: fullscreenmenu.css
+Downloaded stylesheet: slick.css
+Downloaded stylesheet: menustyles.css
+Downloaded stylesheet: mystyle.css
+Downloaded stylesheet: responsive.css
+Downloaded stylesheet: line-awesome.min.css
+Downloaded stylesheet: dataTables.bootstrap5.min.css
+Downloaded stylesheet: easy-responsive-tabs.css
+Downloaded image: home.png
+Downloaded image: down-arrow.png
+Downloaded image: logo-1.png
+Downloaded image: logo-1.png
+Downloaded image: 9a1e918c-86af-4667-a7ed-0b3c4e388af8.png
+Downloaded image: 557ce2f7-66a1-4e50-91f7-27accb076dac.png
+Downloaded image: 316f8fa0-09ee-4358-8602-ce161edbe82d.png
+Downloaded image: 12f44380-5332-4d35-8fef-f1ad56a7aef1.png
+Downloaded image: 0dcc5dd3-e0d2-48d0-a8ae-94c3f020ae8d.png
+Downloaded image: 8ed02fda-8d75-42a9-890a-71be04908de5.jpg
+Downloaded image: 015e1ed5-3528-40db-bb91-4de20409b667.jpg
+Downloaded image: 7f1a6ad9-676d-41d5-ab04-8d3913de04f9.jpg
+Downloaded image: e46806a7-819a-48ec-8be1-b43ebf1a8f55.png
+Downloaded image: a99ac780-b5fd-4e87-bbbf-dff0ded298ee.png
+Downloaded image: 8c1aae6b-e821-4980-8fd4-bf7eeb10a265.png
+Downloaded image: 9e0768f4-6213-4737-aaec-151ec4f03462.jpg
+INFO:     127.0.0.1:64773 - "GET /load_data?st_message=academic_calendar%2Call_curriculum HTTP/1.1" 200 OK
+INFO:__main__:selected Urls : {'academic_programs': 'https://iitj.ac.in/office-of-academics/en/list-of-academic-programs', 'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:MCP Data extract invoked for URLs: {'academic_programs': 'https://iitj.ac.in/office-of-academics/en/list-of-academic-programs', 'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf'}
+INFO:__main__:Saved ./student_ui/static/resource\academic_programs.html
+INFO:__main__:Saved ./student_ui/static/resource\academic_calendar.pdf
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_images'
+Downloading academic_programs from https://iitj.ac.in/office-of-academics/en/list-of-academic-programs...
+Downloaded stylesheet: bootstrap.min.css
+Downloaded stylesheet: font-awesome.min.css
+Downloaded stylesheet: material-icon.css
+Downloaded stylesheet: slick.min.css
+Downloaded stylesheet: fullscreenmenu.css
+Downloaded stylesheet: slick.css
+Downloaded stylesheet: menustyles.css
+Downloaded stylesheet: mystyle.css
+Downloaded stylesheet: responsive.css
+Downloaded stylesheet: line-awesome.min.css
+Downloaded stylesheet: dataTables.bootstrap5.min.css
+Downloaded stylesheet: easy-responsive-tabs.css
+Downloaded image: home.png
+Downloaded image: down-arrow.png
+Downloaded image: logo-1.png
+Downloaded image: logo-1.png
+Downloaded image: 9a1e918c-86af-4667-a7ed-0b3c4e388af8.png
+Downloaded image: 557ce2f7-66a1-4e50-91f7-27accb076dac.png
+Downloaded image: 316f8fa0-09ee-4358-8602-ce161edbe82d.png
+Downloaded image: 12f44380-5332-4d35-8fef-f1ad56a7aef1.png
+Downloaded image: 0dcc5dd3-e0d2-48d0-a8ae-94c3f020ae8d.png
+Downloaded image: 8ed02fda-8d75-42a9-890a-71be04908de5.jpg
+Downloaded image: 015e1ed5-3528-40db-bb91-4de20409b667.jpg
+Downloaded image: 7f1a6ad9-676d-41d5-ab04-8d3913de04f9.jpg
+Downloaded image: e46806a7-819a-48ec-8be1-b43ebf1a8f55.png
+Downloaded image: a99ac780-b5fd-4e87-bbbf-dff0ded298ee.png
+Downloaded image: 8c1aae6b-e821-4980-8fd4-bf7eeb10a265.png
+Downloaded image: 9e0768f4-6213-4737-aaec-151ec4f03462.jpg
+Downloading academic_calendar from https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf...
+INFO:     127.0.0.1:63015 - "GET /load_data?st_message=academic_programs%2Cacademic_calendar HTTP/1.1" 200 OK
+INFO:__main__:selected Urls : {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf', 'all_curriculum': 'https://iitj.ac.in/office-of-academics/en/curriculum'}
+INFO:__main__:MCP Data extract invoked for URLs: {'academic_calendar': 'https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf', 'all_curriculum': 'https://iitj.ac.in/office-of-academics/en/curriculum'}
+INFO:__main__:Saved ./student_ui/static/resource\academic_calendar.pdf
+INFO:__main__:Saved ./student_ui/static/resource\all_curriculum.html
+Failed to delete directory ./student_ui/static/resource\academic_programs_css: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_css'
+Failed to delete directory ./student_ui/static/resource\academic_programs_images: [WinError 5] Access is denied: './student_ui/static/resource\\academic_programs_images'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\all_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\all_curriculum_images'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_css: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_css'
+Failed to delete directory ./student_ui/static/resource\ug_curriculum_images: [WinError 5] Access is denied: './student_ui/static/resource\\ug_curriculum_images'
+Downloading academic_calendar from https://www.iitj.ac.in/PageImages/Gallery/07-2025/Academic-Calendar-AY-202526SemI2-with-CCCD-events-638871414539740843.pdf...
+Downloading all_curriculum from https://iitj.ac.in/office-of-academics/en/curriculum...
+Downloaded stylesheet: bootstrap.min.css
+Downloaded stylesheet: font-awesome.min.css
+Downloaded stylesheet: material-icon.css
+Downloaded stylesheet: slick.min.css
+Downloaded stylesheet: fullscreenmenu.css
+Downloaded stylesheet: slick.css
+Downloaded stylesheet: menustyles.css
+Downloaded stylesheet: mystyle.css
+Downloaded stylesheet: responsive.css
+Downloaded stylesheet: line-awesome.min.css
+Downloaded stylesheet: dataTables.bootstrap5.min.css
+Downloaded stylesheet: easy-responsive-tabs.css
+Downloaded image: home.png
+Downloaded image: down-arrow.png
+Downloaded image: logo-1.png
+Downloaded image: logo-1.png
+Downloaded image: 9a1e918c-86af-4667-a7ed-0b3c4e388af8.png
+Downloaded image: 557ce2f7-66a1-4e50-91f7-27accb076dac.png
+Downloaded image: 316f8fa0-09ee-4358-8602-ce161edbe82d.png
+Downloaded image: 12f44380-5332-4d35-8fef-f1ad56a7aef1.png
+Downloaded image: 0dcc5dd3-e0d2-48d0-a8ae-94c3f020ae8d.png
+Downloaded image: 8ed02fda-8d75-42a9-890a-71be04908de5.jpg
+Downloaded image: 015e1ed5-3528-40db-bb91-4de20409b667.jpg
+Downloaded image: 7f1a6ad9-676d-41d5-ab04-8d3913de04f9.jpg
+Downloaded image: e46806a7-819a-48ec-8be1-b43ebf1a8f55.png
+Downloaded image: a99ac780-b5fd-4e87-bbbf-dff0ded298ee.png
+Downloaded image: 8c1aae6b-e821-4980-8fd4-bf7eeb10a265.png
+Downloaded image: 9e0768f4-6213-4737-aaec-151ec4f03462.jpg
+INFO:     127.0.0.1:60544 - "GET /load_data?st_message=academic_calendar%2Call_curriculum HTTP/1.1" 200 OK

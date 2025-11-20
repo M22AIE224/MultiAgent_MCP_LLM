@@ -1,6 +1,6 @@
-2025-11-18 15:36:19,699 [INFO] Starting ML MCP Agent at http://localhost:10200
-2025-11-18 15:36:19,702 [INFO] Using MCP ML Trainer at http://localhost:11000/ml
-INFO:     Started server process [33520]
+2025-11-20 13:23:46,377 [INFO] Starting ML MCP Agent at http://localhost:10200
+2025-11-20 13:23:46,377 [INFO] Using MCP ML Trainer at http://localhost:11000/ml
+INFO:     Started server process [27896]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:10200 (Press CTRL+C to quit)
@@ -13,109 +13,349 @@ Downloaded certificate zip, size: 19445 bytes
 Certifi bundle path: C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\certifi\cacert.pem
 Appending Dell certificates to certifi bundle...
 Dell certificates successfully added to certifi bundle.
-INFO:     127.0.0.1:52570 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
-2025-11-18 15:46:20,274 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
-2025-11-18 15:46:20,275 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='46e78506-c23a-4489-a1dc-ab0057062f42', extensions=None, kind='message', message_id='bea6363b15ce4be688c7ed789793e7ec', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='Getting planner from LLM with USer query calandar'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='bf4e3e46-3ec9-4b71-bfbc-855775678676'), metadata=None), '_task_id': 'bf4e3e46-3ec9-4b71-bfbc-855775678676', '_context_id': '46e78506-c23a-4489-a1dc-ab0057062f42', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '271', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000001CDA11F8440>, requested_extensions=set(), activated_extensions=set())}
-2025-11-18 15:46:20,276 [INFO] User Query in ML Agent Execute Start: Getting planner from LLM with USer query calandar
+INFO:     127.0.0.1:55225 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
+2025-11-20 13:25:29,059 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 13:25:29,059 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='eb563cec-bc0b-4005-9d19-04ff95dc2af8', extensions=None, kind='message', message_id='4ed3c04d3ee1429197fa3eff659d41f1', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='"Tell me about all curriculum and programs."'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='a5cc80bf-1e55-406f-b40e-fd56a134d32c'), metadata=None), '_task_id': 'a5cc80bf-1e55-406f-b40e-fd56a134d32c', '_context_id': 'eb563cec-bc0b-4005-9d19-04ff95dc2af8', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '268', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000023F82A582F0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 13:25:29,059 [INFO] User Query in ML Agent Execute Start: "Tell me about all curriculum and programs."
 C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\agent_executor.py:65: RuntimeWarning: coroutine 'EventQueue.enqueue_event' was never awaited
   event_queue.enqueue_event(task)
 RuntimeWarning: Enable tracemalloc to get the object allocation traceback
-2025-11-18 15:46:20,324 [INFO] MLAgent invoked with query='Getting planner from LLM with USer query calandar' | context_id=46e78506-c23a-4489-a1dc-ab0057062f42
-2025-11-18 15:46:25,177 [ERROR] MLAgent failed: Object of type coroutine is not JSON serializable
-Traceback (most recent call last):
-  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\ml_agent.py", line 33, in invoke
-    result = await self.call_llm(query,context_id)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\ml_agent.py", line 57, in call_llm
-    resp = client.chat.completions.create(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_utils\_utils.py", line 286, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
-    return self._post(
-           ^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 1259, in post
-    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 968, in request
-    request = self._build_request(options, retries_taken=retries_taken)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 547, in _build_request
-    return self._client.build_request(  # pyright: ignore[reportUnknownMemberType]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 378, in build_request
-    return Request(
-           ^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_models.py", line 408, in __init__
-    headers, stream = encode_request(
-                      ^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_content.py", line 216, in encode_request
-    return encode_json(json)
-           ^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_content.py", line 177, in encode_json
-    body = json_dumps(
-           ^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\json\__init__.py", line 238, in dumps
-    **kw).encode(obj)
-          ^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\json\encoder.py", line 200, in encode
-    chunks = self.iterencode(o, _one_shot=True)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\json\encoder.py", line 258, in iterencode
-    return _iterencode(o, 0)
-           ^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\json\encoder.py", line 180, in default
-    raise TypeError(f'Object of type {o.__class__.__name__} '
-TypeError: Object of type coroutine is not JSON serializable
-2025-11-18 15:46:25,671 [ERROR] Error executing MLAgent task: Object of type coroutine is not JSON serializable
-Traceback (most recent call last):
-  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\agent_executor.py", line 72, in execute
-    result = await self.agent.invoke(query, task.context_id)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\ml_agent.py", line 33, in invoke
-    result = await self.call_llm(query,context_id)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\ml_agent.py", line 57, in call_llm
-    resp = client.chat.completions.create(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_utils\_utils.py", line 286, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
-    return self._post(
-           ^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 1259, in post
-    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 968, in request
-    request = self._build_request(options, retries_taken=retries_taken)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 547, in _build_request
-    return self._client.build_request(  # pyright: ignore[reportUnknownMemberType]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_client.py", line 378, in build_request
-    return Request(
-           ^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_models.py", line 408, in __init__
-    headers, stream = encode_request(
-                      ^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_content.py", line 216, in encode_request
-    return encode_json(json)
-           ^^^^^^^^^^^^^^^^^
-  File "C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\httpx\_content.py", line 177, in encode_json
-    body = json_dumps(
-           ^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\json\__init__.py", line 238, in dumps
-    **kw).encode(obj)
-          ^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\json\encoder.py", line 200, in encode
-    chunks = self.iterencode(o, _one_shot=True)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\json\encoder.py", line 258, in iterencode
-    return _iterencode(o, 0)
-           ^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\json\encoder.py", line 180, in default
-    raise TypeError(f'Object of type {o.__class__.__name__} '
-TypeError: Object of type coroutine is not JSON serializable
-INFO:     127.0.0.1:58528 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:25:29,096 [INFO] MLAgent invoked with query='"Tell me about all curriculum and programs."' | context_id=eb563cec-bc0b-4005-9d19-04ff95dc2af8
+2025-11-20 13:25:29,096 [INFO] Created Async OpenAI Client
+2025-11-20 13:25:31,979 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 13:25:31,989 [INFO] Response returned
+2025-11-20 13:25:31,989 [INFO] ChatCompletion(id='chatcmpl-CdtnnX19neJsvRgsgo4IiMtO3HodT', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "all_curriculum,academic_programs"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763625331, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_560af6e559', usage=CompletionUsage(completion_tokens=12, prompt_tokens=278, total_tokens=290, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 13:25:31,989 [INFO] Received response: {"method": "all_curriculum,academic_programs"}
+2025-11-20 13:25:31,989 [INFO] LLM Response: {"method": "all_curriculum,academic_programs"}
+2025-11-20 13:25:31,989 [INFO]  LLM response from query : {"method": "all_curriculum,academic_programs"}
+2025-11-20 13:25:31,989 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 13:25:31,989 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"all_curriculum,academic_programs\"}"
+}
+2025-11-20 13:25:31,989 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:52004 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:34:06,435 [INFO] Starting ML MCP Agent at http://localhost:10200
+2025-11-20 13:34:06,436 [INFO] Using MCP ML Trainer at http://localhost:11000/ml
+INFO:     Started server process [44096]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10200 (Press CTRL+C to quit)
+Client ID 1234
+Client Sercret abcd
+USE_SSO true
+Using Single Sign-On (SSO)
+Downloading Dell certificates zip from: https://pki.dell.com//Dell%20Technologies%20PKI%202018%20B64_PEM.zip
+Downloaded certificate zip, size: 19445 bytes
+Certifi bundle path: C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\certifi\cacert.pem
+Appending Dell certificates to certifi bundle...
+Dell certificates successfully added to certifi bundle.
+INFO:     127.0.0.1:65008 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
+2025-11-20 13:34:24,835 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 13:34:24,835 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='c28fd175-851f-49a3-acc7-5c4b863cff7f', extensions=None, kind='message', message_id='2f4d8ef49e6d441194e3eb91f7dc3c40', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='Tell me about all curriculum and programs.'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='7e603439-c4a7-47a5-b17a-1ebe0eb3f6ee'), metadata=None), '_task_id': '7e603439-c4a7-47a5-b17a-1ebe0eb3f6ee', '_context_id': 'c28fd175-851f-49a3-acc7-5c4b863cff7f', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '264', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000027E8FDF34D0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 13:34:24,835 [INFO] User Query in ML Agent Execute Start: Tell me about all curriculum and programs.
+C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\agent_executor.py:65: RuntimeWarning: coroutine 'EventQueue.enqueue_event' was never awaited
+  event_queue.enqueue_event(task)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+2025-11-20 13:34:24,847 [INFO] MLAgent invoked with query='Tell me about all curriculum and programs.' | context_id=c28fd175-851f-49a3-acc7-5c4b863cff7f
+2025-11-20 13:34:24,847 [INFO] Created Async OpenAI Client
+2025-11-20 13:34:28,865 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 13:34:28,876 [INFO] Response returned
+2025-11-20 13:34:28,876 [INFO] ChatCompletion(id='chatcmpl-CdtwQleZYSaSxsNuRv0bPPnMCZz8N', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "all_curriculum,academic_programs"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763625866, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_560af6e559', usage=CompletionUsage(completion_tokens=12, prompt_tokens=277, total_tokens=289, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 13:34:28,876 [INFO] Received response: {"method": "all_curriculum,academic_programs"}
+2025-11-20 13:34:28,876 [INFO] LLM Response: {"method": "all_curriculum,academic_programs"}
+2025-11-20 13:34:28,876 [INFO]  LLM response from query : {"method": "all_curriculum,academic_programs"}
+2025-11-20 13:34:28,876 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 13:34:28,876 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"all_curriculum,academic_programs\"}"
+}
+2025-11-20 13:34:28,876 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:65008 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:39:52,406 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 13:39:52,406 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='5651a2b5-7e7f-4a82-bd2f-99e5e89cb8af', extensions=None, kind='message', message_id='457b7fdf994249608f091a20f1da34a3', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='Show me Academic Calendar'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='e5e0ac8b-9a01-4009-823a-6a0b1f198bfd'), metadata=None), '_task_id': 'e5e0ac8b-9a01-4009-823a-6a0b1f198bfd', '_context_id': '5651a2b5-7e7f-4a82-bd2f-99e5e89cb8af', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '247', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000027E902A9970>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 13:39:52,406 [INFO] User Query in ML Agent Execute Start: Show me Academic Calendar
+2025-11-20 13:39:52,406 [INFO] MLAgent invoked with query='Show me Academic Calendar' | context_id=5651a2b5-7e7f-4a82-bd2f-99e5e89cb8af
+2025-11-20 13:39:52,406 [INFO] Created Async OpenAI Client
+2025-11-20 13:39:54,248 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 13:39:54,249 [INFO] Response returned
+2025-11-20 13:39:54,250 [INFO] ChatCompletion(id='chatcmpl-Cdu1huOtjjxFFYj2cewRlByRv1K8l', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "academic_calendar"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763626193, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_51db84afab', usage=CompletionUsage(completion_tokens=7, prompt_tokens=273, total_tokens=280, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 13:39:54,250 [INFO] Received response: {"method": "academic_calendar"}
+2025-11-20 13:39:54,250 [INFO] LLM Response: {"method": "academic_calendar"}
+2025-11-20 13:39:54,250 [INFO]  LLM response from query : {"method": "academic_calendar"}
+2025-11-20 13:39:54,250 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 13:39:54,250 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar\"}"
+}
+2025-11-20 13:39:54,250 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:49884 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:42:57,544 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 13:42:57,544 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='c853dd8d-3b6f-45fa-a36e-9698a3b2a703', extensions=None, kind='message', message_id='42e75f050c8c41babd51011706edcdb7', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='What is my Academic Calander'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='4c021b86-9a5c-48a3-8f5c-c3fd1aa63795'), metadata=None), '_task_id': '4c021b86-9a5c-48a3-8f5c-c3fd1aa63795', '_context_id': 'c853dd8d-3b6f-45fa-a36e-9698a3b2a703', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '250', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000027E902A9970>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 13:42:57,546 [INFO] User Query in ML Agent Execute Start: What is my Academic Calander
+2025-11-20 13:42:57,546 [INFO] MLAgent invoked with query='What is my Academic Calander' | context_id=c853dd8d-3b6f-45fa-a36e-9698a3b2a703
+2025-11-20 13:42:57,546 [INFO] Created Async OpenAI Client
+2025-11-20 13:42:58,939 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 13:42:58,941 [INFO] Response returned
+2025-11-20 13:42:58,941 [INFO] ChatCompletion(id='chatcmpl-Cdu4gBIldqA3fgUqOG9xfcqqFRxLx', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "academic_calendar"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763626378, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_51db84afab', usage=CompletionUsage(completion_tokens=7, prompt_tokens=275, total_tokens=282, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 13:42:58,941 [INFO] Received response: {"method": "academic_calendar"}
+2025-11-20 13:42:58,941 [INFO] LLM Response: {"method": "academic_calendar"}
+2025-11-20 13:42:58,941 [INFO]  LLM response from query : {"method": "academic_calendar"}
+2025-11-20 13:42:58,941 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 13:42:58,941 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar\"}"
+}
+2025-11-20 13:42:58,941 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:59499 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:45:44,397 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 13:45:44,397 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='efc0fc46-04a7-4103-944f-2048f4331a3c', extensions=None, kind='message', message_id='9d7d6cec82274cfd949984ee38eb37c2', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='"Tell me about all curriculum and programs."'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='9049a08a-af17-4943-bdb6-d50158005f71'), metadata=None), '_task_id': '9049a08a-af17-4943-bdb6-d50158005f71', '_context_id': 'efc0fc46-04a7-4103-944f-2048f4331a3c', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '268', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000027E90304680>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 13:45:44,397 [INFO] User Query in ML Agent Execute Start: "Tell me about all curriculum and programs."
+2025-11-20 13:45:44,397 [INFO] MLAgent invoked with query='"Tell me about all curriculum and programs."' | context_id=efc0fc46-04a7-4103-944f-2048f4331a3c
+2025-11-20 13:45:44,397 [INFO] Created Async OpenAI Client
+2025-11-20 13:45:46,720 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 13:45:46,722 [INFO] Response returned
+2025-11-20 13:45:46,722 [INFO] ChatCompletion(id='chatcmpl-Cdu7OlVfiK0GazjIDiEelfmFjdWts', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "all_curriculum,academic_programs"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763626546, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_560af6e559', usage=CompletionUsage(completion_tokens=12, prompt_tokens=278, total_tokens=290, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 13:45:46,722 [INFO] Received response: {"method": "all_curriculum,academic_programs"}
+2025-11-20 13:45:46,722 [INFO] LLM Response: {"method": "all_curriculum,academic_programs"}
+2025-11-20 13:45:46,722 [INFO]  LLM response from query : {"method": "all_curriculum,academic_programs"}
+2025-11-20 13:45:46,722 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 13:45:46,722 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"all_curriculum,academic_programs\"}"
+}
+2025-11-20 13:45:46,722 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:62965 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:46:06,765 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 13:46:06,765 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='81547368-3ae7-42d0-a266-86c5db8d4bc4', extensions=None, kind='message', message_id='d72071cfd5204a588b361ea502a26a6b', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='What is my Academic Calander'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='dcd92ca1-2cdf-432c-bcee-128703cd89dd'), metadata=None), '_task_id': 'dcd92ca1-2cdf-432c-bcee-128703cd89dd', '_context_id': '81547368-3ae7-42d0-a266-86c5db8d4bc4', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '250', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000027E902A9970>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 13:46:06,765 [INFO] User Query in ML Agent Execute Start: What is my Academic Calander
+2025-11-20 13:46:06,765 [INFO] MLAgent invoked with query='What is my Academic Calander' | context_id=81547368-3ae7-42d0-a266-86c5db8d4bc4
+2025-11-20 13:46:06,765 [INFO] Created Async OpenAI Client
+2025-11-20 13:46:08,449 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 13:46:08,449 [INFO] Response returned
+2025-11-20 13:46:08,449 [INFO] ChatCompletion(id='chatcmpl-Cdu7kO0TfmGlzW5TNnkEe3TCjGD6F', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "academic_calendar"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763626568, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_560af6e559', usage=CompletionUsage(completion_tokens=7, prompt_tokens=275, total_tokens=282, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 13:46:08,449 [INFO] Received response: {"method": "academic_calendar"}
+2025-11-20 13:46:08,449 [INFO] LLM Response: {"method": "academic_calendar"}
+2025-11-20 13:46:08,449 [INFO]  LLM response from query : {"method": "academic_calendar"}
+2025-11-20 13:46:08,449 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 13:46:08,449 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar\"}"
+}
+2025-11-20 13:46:08,449 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:49681 - "POST / HTTP/1.1" 200 OK
+2025-11-20 13:52:42,952 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 13:52:42,952 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='91cdf74e-193f-498f-821c-3313d0b175bb', extensions=None, kind='message', message_id='39d95f12eca84f5f8dd60903e4ce02c6', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='What is my Academic Calendar'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='bc7cfd6c-436a-4ad7-94f8-c8c254f099d3'), metadata=None), '_task_id': 'bc7cfd6c-436a-4ad7-94f8-c8c254f099d3', '_context_id': '91cdf74e-193f-498f-821c-3313d0b175bb', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '250', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x0000027E90304680>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 13:52:42,952 [INFO] User Query in ML Agent Execute Start: What is my Academic Calendar
+2025-11-20 13:52:42,952 [INFO] MLAgent invoked with query='What is my Academic Calendar' | context_id=91cdf74e-193f-498f-821c-3313d0b175bb
+2025-11-20 13:52:42,952 [INFO] Created Async OpenAI Client
+2025-11-20 13:52:43,638 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 13:52:43,638 [INFO] Response returned
+2025-11-20 13:52:43,638 [INFO] ChatCompletion(id='chatcmpl-CduE72S2KOnOSquJ7jKL9oi7kdIPC', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "academic_calendar"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763626963, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_51db84afab', usage=CompletionUsage(completion_tokens=7, prompt_tokens=274, total_tokens=281, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 13:52:43,638 [INFO] Received response: {"method": "academic_calendar"}
+2025-11-20 13:52:43,638 [INFO] LLM Response: {"method": "academic_calendar"}
+2025-11-20 13:52:43,638 [INFO]  LLM response from query : {"method": "academic_calendar"}
+2025-11-20 13:52:43,638 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 13:52:43,638 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar\"}"
+}
+2025-11-20 13:52:43,638 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:65280 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:42:10,593 [INFO] Starting ML MCP Agent at http://localhost:10200
+2025-11-20 14:42:10,593 [INFO] Using MCP ML Trainer at http://localhost:11000/ml
+INFO:     Started server process [42176]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10200 (Press CTRL+C to quit)
+Client ID 1234
+Client Sercret abcd
+USE_SSO true
+Using Single Sign-On (SSO)
+Downloading Dell certificates zip from: https://pki.dell.com//Dell%20Technologies%20PKI%202018%20B64_PEM.zip
+Downloaded certificate zip, size: 19445 bytes
+Certifi bundle path: C:\Users\Prabha_Sharma\AppData\Roaming\Python\Python312\site-packages\certifi\cacert.pem
+Appending Dell certificates to certifi bundle...
+Dell certificates successfully added to certifi bundle.
+INFO:     127.0.0.1:61064 - "GET /.well-known/agent-card.json HTTP/1.1" 200 OK
+2025-11-20 14:43:55,819 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 14:43:55,819 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='9469ee3a-95cb-4270-a1e8-9a4adae56509', extensions=None, kind='message', message_id='c490487e9482458aa3eec280ded65823', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='Can you list me curriculum of UG'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='8b12bbea-31ac-43e2-983f-41d73e8a91db'), metadata=None), '_task_id': '8b12bbea-31ac-43e2-983f-41d73e8a91db', '_context_id': '9469ee3a-95cb-4270-a1e8-9a4adae56509', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '254', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000002F2054B38C0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:43:55,819 [INFO] User Query in ML Agent Execute Start: Can you list me curriculum of UG
+C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\agents\ml_agent\agent_executor.py:65: RuntimeWarning: coroutine 'EventQueue.enqueue_event' was never awaited
+  event_queue.enqueue_event(task)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+2025-11-20 14:43:55,851 [INFO] MLAgent invoked with query='Can you list me curriculum of UG' | context_id=9469ee3a-95cb-4270-a1e8-9a4adae56509
+2025-11-20 14:43:55,851 [INFO] Created Async OpenAI Client
+2025-11-20 14:43:58,529 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 14:43:58,534 [INFO] Response returned
+2025-11-20 14:43:58,534 [INFO] ChatCompletion(id='chatcmpl-Cdv1iz9kvo3a0BiXHiPLxmZMTSSVE', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "ug_curriculum"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763630038, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_51db84afab', usage=CompletionUsage(completion_tokens=8, prompt_tokens=276, total_tokens=284, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 14:43:58,534 [INFO] Received response: {"method": "ug_curriculum"}
+2025-11-20 14:43:58,534 [INFO] LLM Response: {"method": "ug_curriculum"}
+2025-11-20 14:43:58,534 [INFO]  LLM response from query : {"method": "ug_curriculum"}
+2025-11-20 14:43:58,534 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 14:43:58,534 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"ug_curriculum\"}"
+}
+2025-11-20 14:43:58,534 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:49878 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:48:51,004 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 14:48:51,005 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='8d33aaba-dfea-46d1-a5e4-3aa856945008', extensions=None, kind='message', message_id='1cbd094804d8409a951c8511374ca840', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='What is UG Curriculum?'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='af6f9062-7189-47dd-98cb-2f36690fed33'), metadata=None), '_task_id': 'af6f9062-7189-47dd-98cb-2f36690fed33', '_context_id': '8d33aaba-dfea-46d1-a5e4-3aa856945008', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '244', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000002F2054B3A70>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:48:51,006 [INFO] User Query in ML Agent Execute Start: What is UG Curriculum?
+2025-11-20 14:48:51,006 [INFO] MLAgent invoked with query='What is UG Curriculum?' | context_id=8d33aaba-dfea-46d1-a5e4-3aa856945008
+2025-11-20 14:48:51,006 [INFO] Created Async OpenAI Client
+2025-11-20 14:48:52,925 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 14:48:52,927 [INFO] Response returned
+2025-11-20 14:48:52,927 [INFO] ChatCompletion(id='chatcmpl-Cdv6S68Ns6fdAkfuIAAYTrcXAjuJk', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "ug_curriculum"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763630332, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_560af6e559', usage=CompletionUsage(completion_tokens=8, prompt_tokens=274, total_tokens=282, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 14:48:52,928 [INFO] Received response: {"method": "ug_curriculum"}
+2025-11-20 14:48:52,928 [INFO] LLM Response: {"method": "ug_curriculum"}
+2025-11-20 14:48:52,928 [INFO]  LLM response from query : {"method": "ug_curriculum"}
+2025-11-20 14:48:52,928 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 14:48:52,928 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"ug_curriculum\"}"
+}
+2025-11-20 14:48:52,929 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:53819 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:51:29,777 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 14:51:29,779 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='c16b601c-a98c-486f-adaf-b5ffdb5c382d', extensions=None, kind='message', message_id='72d07542eaaa49478ab8a450be0ec73d', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='What is UG Curriculum?'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='0623d003-ea37-4d01-a236-29c49a8acf04'), metadata=None), '_task_id': '0623d003-ea37-4d01-a236-29c49a8acf04', '_context_id': 'c16b601c-a98c-486f-adaf-b5ffdb5c382d', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '244', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000002F205968AD0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:51:29,780 [INFO] User Query in ML Agent Execute Start: What is UG Curriculum?
+2025-11-20 14:51:29,780 [INFO] MLAgent invoked with query='What is UG Curriculum?' | context_id=c16b601c-a98c-486f-adaf-b5ffdb5c382d
+2025-11-20 14:51:29,781 [INFO] Created Async OpenAI Client
+2025-11-20 14:51:30,924 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 14:51:30,927 [INFO] Response returned
+2025-11-20 14:51:30,927 [INFO] ChatCompletion(id='chatcmpl-Cdv907t1bmGU2vdHzEjkNdxd7IhVV', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "ug_curriculum"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763630490, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_51db84afab', usage=CompletionUsage(completion_tokens=8, prompt_tokens=274, total_tokens=282, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 14:51:30,927 [INFO] Received response: {"method": "ug_curriculum"}
+2025-11-20 14:51:30,927 [INFO] LLM Response: {"method": "ug_curriculum"}
+2025-11-20 14:51:30,927 [INFO]  LLM response from query : {"method": "ug_curriculum"}
+2025-11-20 14:51:30,927 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 14:51:30,927 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"ug_curriculum\"}"
+}
+2025-11-20 14:51:30,927 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:56987 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:51:48,379 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 14:51:48,379 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='33adabd0-7f08-4ceb-ae6d-ee319165a56f', extensions=None, kind='message', message_id='e2310b49abdf4b52b5142648ede021ee', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='What is my Academic Calander'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='e95f87e4-699e-48b4-967d-75f05a76ce3e'), metadata=None), '_task_id': 'e95f87e4-699e-48b4-967d-75f05a76ce3e', '_context_id': '33adabd0-7f08-4ceb-ae6d-ee319165a56f', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '250', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000002F205968AD0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:51:48,379 [INFO] User Query in ML Agent Execute Start: What is my Academic Calander
+2025-11-20 14:51:48,379 [INFO] MLAgent invoked with query='What is my Academic Calander' | context_id=33adabd0-7f08-4ceb-ae6d-ee319165a56f
+2025-11-20 14:51:48,379 [INFO] Created Async OpenAI Client
+2025-11-20 14:51:49,515 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 14:51:49,515 [INFO] Response returned
+2025-11-20 14:51:49,515 [INFO] ChatCompletion(id='chatcmpl-Cdv9JFcW6GTM5DUU0fIlalEUxg4qM', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "academic_calendar"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763630509, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_51db84afab', usage=CompletionUsage(completion_tokens=7, prompt_tokens=275, total_tokens=282, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 14:51:49,515 [INFO] Received response: {"method": "academic_calendar"}
+2025-11-20 14:51:49,515 [INFO] LLM Response: {"method": "academic_calendar"}
+2025-11-20 14:51:49,515 [INFO]  LLM response from query : {"method": "academic_calendar"}
+2025-11-20 14:51:49,515 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 14:51:49,515 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar\"}"
+}
+2025-11-20 14:51:49,515 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:61433 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:52:18,086 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 14:52:18,086 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='c299e4bf-5cd1-43c6-ab87-0d1ea6024319', extensions=None, kind='message', message_id='0936ecabd85042a0891d65bbfb8a8507', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='What is my Academic Calander'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='564c6f5e-005a-4430-b7f4-6012659402ba'), metadata=None), '_task_id': '564c6f5e-005a-4430-b7f4-6012659402ba', '_context_id': 'c299e4bf-5cd1-43c6-ab87-0d1ea6024319', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '250', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000002F205968AD0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:52:18,086 [INFO] User Query in ML Agent Execute Start: What is my Academic Calander
+2025-11-20 14:52:18,086 [INFO] MLAgent invoked with query='What is my Academic Calander' | context_id=c299e4bf-5cd1-43c6-ab87-0d1ea6024319
+2025-11-20 14:52:18,086 [INFO] Created Async OpenAI Client
+2025-11-20 14:52:19,471 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 14:52:19,474 [INFO] Response returned
+2025-11-20 14:52:19,474 [INFO] ChatCompletion(id='chatcmpl-Cdv9nKpB389ZUrF11ETTvrnkaiP7o', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "academic_calendar"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763630539, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_560af6e559', usage=CompletionUsage(completion_tokens=7, prompt_tokens=275, total_tokens=282, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 14:52:19,474 [INFO] Received response: {"method": "academic_calendar"}
+2025-11-20 14:52:19,474 [INFO] LLM Response: {"method": "academic_calendar"}
+2025-11-20 14:52:19,474 [INFO]  LLM response from query : {"method": "academic_calendar"}
+2025-11-20 14:52:19,474 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 14:52:19,474 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar\"}"
+}
+2025-11-20 14:52:19,475 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:58279 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:52:44,581 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 14:52:44,581 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='6d229dfb-b1a7-40b7-af84-74d6650e38cc', extensions=None, kind='message', message_id='d53d96a6caf44f17ad8689105014393b', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='What is UG Curriculum?'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='390358d3-82ec-4806-bec2-f2e5f9599504'), metadata=None), '_task_id': '390358d3-82ec-4806-bec2-f2e5f9599504', '_context_id': '6d229dfb-b1a7-40b7-af84-74d6650e38cc', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '244', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000002F205968AD0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:52:44,581 [INFO] User Query in ML Agent Execute Start: What is UG Curriculum?
+2025-11-20 14:52:44,581 [INFO] MLAgent invoked with query='What is UG Curriculum?' | context_id=6d229dfb-b1a7-40b7-af84-74d6650e38cc
+2025-11-20 14:52:44,581 [INFO] Created Async OpenAI Client
+2025-11-20 14:52:47,094 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 14:52:47,116 [INFO] Response returned
+2025-11-20 14:52:47,116 [INFO] ChatCompletion(id='chatcmpl-CdvAEJfqHztDc2TpZtITd6YzLf1XB', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "ug_curriculum"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763630566, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_560af6e559', usage=CompletionUsage(completion_tokens=8, prompt_tokens=274, total_tokens=282, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 14:52:47,116 [INFO] Received response: {"method": "ug_curriculum"}
+2025-11-20 14:52:47,116 [INFO] LLM Response: {"method": "ug_curriculum"}
+2025-11-20 14:52:47,116 [INFO]  LLM response from query : {"method": "ug_curriculum"}
+2025-11-20 14:52:47,116 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 14:52:47,116 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"ug_curriculum\"}"
+}
+2025-11-20 14:52:47,116 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:55919 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:54:47,558 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 14:54:47,558 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='73935a9b-2411-43f8-a394-3f2e610465dd', extensions=None, kind='message', message_id='f67952be65664d2fa98369fc591bef2e', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='Can you give me Academic Calander and Curriculum'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='11b9d1e8-a60e-48a4-9515-d5c14b437756'), metadata=None), '_task_id': '11b9d1e8-a60e-48a4-9515-d5c14b437756', '_context_id': '73935a9b-2411-43f8-a394-3f2e610465dd', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '270', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000002F205A02ED0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:54:47,558 [INFO] User Query in ML Agent Execute Start: Can you give me Academic Calander and Curriculum
+2025-11-20 14:54:47,558 [INFO] MLAgent invoked with query='Can you give me Academic Calander and Curriculum' | context_id=73935a9b-2411-43f8-a394-3f2e610465dd
+2025-11-20 14:54:47,558 [INFO] Created Async OpenAI Client
+2025-11-20 14:54:49,063 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 14:54:49,066 [INFO] Response returned
+2025-11-20 14:54:49,066 [INFO] ChatCompletion(id='chatcmpl-CdvCChVs3kBXMdI5aif035tQgU3vv', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "academic_calendar,all_curriculum"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763630688, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_560af6e559', usage=CompletionUsage(completion_tokens=11, prompt_tokens=278, total_tokens=289, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 14:54:49,068 [INFO] Received response: {"method": "academic_calendar,all_curriculum"}
+2025-11-20 14:54:49,068 [INFO] LLM Response: {"method": "academic_calendar,all_curriculum"}
+2025-11-20 14:54:49,068 [INFO]  LLM response from query : {"method": "academic_calendar,all_curriculum"}
+2025-11-20 14:54:49,069 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 14:54:49,069 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar,all_curriculum\"}"
+}
+2025-11-20 14:54:49,069 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:64768 - "POST / HTTP/1.1" 200 OK
+2025-11-20 14:59:55,688 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 14:59:55,688 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='ffcfa541-df6f-4350-8835-00826274384f', extensions=None, kind='message', message_id='91c7efc3979c4f258816ce3b73de71ad', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='Can you give me Academic Programs and Academic  Calendar of IIT Jodhpur'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='c4c9aafa-62a4-4673-9997-9e5d4a7fd4ec'), metadata=None), '_task_id': 'c4c9aafa-62a4-4673-9997-9e5d4a7fd4ec', '_context_id': 'ffcfa541-df6f-4350-8835-00826274384f', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '293', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000002F205A020F0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 14:59:55,688 [INFO] User Query in ML Agent Execute Start: Can you give me Academic Programs and Academic  Calendar of IIT Jodhpur
+2025-11-20 14:59:55,688 [INFO] MLAgent invoked with query='Can you give me Academic Programs and Academic  Calendar of IIT Jodhpur' | context_id=ffcfa541-df6f-4350-8835-00826274384f
+2025-11-20 14:59:55,688 [INFO] Created Async OpenAI Client
+2025-11-20 14:59:56,688 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 14:59:56,936 [INFO] Response returned
+2025-11-20 14:59:56,936 [INFO] ChatCompletion(id='chatcmpl-CdvHAzCoak3JyYFkIYfbVIIU25ZuG', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "academic_programs,academic_calendar"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763630996, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_51db84afab', usage=CompletionUsage(completion_tokens=11, prompt_tokens=284, total_tokens=295, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 14:59:56,936 [INFO] Received response: {"method": "academic_programs,academic_calendar"}
+2025-11-20 14:59:56,936 [INFO] LLM Response: {"method": "academic_programs,academic_calendar"}
+2025-11-20 14:59:56,936 [INFO]  LLM response from query : {"method": "academic_programs,academic_calendar"}
+2025-11-20 14:59:56,936 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 14:59:56,936 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_programs,academic_calendar\"}"
+}
+2025-11-20 14:59:56,936 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:63010 - "POST / HTTP/1.1" 200 OK
+2025-11-20 15:04:28,085 [INFO] ----------- FORWARD LAYER 2: A2A REQUEST \u2192 MCP (ML) -----------
+2025-11-20 15:04:28,086 [INFO] REQUEST CONTEXT: {'_params': MessageSendParams(configuration=None, message=Message(context_id='06b80b6f-43bf-45b4-8114-9313712c2004', extensions=None, kind='message', message_id='0156a9f630fc48a382511402b853f729', metadata=None, parts=[Part(root=TextPart(kind='text', metadata=None, text='Can you give me Academic Calendar and Curriculum of IIT Jodhpur'))], reference_task_ids=None, role=<Role.user: 'user'>, task_id='83547242-5002-4d9b-a579-05a07d54a939'), metadata=None), '_task_id': '83547242-5002-4d9b-a579-05a07d54a939', '_context_id': '06b80b6f-43bf-45b4-8114-9313712c2004', '_current_task': None, '_related_tasks': [], '_call_context': ServerCallContext(state={'headers': {'host': 'localhost:10200', 'accept': '*/*', 'accept-encoding': 'gzip, deflate, zstd', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-length': '285', 'content-type': 'application/json'}}, user=<a2a.auth.user.UnauthenticatedUser object at 0x000002F205A027E0>, requested_extensions=set(), activated_extensions=set())}
+2025-11-20 15:04:28,086 [INFO] User Query in ML Agent Execute Start: Can you give me Academic Calendar and Curriculum of IIT Jodhpur
+2025-11-20 15:04:28,087 [INFO] MLAgent invoked with query='Can you give me Academic Calendar and Curriculum of IIT Jodhpur' | context_id=06b80b6f-43bf-45b4-8114-9313712c2004
+2025-11-20 15:04:28,087 [INFO] Created Async OpenAI Client
+2025-11-20 15:04:29,925 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-20 15:04:29,933 [INFO] Response returned
+2025-11-20 15:04:29,933 [INFO] ChatCompletion(id='chatcmpl-CdvLZXVGimPcEZoYcEQ4Ta2pDUagL', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"method": "academic_calendar,all_curriculum"}', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1763631269, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_560af6e559', usage=CompletionUsage(completion_tokens=11, prompt_tokens=282, total_tokens=293, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2025-11-20 15:04:29,933 [INFO] Received response: {"method": "academic_calendar,all_curriculum"}
+2025-11-20 15:04:29,933 [INFO] LLM Response: {"method": "academic_calendar,all_curriculum"}
+2025-11-20 15:04:29,933 [INFO]  LLM response from query : {"method": "academic_calendar,all_curriculum"}
+2025-11-20 15:04:29,933 [INFO] ----------- BACKWARD LAYER 2: MCP RESPONSE \u2192 A2A (ML) -----------
+2025-11-20 15:04:29,933 [INFO] RESPONSE: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar,all_curriculum\"}"
+}
+2025-11-20 15:04:29,934 [INFO] Response streamed successfully to client (ML).
+INFO:     127.0.0.1:60533 - "POST / HTTP/1.1" 200 OK

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Academic Copilot</title>
+  <link rel="stylesheet" href="/static/style.css">
+
+  <style>
+    /* --- Extra Beautification --- */
+
+    body {
+      background: #f4f6f9;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    textarea {
+      width: 100%;
+      font-size: 1rem;
+      padding: 12px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: none;
+      color: white;
+      background: #0078ff;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #005fcc;
+    }
+
+    /* --- Copilot response section --- */
+
+    .response {
+      margin-top: 40px;
+      padding: 25px;
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      box-shadow: 0px 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .dv-output {
+      margin-top: 20px;
+    }
+
+    .dv-card {
+      padding: 20px;
+      background: #fafafa;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .dv-card h3 {
+      margin-top: 0;
+      color: #333;
+      font-size: 1.3rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎓 Student Academic Copilot</h1>
+
+    <form method="POST">
+      <label for="question">Ask your academic question:</label>
+      <textarea id="question" name="question" rows="3"
+        placeholder="e.g., What are the electives for 3rd semester CSE?" 
+        required>Tell me about all curriculum and programs.</textarea>
+
+      <button type="submit">Ask</button>
+    </form>
+
+
+    <!-- Render Supervisor ➜ DV Output -->
+    <div class="response">
+      <h2>Copilot Response</h2>
+
+      <div class="dv-output">
+
+        <!-- Beautiful DV Cards -->
+        <div class="dv-card">
+          <h3>📄 academic_programs.html</h3>
+          <iframe src="/static/resource/academic_programs.html"></iframe>
+        </div>
+
+        <div class="dv-card">
+          <h3>📄 all_curriculum.html</h3>
+          <iframe src="/static/resource/all_curriculum.html"></iframe>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

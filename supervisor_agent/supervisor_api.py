@@ -41,21 +41,32 @@ async def ask_supervisor(payload: Query):
         return JSONResponse({"error":"pipeline_exception", "detail": str(e)}, status_code=500)
 
     # ensure the response is JSON-serializable
+    dv_html = None
     try:
-        if hasattr(result, "dict"):   # pydantic model
-            result_to_return = result.dict()
-        elif isinstance(result, (dict, list, str, int, float, bool, type(None))):
-            result_to_return = result
-        else:
-            # fallback: stringify complex objects
-            result_to_return = {"result": str(result)}
-    except Exception as e:
-        print("Error serializing result:", e)
-        result_to_return = {"result": "unserializable_result", "raw": str(result)}
+        dv_html = (
+            result["dv_result"]
+                ["result"]
+                ["parts"][0]
+                ["text"]
+        )
 
-    print("Returning to client:", result_to_return)
-    return JSONResponse(result_to_return)
+        # dv_html = (
+        #     result.get("dv_result", {})
+        #         .get("result", {})
+        #         .get("parts", [{}])[0]
+        #         .get("text", "")
+        # )
+    except Exception:
+        dv_html = ""
 
+    result_to_return = {
+        "dv_html": dv_html
+    }
+
+
+    logger.info(f"Returning to client: {result_to_return}")
+    
+    return JSONResponse(content=result_to_return)
 
 
 @app.on_event("startup")

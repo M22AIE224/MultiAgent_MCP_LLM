@@ -1,11 +1,11 @@
-C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\supervisor_agent\supervisor_api.py:61: DeprecationWarning: 
+C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\supervisor_agent\supervisor_api.py:72: DeprecationWarning: 
         on_event is deprecated, use lifespan event handlers instead.
 
         Read more about it in the
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("startup")
-INFO:     Started server process [50784]
+INFO:     Started server process [45676]
 INFO:     Waiting for application startup.
 INFO:supervisor_agent.supervisor_agent:Fetching agent card from http://localhost:10100/.well-known/agent-card.json
 INFO:httpx:HTTP Request: GET http://localhost:10100/.well-known/agent-card.json "HTTP/1.1 200 OK"
@@ -24,11 +24,54 @@ INFO:     Uvicorn running on http://0.0.0.0:10500 (Press CTRL+C to quit)
 INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
 INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
 INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': 'f8eec4b6-90de-433b-b1c2-586711285cf1', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '748b4c41-7561-4612-acda-022a89706370', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"all_curriculum,academic_programs\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"all_curriculum,academic_programs\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: all_curriculum,academic_programs
 INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
-INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE={};
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=all_curriculum,academic_programs;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\supervisor_agent\supervisor_api.py:72: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+INFO:     Started server process [45988]
+INFO:     Waiting for application startup.
+INFO:supervisor_agent.supervisor_agent:Fetching agent card from http://localhost:10100/.well-known/agent-card.json
+INFO:httpx:HTTP Request: GET http://localhost:10100/.well-known/agent-card.json "HTTP/1.1 200 OK"
+INFO:a2a.client.card_resolver:Successfully fetched agent card data from http://localhost:10100/.well-known/agent-card.json: {'additionalInterfaces': None, 'capabilities': {'extensions': None, 'pushNotifications': False, 'stateTransitionHistory': None, 'streaming': False}, 'defaultInputModes': ['text/plain'], 'defaultOutputModes': ['text/plain'], 'description': 'Loads CSV data, performs feature engineering, and returns preprocessed file path.', 'documentationUrl': None, 'iconUrl': None, 'name': 'Data MCP Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'provider': None, 'security': None, 'securitySchemes': None, 'signatures': None, 'skills': [{'description': 'Loads data from local path or remote MCP, selects columns, and performs preprocessing.', 'examples': None, 'id': 'data_loader', 'inputModes': None, 'name': 'Data Loader MCP', 'outputModes': None, 'security': None, 'tags': ['data', 'mcp', 'feature-engineering']}], 'supportsAuthenticatedExtendedCard': None, 'url': 'http://localhost:10100/', 'version': '1.0.0'}
+INFO:supervisor_agent.supervisor_agent:data_agent card fetched successfully.
+INFO:supervisor_agent.supervisor_agent:Fetching agent card from http://localhost:10200/.well-known/agent-card.json
+INFO:httpx:HTTP Request: GET http://localhost:10200/.well-known/agent-card.json "HTTP/1.1 200 OK"
+INFO:a2a.client.card_resolver:Successfully fetched agent card data from http://localhost:10200/.well-known/agent-card.json: {'additionalInterfaces': None, 'capabilities': {'extensions': None, 'pushNotifications': False, 'stateTransitionHistory': None, 'streaming': False}, 'defaultInputModes': ['text/plain'], 'defaultOutputModes': ['text/plain'], 'description': 'Use of LLM to get data for Student..', 'documentationUrl': None, 'iconUrl': None, 'name': 'ML MCP Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'provider': None, 'security': None, 'securitySchemes': None, 'signatures': None, 'skills': [{'description': 'Use of LLM to get data for Student.', 'examples': None, 'id': 'ml_trainer', 'inputModes': None, 'name': 'ML Trainer MCP', 'outputModes': None, 'security': None, 'tags': ['ml', 'mcp', 'training', 'modeling']}], 'supportsAuthenticatedExtendedCard': None, 'url': 'http://localhost:10200/', 'version': '1.0.0'}
+INFO:supervisor_agent.supervisor_agent:ml_agent card fetched successfully.
+INFO:supervisor_agent.supervisor_agent:Fetching agent card from http://localhost:10300/.well-known/agent-card.json
+INFO:httpx:HTTP Request: GET http://localhost:10300/.well-known/agent-card.json "HTTP/1.1 200 OK"
+INFO:a2a.client.card_resolver:Successfully fetched agent card data from http://localhost:10300/.well-known/agent-card.json: {'additionalInterfaces': None, 'capabilities': {'extensions': None, 'pushNotifications': False, 'stateTransitionHistory': None, 'streaming': False}, 'defaultInputModes': ['text/plain'], 'defaultOutputModes': ['application/json'], 'description': 'Agent that triggers MCP_DV to create visualizations.', 'documentationUrl': None, 'iconUrl': None, 'name': 'DV Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'provider': None, 'security': None, 'securitySchemes': None, 'signatures': None, 'skills': [{'description': 'Generates plots from ML predictions and saves artifacts.', 'examples': None, 'id': 'visualization', 'inputModes': None, 'name': 'Visualization MCP', 'outputModes': None, 'security': None, 'tags': ['viz', 'plots', 'mcp']}], 'supportsAuthenticatedExtendedCard': None, 'url': 'http://localhost:10300/', 'version': '1.0.0'}
+INFO:supervisor_agent.supervisor_agent:dv_agent card fetched successfully.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10500 (Press CTRL+C to quit)
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': '80c5c18a-92df-4c9f-9499-ce234819d90e', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'a853d559-880e-431b-b439-eb5b69bc9dde', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"all_curriculum,academic_programs\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"all_curriculum,academic_programs\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: all_curriculum,academic_programs
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=all_curriculum,academic_programs;
 INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
 INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
-INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': '2c3e683e-9318-4f3d-8fe1-95881d3e2afa', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '87eb48b7-17ec-4bed-bb9b-31a1b30f7ef0', 'parts': [{'kind': 'text', 'text': '{\n  "rows": "",\n  "columns": "",\n  "target": "",\n  "source": "local",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': 'b578a7ac-bdfc-4cbc-82a1-f41c98646941', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'e960a4c6-7e53-4d56-95e4-3f2c6975304f', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
 INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
 INFO:supervisor_agent.supervisor_agent:DV Promt: 
 INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
@@ -40,19 +83,1110 @@ Your job:
 
 ML Output:
 {
-  "error": {
-    "code": -32603,
-    "message": "Internal error"
-  },
-  "jsonrpc": "2.0"
+  "id": "80c5c18a-92df-4c9f-9499-ce234819d90e",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "a853d559-880e-431b-b439-eb5b69bc9dde",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"all_curriculum,academic_programs\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
 }
 INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
-INFO:supervisor_agent.supervisor_agent:{'id': 'fb03095a-c5c0-4856-90bc-3cadc815625a', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'b211318f-57c3-4c32-9255-69a3c73a01de', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>PDF Resource: academic_calendar.pdf</h2>\n                        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" width="100%" height="800px" />\n                    </section>\n                    \n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>HTML Resource: academic_programs.html</h2>\n                        <iframe src="/static/resource/academic_programs.html" \n                                style="width:100%; height:600px; border:none;">\n                        </iframe>\n                    </section>\n                    <p style=\'color:orange\'>Unsupported file type: academic_programs_css</p>\n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>HTML Resource: all_curriculum.html</h2>\n                        <iframe src="/static/resource/all_curriculum.html" \n                                style="width:100%; height:600px; border:none;">\n                        </iframe>\n                    </section>\n                    <p style=\'color:orange\'>Unsupported file type: all_curriculum_css</p>\n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>HTML Resource: ug_curriculum.html</h2>\n                        <iframe src="/static/resource/ug_curriculum.html" \n                                style="width:100%; height:600px; border:none;">\n                        </iframe>\n                    </section>\n                    <p style=\'color:orange\'>Unsupported file type: ug_curriculum_css</p>\n            </body>\n            </html>\n            '}], 'role': 'agent'}}
-WARNING:supervisor_agent.supervisor_agent:DV Agent did not return expected HTML. Full response returned.
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': 'ab981e9c-2cce-4e5b-a80a-9aeda8e58132', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '5a9a2796-0806-4d65-87bc-60a1f63a713e', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: academic_programs.html</h2>\n            \n        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+            <head>
+                <title>Combined Resource Visualization</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        background: #f7f7f7;
+                    }
+                    h1 {
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>HTML Resource: academic_programs.html</h2>
+            
+        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+        <section class="dv-card">
+            <h2>HTML Resource: all_curriculum.html</h2>
+            
+        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
 INFO:supervisor_agent.supervisor_agent:DV Stage complete.
 INFO:supervisor_agent.supervisor_agent:Pipeline finished.
-INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'calandar'}], 'data_results': {'id': '2c3e683e-9318-4f3d-8fe1-95881d3e2afa', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '87eb48b7-17ec-4bed-bb9b-31a1b30f7ef0', 'parts': [{'kind': 'text', 'text': '{\n  "rows": "",\n  "columns": "",\n  "target": "",\n  "source": "local",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'error': {'code': -32603, 'message': 'Internal error'}, 'jsonrpc': '2.0'}, 'dv_result': {'id': 'fb03095a-c5c0-4856-90bc-3cadc815625a', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'b211318f-57c3-4c32-9255-69a3c73a01de', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>PDF Resource: academic_calendar.pdf</h2>\n                        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" width="100%" height="800px" />\n                    </section>\n                    \n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>HTML Resource: academic_programs.html</h2>\n                        <iframe src="/static/resource/academic_programs.html" \n                                style="width:100%; height:600px; border:none;">\n                        </iframe>\n                    </section>\n                    <p style=\'color:orange\'>Unsupported file type: academic_programs_css</p>\n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>HTML Resource: all_curriculum.html</h2>\n                        <iframe src="/static/resource/all_curriculum.html" \n                                style="width:100%; height:600px; border:none;">\n                        </iframe>\n                    </section>\n                    <p style=\'color:orange\'>Unsupported file type: all_curriculum_css</p>\n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>HTML Resource: ug_curriculum.html</h2>\n                        <iframe src="/static/resource/ug_curriculum.html" \n                                style="width:100%; height:600px; border:none;">\n                        </iframe>\n                    </section>\n                    <p style=\'color:orange\'>Unsupported file type: ug_curriculum_css</p>\n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
-INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'calandar'}], 'data_results': {'id': '2c3e683e-9318-4f3d-8fe1-95881d3e2afa', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '87eb48b7-17ec-4bed-bb9b-31a1b30f7ef0', 'parts': [{'kind': 'text', 'text': '{\n  "rows": "",\n  "columns": "",\n  "target": "",\n  "source": "local",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'error': {'code': -32603, 'message': 'Internal error'}, 'jsonrpc': '2.0'}, 'dv_result': {'id': 'fb03095a-c5c0-4856-90bc-3cadc815625a', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'b211318f-57c3-4c32-9255-69a3c73a01de', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>PDF Resource: academic_calendar.pdf</h2>\n                        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" width="100%" height="800px" />\n                    </section>\n                    \n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>HTML Resource: academic_programs.html</h2>\n                        <iframe src="/static/resource/academic_programs.html" \n                                style="width:100%; height:600px; border:none;">\n                        </iframe>\n                    </section>\n                    <p style=\'color:orange\'>Unsupported file type: academic_programs_css</p>\n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>HTML Resource: all_curriculum.html</h2>\n                        <iframe src="/static/resource/all_curriculum.html" \n                                style="width:100%; height:600px; border:none;">\n                        </iframe>\n                    </section>\n                    <p style=\'color:orange\'>Unsupported file type: all_curriculum_css</p>\n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>HTML Resource: ug_curriculum.html</h2>\n                        <iframe src="/static/resource/ug_curriculum.html" \n                                style="width:100%; height:600px; border:none;">\n                        </iframe>\n                    </section>\n                    <p style=\'color:orange\'>Unsupported file type: ug_curriculum_css</p>\n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
-Received question: calandar
-Returning to client: {'messages': [{'role': 'user', 'content': 'calandar'}], 'data_results': {'id': '2c3e683e-9318-4f3d-8fe1-95881d3e2afa', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '87eb48b7-17ec-4bed-bb9b-31a1b30f7ef0', 'parts': [{'kind': 'text', 'text': '{\n  "rows": "",\n  "columns": "",\n  "target": "",\n  "source": "local",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'error': {'code': -32603, 'message': 'Internal error'}, 'jsonrpc': '2.0'}, 'dv_result': {'id': 'fb03095a-c5c0-4856-90bc-3cadc815625a', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'b211318f-57c3-4c32-9255-69a3c73a01de', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>PDF Resource: academic_calendar.pdf</h2>\n                        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" width="100%" height="800px" />\n                    </section>\n                    \n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>HTML Resource: academic_programs.html</h2>\n                        <iframe src="/static/resource/academic_programs.html" \n                                style="width:100%; height:600px; border:none;">\n                        </iframe>\n                    </section>\n                    <p style=\'color:orange\'>Unsupported file type: academic_programs_css</p>\n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>HTML Resource: all_curriculum.html</h2>\n                        <iframe src="/static/resource/all_curriculum.html" \n                                style="width:100%; height:600px; border:none;">\n                        </iframe>\n                    </section>\n                    <p style=\'color:orange\'>Unsupported file type: all_curriculum_css</p>\n                    <section style="margin-bottom:30px; padding:20px; border:1px solid #ccc; border-radius:8px;">\n                        <h2>HTML Resource: ug_curriculum.html</h2>\n                        <iframe src="/static/resource/ug_curriculum.html" \n                                style="width:100%; height:600px; border:none;">\n                        </iframe>\n                    </section>\n                    <p style=\'color:orange\'>Unsupported file type: ug_curriculum_css</p>\n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
-INFO:     127.0.0.1:58526 - "POST /ask HTTP/1.1" 200 OK
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'Tell me about all curriculum and programs.'}], 'data_results': {'id': 'b578a7ac-bdfc-4cbc-82a1-f41c98646941', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'e960a4c6-7e53-4d56-95e4-3f2c6975304f', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '80c5c18a-92df-4c9f-9499-ce234819d90e', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'a853d559-880e-431b-b439-eb5b69bc9dde', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"all_curriculum,academic_programs\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': 'ab981e9c-2cce-4e5b-a80a-9aeda8e58132', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '5a9a2796-0806-4d65-87bc-60a1f63a713e', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: academic_programs.html</h2>\n            \n        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'Tell me about all curriculum and programs.'}], 'data_results': {'id': 'b578a7ac-bdfc-4cbc-82a1-f41c98646941', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'e960a4c6-7e53-4d56-95e4-3f2c6975304f', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '80c5c18a-92df-4c9f-9499-ce234819d90e', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'a853d559-880e-431b-b439-eb5b69bc9dde', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"all_curriculum,academic_programs\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': 'ab981e9c-2cce-4e5b-a80a-9aeda8e58132', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '5a9a2796-0806-4d65-87bc-60a1f63a713e', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: academic_programs.html</h2>\n            \n        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: academic_programs.html</h2>\n            \n        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: Tell me about all curriculum and programs.
+INFO:     127.0.0.1:59198 - "POST /ask HTTP/1.1" 200 OK
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': 'f31136f8-c640-4a0d-a596-da225207bf65', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '7340013e-ecda-4264-b837-03ce33040ace', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: academic_calendar
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=academic_calendar;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': '096c2c99-ed69-491c-8b37-a48d75146d21', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'a89b340d-1441-4928-bddc-dcc0ffbf029e', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "f31136f8-c640-4a0d-a596-da225207bf65",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "7340013e-ecda-4264-b837-03ce33040ace",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"academic_calendar\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': '65da1af0-e73d-4ca6-8623-529b3190075b', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'eb61b9d5-428d-4aa8-b1e3-849c468ac8f9', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+            <head>
+                <title>Combined Resource Visualization</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        background: #f7f7f7;
+                    }
+                    h1 {
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'Show me Academic Calendar'}], 'data_results': {'id': '096c2c99-ed69-491c-8b37-a48d75146d21', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'a89b340d-1441-4928-bddc-dcc0ffbf029e', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': 'f31136f8-c640-4a0d-a596-da225207bf65', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '7340013e-ecda-4264-b837-03ce33040ace', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '65da1af0-e73d-4ca6-8623-529b3190075b', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'eb61b9d5-428d-4aa8-b1e3-849c468ac8f9', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'Show me Academic Calendar'}], 'data_results': {'id': '096c2c99-ed69-491c-8b37-a48d75146d21', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'a89b340d-1441-4928-bddc-dcc0ffbf029e', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': 'f31136f8-c640-4a0d-a596-da225207bf65', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '7340013e-ecda-4264-b837-03ce33040ace', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '65da1af0-e73d-4ca6-8623-529b3190075b', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'eb61b9d5-428d-4aa8-b1e3-849c468ac8f9', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: Show me Academic Calendar
+INFO:     127.0.0.1:49882 - "POST /ask HTTP/1.1" 200 OK
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': 'd0f42ebf-04e5-4cfe-b144-50d9834c26ea', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '8b0b6596-8958-47bb-ab03-9aef4730f720', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: academic_calendar
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=academic_calendar;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': 'aeb6bddc-7f6c-4dcc-9c9a-97b55b063122', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '4f309503-94ac-4a91-b7e0-36fb5845277a', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "d0f42ebf-04e5-4cfe-b144-50d9834c26ea",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "8b0b6596-8958-47bb-ab03-9aef4730f720",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"academic_calendar\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': 'dcee43c3-557d-4d9d-b5a2-39cc5517da4c', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '980658f3-0344-4749-bc3a-be45d6d00170', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+            <head>
+                <title>Combined Resource Visualization</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        background: #f7f7f7;
+                    }
+                    h1 {
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'What is my Academic Calander'}], 'data_results': {'id': 'aeb6bddc-7f6c-4dcc-9c9a-97b55b063122', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '4f309503-94ac-4a91-b7e0-36fb5845277a', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': 'd0f42ebf-04e5-4cfe-b144-50d9834c26ea', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '8b0b6596-8958-47bb-ab03-9aef4730f720', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': 'dcee43c3-557d-4d9d-b5a2-39cc5517da4c', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '980658f3-0344-4749-bc3a-be45d6d00170', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'What is my Academic Calander'}], 'data_results': {'id': 'aeb6bddc-7f6c-4dcc-9c9a-97b55b063122', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '4f309503-94ac-4a91-b7e0-36fb5845277a', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': 'd0f42ebf-04e5-4cfe-b144-50d9834c26ea', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '8b0b6596-8958-47bb-ab03-9aef4730f720', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': 'dcee43c3-557d-4d9d-b5a2-39cc5517da4c', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '980658f3-0344-4749-bc3a-be45d6d00170', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: What is my Academic Calander
+INFO:     127.0.0.1:59497 - "POST /ask HTTP/1.1" 200 OK
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': 'c0fba487-046d-4f29-a6e1-3e91b6dd3592', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'f4f466e4-d58b-428b-8085-d78340743016', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"all_curriculum,academic_programs\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"all_curriculum,academic_programs\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: all_curriculum,academic_programs
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=all_curriculum,academic_programs;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': '7bdef1f4-1716-4a4c-acd3-27df00e8f47d', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'c0e3c683-19ae-407e-ad72-9828d6140f95', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: academic_calendar
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=academic_calendar;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': 'd3239ce0-3bf8-4d3d-a141-7de343a88016', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '4fc96f71-9b66-46c7-acef-7bf08d9186ef', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "7bdef1f4-1716-4a4c-acd3-27df00e8f47d",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "c0e3c683-19ae-407e-ad72-9828d6140f95",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"academic_calendar\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': '93ac9975-48ce-4b8d-9afe-c95c19435cd8', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'f86538c5-7dcd-4462-9963-bd5f88194e54', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+            <head>
+                <title>Combined Resource Visualization</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        background: #f7f7f7;
+                    }
+                    h1 {
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'What is my Academic Calander'}], 'data_results': {'id': 'd3239ce0-3bf8-4d3d-a141-7de343a88016', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '4fc96f71-9b66-46c7-acef-7bf08d9186ef', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '7bdef1f4-1716-4a4c-acd3-27df00e8f47d', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'c0e3c683-19ae-407e-ad72-9828d6140f95', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '93ac9975-48ce-4b8d-9afe-c95c19435cd8', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'f86538c5-7dcd-4462-9963-bd5f88194e54', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'What is my Academic Calander'}], 'data_results': {'id': 'd3239ce0-3bf8-4d3d-a141-7de343a88016', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '4fc96f71-9b66-46c7-acef-7bf08d9186ef', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '7bdef1f4-1716-4a4c-acd3-27df00e8f47d', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'c0e3c683-19ae-407e-ad72-9828d6140f95', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '93ac9975-48ce-4b8d-9afe-c95c19435cd8', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'f86538c5-7dcd-4462-9963-bd5f88194e54', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: "Tell me about all curriculum and programs."
+Received question: What is my Academic Calander
+INFO:     127.0.0.1:49679 - "POST /ask HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': '4f94b60a-6c83-4254-9891-df9d7076f925', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'e3808c75-72ea-4286-aa21-88447a4ada7c', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "c0fba487-046d-4f29-a6e1-3e91b6dd3592",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "f4f466e4-d58b-428b-8085-d78340743016",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"all_curriculum,academic_programs\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': '24ce7165-426a-4f1d-b5fd-f71cba172e21', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '00acf296-aad2-48a6-ba97-c1054ca3bc2b', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: academic_programs.html</h2>\n            \n        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+            <head>
+                <title>Combined Resource Visualization</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        background: #f7f7f7;
+                    }
+                    h1 {
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+        <section class="dv-card">
+            <h2>HTML Resource: academic_programs.html</h2>
+            
+        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+        <section class="dv-card">
+            <h2>HTML Resource: all_curriculum.html</h2>
+            
+        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': '"Tell me about all curriculum and programs."'}], 'data_results': {'id': '4f94b60a-6c83-4254-9891-df9d7076f925', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'e3808c75-72ea-4286-aa21-88447a4ada7c', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': 'c0fba487-046d-4f29-a6e1-3e91b6dd3592', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'f4f466e4-d58b-428b-8085-d78340743016', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"all_curriculum,academic_programs\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '24ce7165-426a-4f1d-b5fd-f71cba172e21', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '00acf296-aad2-48a6-ba97-c1054ca3bc2b', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: academic_programs.html</h2>\n            \n        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': '"Tell me about all curriculum and programs."'}], 'data_results': {'id': '4f94b60a-6c83-4254-9891-df9d7076f925', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'e3808c75-72ea-4286-aa21-88447a4ada7c', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': 'c0fba487-046d-4f29-a6e1-3e91b6dd3592', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'f4f466e4-d58b-428b-8085-d78340743016', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"all_curriculum,academic_programs\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '24ce7165-426a-4f1d-b5fd-f71cba172e21', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '00acf296-aad2-48a6-ba97-c1054ca3bc2b', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: academic_programs.html</h2>\n            \n        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: academic_programs.html</h2>\n            \n        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+INFO:     127.0.0.1:62963 - "POST /ask HTTP/1.1" 200 OK
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': '6f6b0f2d-9c40-44c0-a9ca-9b2e16606e46', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '11fade91-1071-4273-a28e-f1da01d4ee2f', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: academic_calendar
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=academic_calendar;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': '9798abdf-185f-453b-929f-5da28d75996c', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'a4e61420-1eb0-4800-a452-69a061d471ef', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "6f6b0f2d-9c40-44c0-a9ca-9b2e16606e46",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "11fade91-1071-4273-a28e-f1da01d4ee2f",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"academic_calendar\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': '279f0859-9621-4c0b-8c8f-17e400b5d12b', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'ebaa0407-055c-4cc8-86cc-6cc3ef82a970', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+            <head>
+                <title>Combined Resource Visualization</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        background: #f7f7f7;
+                    }
+                    h1 {
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'What is my Academic Calendar'}], 'data_results': {'id': '9798abdf-185f-453b-929f-5da28d75996c', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'a4e61420-1eb0-4800-a452-69a061d471ef', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '6f6b0f2d-9c40-44c0-a9ca-9b2e16606e46', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '11fade91-1071-4273-a28e-f1da01d4ee2f', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '279f0859-9621-4c0b-8c8f-17e400b5d12b', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'ebaa0407-055c-4cc8-86cc-6cc3ef82a970', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'What is my Academic Calendar'}], 'data_results': {'id': '9798abdf-185f-453b-929f-5da28d75996c', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'a4e61420-1eb0-4800-a452-69a061d471ef', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '6f6b0f2d-9c40-44c0-a9ca-9b2e16606e46', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '11fade91-1071-4273-a28e-f1da01d4ee2f', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '279f0859-9621-4c0b-8c8f-17e400b5d12b', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'ebaa0407-055c-4cc8-86cc-6cc3ef82a970', 'parts': [{'kind': 'text', 'text': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n            <head>\n                <title>Combined Resource Visualization</title>\n                <style>\n                    body {\n                        font-family: Arial, sans-serif;\n                        margin: 20px;\n                        background: #f7f7f7;\n                    }\n                    h1 {\n                        text-align: center;\n                        margin-bottom: 40px;\n                    }\n                </style>\n            </head>\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: What is my Academic Calendar
+INFO:     127.0.0.1:65278 - "POST /ask HTTP/1.1" 200 OK
+C:\Users\Prabha_Sharma\OneDrive - Dell Technologies\Documents\Prabha Sharma\Personal\IITJ\Projects\Assignments\practice\FM_Assignment1\MultiAgent MCP System\supervisor_agent\supervisor_api.py:72: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+INFO:     Started server process [13612]
+INFO:     Waiting for application startup.
+INFO:supervisor_agent.supervisor_agent:Fetching agent card from http://localhost:10100/.well-known/agent-card.json
+INFO:httpx:HTTP Request: GET http://localhost:10100/.well-known/agent-card.json "HTTP/1.1 200 OK"
+INFO:a2a.client.card_resolver:Successfully fetched agent card data from http://localhost:10100/.well-known/agent-card.json: {'additionalInterfaces': None, 'capabilities': {'extensions': None, 'pushNotifications': False, 'stateTransitionHistory': None, 'streaming': False}, 'defaultInputModes': ['text/plain'], 'defaultOutputModes': ['text/plain'], 'description': 'Loads CSV data, performs feature engineering, and returns preprocessed file path.', 'documentationUrl': None, 'iconUrl': None, 'name': 'Data MCP Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'provider': None, 'security': None, 'securitySchemes': None, 'signatures': None, 'skills': [{'description': 'Loads data from local path or remote MCP, selects columns, and performs preprocessing.', 'examples': None, 'id': 'data_loader', 'inputModes': None, 'name': 'Data Loader MCP', 'outputModes': None, 'security': None, 'tags': ['data', 'mcp', 'feature-engineering']}], 'supportsAuthenticatedExtendedCard': None, 'url': 'http://localhost:10100/', 'version': '1.0.0'}
+INFO:supervisor_agent.supervisor_agent:data_agent card fetched successfully.
+INFO:supervisor_agent.supervisor_agent:Fetching agent card from http://localhost:10200/.well-known/agent-card.json
+INFO:httpx:HTTP Request: GET http://localhost:10200/.well-known/agent-card.json "HTTP/1.1 200 OK"
+INFO:a2a.client.card_resolver:Successfully fetched agent card data from http://localhost:10200/.well-known/agent-card.json: {'additionalInterfaces': None, 'capabilities': {'extensions': None, 'pushNotifications': False, 'stateTransitionHistory': None, 'streaming': False}, 'defaultInputModes': ['text/plain'], 'defaultOutputModes': ['text/plain'], 'description': 'Use of LLM to get data for Student..', 'documentationUrl': None, 'iconUrl': None, 'name': 'ML MCP Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'provider': None, 'security': None, 'securitySchemes': None, 'signatures': None, 'skills': [{'description': 'Use of LLM to get data for Student.', 'examples': None, 'id': 'ml_trainer', 'inputModes': None, 'name': 'ML Trainer MCP', 'outputModes': None, 'security': None, 'tags': ['ml', 'mcp', 'training', 'modeling']}], 'supportsAuthenticatedExtendedCard': None, 'url': 'http://localhost:10200/', 'version': '1.0.0'}
+INFO:supervisor_agent.supervisor_agent:ml_agent card fetched successfully.
+INFO:supervisor_agent.supervisor_agent:Fetching agent card from http://localhost:10300/.well-known/agent-card.json
+INFO:httpx:HTTP Request: GET http://localhost:10300/.well-known/agent-card.json "HTTP/1.1 200 OK"
+INFO:a2a.client.card_resolver:Successfully fetched agent card data from http://localhost:10300/.well-known/agent-card.json: {'additionalInterfaces': None, 'capabilities': {'extensions': None, 'pushNotifications': False, 'stateTransitionHistory': None, 'streaming': False}, 'defaultInputModes': ['text/plain'], 'defaultOutputModes': ['application/json'], 'description': 'Agent that triggers MCP_DV to create visualizations.', 'documentationUrl': None, 'iconUrl': None, 'name': 'DV Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'provider': None, 'security': None, 'securitySchemes': None, 'signatures': None, 'skills': [{'description': 'Generates plots from ML predictions and saves artifacts.', 'examples': None, 'id': 'visualization', 'inputModes': None, 'name': 'Visualization MCP', 'outputModes': None, 'security': None, 'tags': ['viz', 'plots', 'mcp']}], 'supportsAuthenticatedExtendedCard': None, 'url': 'http://localhost:10300/', 'version': '1.0.0'}
+INFO:supervisor_agent.supervisor_agent:dv_agent card fetched successfully.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10500 (Press CTRL+C to quit)
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': 'ab191a33-930d-4862-893f-a18a84dc36cc', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '32b31351-f78d-45ca-8639-ccbe35305fe4', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"ug_curriculum\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"ug_curriculum\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: ug_curriculum
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=ug_curriculum;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': '2faacb2a-abd6-4767-a911-4902fb420306', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'c36e68bd-51a3-4d0b-a4ba-08e4b02e05fc', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "ab191a33-930d-4862-893f-a18a84dc36cc",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "32b31351-f78d-45ca-8639-ccbe35305fe4",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"ug_curriculum\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': 'e1dbae40-5798-4c77-bcd8-b14c19aea9c4', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '29c6f39d-5a0a-4209-b94c-e598ba2783ca', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>HTML Resource: ug_curriculum.html</h2>
+            
+        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'Can you list me curriculum of UG'}], 'data_results': {'id': '2faacb2a-abd6-4767-a911-4902fb420306', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'c36e68bd-51a3-4d0b-a4ba-08e4b02e05fc', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': 'ab191a33-930d-4862-893f-a18a84dc36cc', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '32b31351-f78d-45ca-8639-ccbe35305fe4', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"ug_curriculum\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': 'e1dbae40-5798-4c77-bcd8-b14c19aea9c4', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '29c6f39d-5a0a-4209-b94c-e598ba2783ca', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'Can you list me curriculum of UG'}], 'data_results': {'id': '2faacb2a-abd6-4767-a911-4902fb420306', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'c36e68bd-51a3-4d0b-a4ba-08e4b02e05fc', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': 'ab191a33-930d-4862-893f-a18a84dc36cc', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '32b31351-f78d-45ca-8639-ccbe35305fe4', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"ug_curriculum\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': 'e1dbae40-5798-4c77-bcd8-b14c19aea9c4', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '29c6f39d-5a0a-4209-b94c-e598ba2783ca', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: Can you list me curriculum of UG
+INFO:     127.0.0.1:49876 - "POST /ask HTTP/1.1" 200 OK
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': '43f94383-8573-46d7-9408-0b9be2f87cc6', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '13d6a192-1698-47f9-a68b-8dbd970f84ed', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"ug_curriculum\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"ug_curriculum\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: ug_curriculum
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=ug_curriculum;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': 'f567949a-2545-44a1-b5cb-8e448101b096', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '58d40138-d09a-4c78-b17a-da29c1178731', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "43f94383-8573-46d7-9408-0b9be2f87cc6",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "13d6a192-1698-47f9-a68b-8dbd970f84ed",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"ug_curriculum\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': 'bcbbd86e-3046-406e-acaf-cde0780cefd4', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '3fec9b21-8d0c-4e34-964d-6a9fc92ccb51', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>HTML Resource: ug_curriculum.html</h2>
+            
+        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'What is UG Curriculum?'}], 'data_results': {'id': 'f567949a-2545-44a1-b5cb-8e448101b096', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '58d40138-d09a-4c78-b17a-da29c1178731', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '43f94383-8573-46d7-9408-0b9be2f87cc6', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '13d6a192-1698-47f9-a68b-8dbd970f84ed', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"ug_curriculum\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': 'bcbbd86e-3046-406e-acaf-cde0780cefd4', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '3fec9b21-8d0c-4e34-964d-6a9fc92ccb51', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'What is UG Curriculum?'}], 'data_results': {'id': 'f567949a-2545-44a1-b5cb-8e448101b096', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '58d40138-d09a-4c78-b17a-da29c1178731', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '43f94383-8573-46d7-9408-0b9be2f87cc6', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '13d6a192-1698-47f9-a68b-8dbd970f84ed', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"ug_curriculum\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': 'bcbbd86e-3046-406e-acaf-cde0780cefd4', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '3fec9b21-8d0c-4e34-964d-6a9fc92ccb51', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: What is UG Curriculum?
+INFO:     127.0.0.1:53817 - "POST /ask HTTP/1.1" 200 OK
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': '60510fa9-0094-4b6a-88c0-dd1386f9f328', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '118c0778-55da-4f10-8611-f5d215da94ea', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"ug_curriculum\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"ug_curriculum\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: ug_curriculum
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=ug_curriculum;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': 'a1684bb0-f72a-452a-9c62-c75703c79dbf', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '1fe1f9f9-57a9-44b5-8e65-02f253159174', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "60510fa9-0094-4b6a-88c0-dd1386f9f328",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "118c0778-55da-4f10-8611-f5d215da94ea",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"ug_curriculum\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': '0b205ae0-c5b3-40a0-9e70-83ed08d62761', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'deb5198d-a9fa-45cb-a65e-078f7b97a58b', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>HTML Resource: ug_curriculum.html</h2>
+            
+        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'What is UG Curriculum?'}], 'data_results': {'id': 'a1684bb0-f72a-452a-9c62-c75703c79dbf', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '1fe1f9f9-57a9-44b5-8e65-02f253159174', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '60510fa9-0094-4b6a-88c0-dd1386f9f328', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '118c0778-55da-4f10-8611-f5d215da94ea', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"ug_curriculum\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '0b205ae0-c5b3-40a0-9e70-83ed08d62761', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'deb5198d-a9fa-45cb-a65e-078f7b97a58b', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'What is UG Curriculum?'}], 'data_results': {'id': 'a1684bb0-f72a-452a-9c62-c75703c79dbf', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '1fe1f9f9-57a9-44b5-8e65-02f253159174', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '60510fa9-0094-4b6a-88c0-dd1386f9f328', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '118c0778-55da-4f10-8611-f5d215da94ea', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"ug_curriculum\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '0b205ae0-c5b3-40a0-9e70-83ed08d62761', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'deb5198d-a9fa-45cb-a65e-078f7b97a58b', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: What is UG Curriculum?
+INFO:     127.0.0.1:56985 - "POST /ask HTTP/1.1" 200 OK
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': '3c0c34bb-8cfa-4272-9f98-c0053b1fbc03', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'febc6512-cd9f-4db8-9008-67c1e6307af2', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: academic_calendar
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=academic_calendar;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': 'cf18b140-6383-4941-b674-d061a81f913f', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '77476090-d7d4-4fb7-8711-2133d7c12ae5', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "3c0c34bb-8cfa-4272-9f98-c0053b1fbc03",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "febc6512-cd9f-4db8-9008-67c1e6307af2",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"academic_calendar\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': '5bf8aaa7-4b0b-4cce-82fa-b6ca91b78a66', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '625de7b6-2c1d-47af-a5b6-e274bf6fd687', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'What is my Academic Calander'}], 'data_results': {'id': 'cf18b140-6383-4941-b674-d061a81f913f', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '77476090-d7d4-4fb7-8711-2133d7c12ae5', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '3c0c34bb-8cfa-4272-9f98-c0053b1fbc03', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'febc6512-cd9f-4db8-9008-67c1e6307af2', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '5bf8aaa7-4b0b-4cce-82fa-b6ca91b78a66', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '625de7b6-2c1d-47af-a5b6-e274bf6fd687', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'What is my Academic Calander'}], 'data_results': {'id': 'cf18b140-6383-4941-b674-d061a81f913f', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '77476090-d7d4-4fb7-8711-2133d7c12ae5', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '3c0c34bb-8cfa-4272-9f98-c0053b1fbc03', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'febc6512-cd9f-4db8-9008-67c1e6307af2', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '5bf8aaa7-4b0b-4cce-82fa-b6ca91b78a66', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '625de7b6-2c1d-47af-a5b6-e274bf6fd687', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: What is my Academic Calander
+INFO:     127.0.0.1:61431 - "POST /ask HTTP/1.1" 200 OK
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': 'e39f3e4e-92d9-4c3f-899b-5b325eb6f1d0', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'f93387b3-ac5c-4eff-93a4-51ee76b3bf1b', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: academic_calendar
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=academic_calendar;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': 'bc22365b-e7bc-4873-8336-a57388e937f8', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'cc2f0d90-1674-4eb0-8f2e-de512e8637f5', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "e39f3e4e-92d9-4c3f-899b-5b325eb6f1d0",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "f93387b3-ac5c-4eff-93a4-51ee76b3bf1b",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"academic_calendar\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': '73b6f080-db98-468a-b3a6-9b9ad15da8eb', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'f446c21f-07d5-43f5-8681-466234ed1e6a', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'What is my Academic Calander'}], 'data_results': {'id': 'bc22365b-e7bc-4873-8336-a57388e937f8', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'cc2f0d90-1674-4eb0-8f2e-de512e8637f5', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': 'e39f3e4e-92d9-4c3f-899b-5b325eb6f1d0', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'f93387b3-ac5c-4eff-93a4-51ee76b3bf1b', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '73b6f080-db98-468a-b3a6-9b9ad15da8eb', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'f446c21f-07d5-43f5-8681-466234ed1e6a', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'What is my Academic Calander'}], 'data_results': {'id': 'bc22365b-e7bc-4873-8336-a57388e937f8', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'cc2f0d90-1674-4eb0-8f2e-de512e8637f5', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': 'e39f3e4e-92d9-4c3f-899b-5b325eb6f1d0', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'f93387b3-ac5c-4eff-93a4-51ee76b3bf1b', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '73b6f080-db98-468a-b3a6-9b9ad15da8eb', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'f446c21f-07d5-43f5-8681-466234ed1e6a', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: What is my Academic Calander
+INFO:     127.0.0.1:58277 - "POST /ask HTTP/1.1" 200 OK
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': '938031f2-0215-4be9-9613-0496a4b949f4', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'c59f8bcd-de6b-4acd-b7fe-40163e04f901', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"ug_curriculum\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"ug_curriculum\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: ug_curriculum
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=ug_curriculum;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': 'f7400fc7-b267-410b-976a-7bb97d2eaab2', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '7df39319-4f79-4051-a200-e844d77a8ac4', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "938031f2-0215-4be9-9613-0496a4b949f4",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "c59f8bcd-de6b-4acd-b7fe-40163e04f901",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"ug_curriculum\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': '40d5d581-ea38-497c-96a4-f5a55d8fe5cd', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '4f5c7375-7c3d-4845-8cad-6fc38076b8ac', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>HTML Resource: ug_curriculum.html</h2>
+            
+        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'What is UG Curriculum?'}], 'data_results': {'id': 'f7400fc7-b267-410b-976a-7bb97d2eaab2', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '7df39319-4f79-4051-a200-e844d77a8ac4', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '938031f2-0215-4be9-9613-0496a4b949f4', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'c59f8bcd-de6b-4acd-b7fe-40163e04f901', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"ug_curriculum\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '40d5d581-ea38-497c-96a4-f5a55d8fe5cd', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '4f5c7375-7c3d-4845-8cad-6fc38076b8ac', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'What is UG Curriculum?'}], 'data_results': {'id': 'f7400fc7-b267-410b-976a-7bb97d2eaab2', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '7df39319-4f79-4051-a200-e844d77a8ac4', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '938031f2-0215-4be9-9613-0496a4b949f4', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'c59f8bcd-de6b-4acd-b7fe-40163e04f901', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"ug_curriculum\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '40d5d581-ea38-497c-96a4-f5a55d8fe5cd', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '4f5c7375-7c3d-4845-8cad-6fc38076b8ac', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>HTML Resource: ug_curriculum.html</h2>\n            \n        <iframe src="/static/resource/ug_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: What is UG Curriculum?
+INFO:     127.0.0.1:55917 - "POST /ask HTTP/1.1" 200 OK
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': 'cc96d46c-9e07-4079-9648-3b18f9437970', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '42784bd5-a710-4407-8296-9282dfd89e6e', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar,all_curriculum\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar,all_curriculum\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: academic_calendar,all_curriculum
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=academic_calendar,all_curriculum;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': '352643a9-6a46-4cea-aec1-b9bd39f9a5b7', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '37491518-0705-44eb-8e59-867a09e92245', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "cc96d46c-9e07-4079-9648-3b18f9437970",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "42784bd5-a710-4407-8296-9282dfd89e6e",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"academic_calendar,all_curriculum\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': 'cc85b56b-70f8-49de-990d-f357b2562967', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '37a60b6a-524c-4e01-b253-3cfd6a351f02', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+        <section class="dv-card">
+            <h2>HTML Resource: all_curriculum.html</h2>
+            
+        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'Can you give me Academic Calander and Curriculum'}], 'data_results': {'id': '352643a9-6a46-4cea-aec1-b9bd39f9a5b7', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '37491518-0705-44eb-8e59-867a09e92245', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': 'cc96d46c-9e07-4079-9648-3b18f9437970', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '42784bd5-a710-4407-8296-9282dfd89e6e', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar,all_curriculum\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': 'cc85b56b-70f8-49de-990d-f357b2562967', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '37a60b6a-524c-4e01-b253-3cfd6a351f02', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'Can you give me Academic Calander and Curriculum'}], 'data_results': {'id': '352643a9-6a46-4cea-aec1-b9bd39f9a5b7', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '37491518-0705-44eb-8e59-867a09e92245', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': 'cc96d46c-9e07-4079-9648-3b18f9437970', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '42784bd5-a710-4407-8296-9282dfd89e6e', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar,all_curriculum\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': 'cc85b56b-70f8-49de-990d-f357b2562967', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '37a60b6a-524c-4e01-b253-3cfd6a351f02', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: Can you give me Academic Calander and Curriculum
+INFO:     127.0.0.1:64765 - "POST /ask HTTP/1.1" 200 OK
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': '8d5ff3ce-9688-4617-b206-30c7229f6401', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'ff7b6634-2d15-49d1-87fc-25619682a6dd', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_programs,academic_calendar\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_programs,academic_calendar\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: academic_programs,academic_calendar
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=academic_programs,academic_calendar;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': '3663d7cb-7707-447d-87ae-4ba627625e17', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '90b14ebe-fe5d-42f6-b4db-fac2b2470ad9', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "8d5ff3ce-9688-4617-b206-30c7229f6401",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "ff7b6634-2d15-49d1-87fc-25619682a6dd",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"academic_programs,academic_calendar\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': '4f80b75b-f4ff-4f3a-a87a-830ec63a6567', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '9670dc5f-7607-4b7a-bd3b-9f10e7f056fd', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: academic_programs.html</h2>\n            \n        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+        <section class="dv-card">
+            <h2>HTML Resource: academic_programs.html</h2>
+            
+        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'Can you give me Academic Programs and Academic  Calendar of IIT Jodhpur'}], 'data_results': {'id': '3663d7cb-7707-447d-87ae-4ba627625e17', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '90b14ebe-fe5d-42f6-b4db-fac2b2470ad9', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '8d5ff3ce-9688-4617-b206-30c7229f6401', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'ff7b6634-2d15-49d1-87fc-25619682a6dd', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_programs,academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '4f80b75b-f4ff-4f3a-a87a-830ec63a6567', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '9670dc5f-7607-4b7a-bd3b-9f10e7f056fd', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: academic_programs.html</h2>\n            \n        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'Can you give me Academic Programs and Academic  Calendar of IIT Jodhpur'}], 'data_results': {'id': '3663d7cb-7707-447d-87ae-4ba627625e17', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '90b14ebe-fe5d-42f6-b4db-fac2b2470ad9', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '8d5ff3ce-9688-4617-b206-30c7229f6401', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'ff7b6634-2d15-49d1-87fc-25619682a6dd', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_programs,academic_calendar\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '4f80b75b-f4ff-4f3a-a87a-830ec63a6567', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '9670dc5f-7607-4b7a-bd3b-9f10e7f056fd', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: academic_programs.html</h2>\n            \n        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: academic_programs.html</h2>\n            \n        <iframe src="/static/resource/academic_programs.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: Can you give me Academic Programs and Academic  Calendar of IIT Jodhpur
+INFO:     127.0.0.1:63008 - "POST /ask HTTP/1.1" 200 OK
+INFO:supervisor_agent.supervisor_agent:Running pipeline via LangGraph...
+INFO:supervisor_agent.supervisor_agent:Calling planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10200/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:ML OUTPUT IN Data STAGE: {'id': '708e751b-3cd2-4bfa-a8c7-573b21ed03f1', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '0af56293-49d5-48c4-be06-94e3517ae8dc', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar,all_curriculum\\"}"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:RAW ML TEXT: {
+  "status": "success",
+  "source": "MCP_ML",
+  "data": "{\"method\": \"academic_calendar,all_curriculum\"}"
+}
+INFO:supervisor_agent.supervisor_agent:Extracted method: academic_calendar,all_curriculum
+INFO:supervisor_agent.supervisor_agent:----------------------------------FORWARD LAYER 1 CLIENT REQUEST TO A2A -------------------------------
+INFO:supervisor_agent.supervisor_agent:Query: STMESSAGE=academic_calendar,all_curriculum;
+INFO:supervisor_agent.supervisor_agent:Calling data planner agent via A2AClient...
+INFO:httpx:HTTP Request: POST http://localhost:10100/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:Data Agent Response: {'id': '22637f7d-fae8-45ed-83e3-345562143978', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '45b09f8f-72ac-450b-b366-f39e07b41602', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV Stage: Calling dv_agent...
+INFO:supervisor_agent.supervisor_agent:DV Promt: 
+INFO:supervisor_agent.supervisor_agent:You are the Data Visualization Agent.
+
+Your job:
+1. Read the processed ML output below.
+2. Generate visualizations OR combined HTML content.
+3. ALWAYS return pure HTML only. No markdown.
+
+ML Output:
+{
+  "id": "708e751b-3cd2-4bfa-a8c7-573b21ed03f1",
+  "jsonrpc": "2.0",
+  "result": {
+    "kind": "message",
+    "messageId": "0af56293-49d5-48c4-be06-94e3517ae8dc",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"source\": \"MCP_ML\",\n  \"data\": \"{\\\"method\\\": \\\"academic_calendar,all_curriculum\\\"}\"\n}"
+      }
+    ],
+    "role": "agent"
+  }
+}
+INFO:httpx:HTTP Request: POST http://localhost:10300/ "HTTP/1.1 200 OK"
+INFO:supervisor_agent.supervisor_agent:DV JSON response:
+INFO:supervisor_agent.supervisor_agent:{'id': '715d3528-81d8-4229-9817-94986aeac6b4', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'cd82a042-1f28-4f03-95dd-b6a7f10274ec', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}
+INFO:supervisor_agent.supervisor_agent:DV HTML : 
+            <html>
+
+            <body>
+                <h1>Visualization Results</h1>
+                
+        <section class="dv-card">
+            <h2>PDF Resource: academic_calendar.pdf</h2>
+            
+        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />
+        
+        </section>
+        
+        <section class="dv-card">
+            <h2>HTML Resource: all_curriculum.html</h2>
+            
+        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>
+        
+        </section>
+        
+            </body>
+            </html>
+            
+INFO:supervisor_agent.supervisor_agent:DV Stage complete.
+INFO:supervisor_agent.supervisor_agent:Pipeline finished.
+INFO:supervisor_agent.supervisor_agent:{'messages': [{'role': 'user', 'content': 'Can you give me Academic Calendar and Curriculum of IIT Jodhpur'}], 'data_results': {'id': '22637f7d-fae8-45ed-83e3-345562143978', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '45b09f8f-72ac-450b-b366-f39e07b41602', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '708e751b-3cd2-4bfa-a8c7-573b21ed03f1', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '0af56293-49d5-48c4-be06-94e3517ae8dc', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar,all_curriculum\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '715d3528-81d8-4229-9817-94986aeac6b4', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'cd82a042-1f28-4f03-95dd-b6a7f10274ec', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Combined files : {'messages': [{'role': 'user', 'content': 'Can you give me Academic Calendar and Curriculum of IIT Jodhpur'}], 'data_results': {'id': '22637f7d-fae8-45ed-83e3-345562143978', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '45b09f8f-72ac-450b-b366-f39e07b41602', 'parts': [{'kind': 'text', 'text': '{\n  "source": "MCP",\n  "processed_path": "C:\\\\Users\\\\Prabha_Sharma\\\\OneDrive - Dell Technologies\\\\Documents\\\\Prabha Sharma\\\\Personal\\\\IITJ\\\\Projects\\\\Assignments\\\\practice\\\\FM_Assignment1\\\\MultiAgent MCP System\\\\student_ui\\\\static\\\\resource"\n}'}], 'role': 'agent'}}, 'ml_result': {'id': '708e751b-3cd2-4bfa-a8c7-573b21ed03f1', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': '0af56293-49d5-48c4-be06-94e3517ae8dc', 'parts': [{'kind': 'text', 'text': '{\n  "status": "success",\n  "source": "MCP_ML",\n  "data": "{\\"method\\": \\"academic_calendar,all_curriculum\\"}"\n}'}], 'role': 'agent'}}, 'dv_result': {'id': '715d3528-81d8-4229-9817-94986aeac6b4', 'jsonrpc': '2.0', 'result': {'kind': 'message', 'messageId': 'cd82a042-1f28-4f03-95dd-b6a7f10274ec', 'parts': [{'kind': 'text', 'text': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}], 'role': 'agent'}}}
+INFO:supervisor_agent.supervisor_api:Returning to client: {'dv_html': '\n            <html>\n\n            <body>\n                <h1>Visualization Results</h1>\n                \n        <section class="dv-card">\n            <h2>PDF Resource: academic_calendar.pdf</h2>\n            \n        <embed src="/static/resource/academic_calendar.pdf" type="application/pdf" class="dv-pdf" />\n        \n        </section>\n        \n        <section class="dv-card">\n            <h2>HTML Resource: all_curriculum.html</h2>\n            \n        <iframe src="/static/resource/all_curriculum.html" class="dv-iframe"></iframe>\n        \n        </section>\n        \n            </body>\n            </html>\n            '}
+Received question: Can you give me Academic Calendar and Curriculum of IIT Jodhpur
+INFO:     127.0.0.1:60531 - "POST /ask HTTP/1.1" 200 OK
